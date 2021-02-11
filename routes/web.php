@@ -30,4 +30,7 @@ Route::get('/type/{id}', [App\Http\Controllers\TypeController::class, 'show'])->
 //Role
 Route::get('/role', [App\Http\Controllers\RoleController::class, 'index'])->name('role');
 Route::get('/role/{id}', [App\Http\Controllers\RoleController::class, 'show'])->name('show');
+//Locality
+Route::get('/locality', [App\Http\Controllers\LocalityController::class, 'index'])->name('locality');
+Route::get('/locality/{id}', [App\Http\Controllers\LocalityController::class, 'show'])->name('show');
 
