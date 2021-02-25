@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Location extends Model
+class Show extends Model
 {
+    
     use HasFactory;
         /**
      * The attributes that are mass assignable.
@@ -15,11 +16,12 @@ class Location extends Model
      */
     protected $fillable = [
         'slug',
-        'designation',
-        'address',
-        'locality_id',
-        'website',
-        'phone',
+        'title',
+        'description',
+        'poster_url',
+        'location_id',
+        'bookable',
+        'price',
     ];
 
    /**
@@ -27,7 +29,7 @@ class Location extends Model
      *
      * @var string
      */
-    protected $table = 'locations';
+    protected $table = 'shows';
 
    /**
      * Indicates if the model should be timestamped.
@@ -37,20 +39,11 @@ class Location extends Model
     public $timestamps = false;
     
     /**
-     * Get the locality of the location - relationship
+     * Get the location of the show - relationship
      */
-    public function locality()
+    public function showLocation()
     {
-        return $this->belongsTo('App\Models\Locality');
+        //return $this->hasMany('App\Models\Location');
+        return $this->belongsTo('App\Models\Location');
     }
-
-    /**
-     * Get the show of the location - relationship
-     */
-    public function locationShow()
-    {
-        //return $this->belongsTo('App\Models\Show');
-        return $this->hasMany('App\Models\Show');
-    }
-
 }

@@ -7,7 +7,7 @@
     
     <ul>
   
-    @foreach($locality->Location as $location)
+    @foreach($locality->location as $location)
         <li>{{ $location->designation }}</li>
     @endforeach
     </ul>
