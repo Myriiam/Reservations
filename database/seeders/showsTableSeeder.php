@@ -19,7 +19,9 @@ class showsTableSeeder extends Seeder
     public function run()
     {
                 //Empty the table first
-        Show::truncate();
+                DB::statement('SET FOREIGN_KEY_CHECKS=0');
+                Show::truncate();
+                DB::statement('SET FOREIGN_KEY_CHECKS=1');
         
         //Define data
         $shows = [
@@ -30,7 +32,7 @@ class showsTableSeeder extends Seeder
                     . 'Questionné par les douaniers, il doit alors justifier son identité, '
                     . 'et surtout prouver qu\'il est haïtien – qu\'est-ce qu\'être haïtien ?',
                 'poster_url'=>'ayiti.jpg',
-                'location_id'=>'espace-delvaux-la-venerie',
+                'location_slug'=>'espace-delvaux-la-venerie',
                 'bookable'=>true,
                 'price'=>8.50,
             ],
@@ -40,7 +42,7 @@ class showsTableSeeder extends Seeder
                 'description'=>'Dans ce « thriller d’anticipation », des adultes semblent alimenter '
                     . 'et véhiculer une crainte féroce envers les enfants âgés entre 10 et 12 ans.',
                 'poster_url'=>'cible.jpg',
-                'location_id'=>'dexia-art-center',
+                'location_slug'=>'dexia-art-center',
                 'bookable'=>true,
                 'price'=>9.00,
             ],
@@ -52,7 +54,7 @@ class showsTableSeeder extends Seeder
                     . 'quatorze nouvelles chansons mêlées à de petits textes humoristiques et '
                     . 'à quelques fortes images poétiques.',
                 'poster_url'=>'claudebelgesaison220.jpg',
-                'location_id'=>null,
+                'location_slug'=>null,
                 'bookable'=>false,
                 'price'=>5.50,
             ],
@@ -62,7 +64,7 @@ class showsTableSeeder extends Seeder
                 'description'=>'A tour de rôle, Pierre se joue de ses oncles, '
                     . 'tantes, grands-parents et surtout de sa mère.',
                 'poster_url'=>'wayburn.jpg',
-                'location_id'=>'la-samaritaine',
+                'location_slug'=>'la-samaritaine',      //Pourquoi location_slug et pas location_id ????????
                 'bookable'=>true,
                 'price'=>10.50,
             ],
@@ -70,7 +72,7 @@ class showsTableSeeder extends Seeder
         
         //Insert data in the table
         foreach ($shows as $data) {
-            $location = Location::firstWhere('slug',$data['slug']);
+            $location = Location::firstWhere('slug',$data['location_slug']); 
             
             DB::table('shows')->insert([
                 'slug' => Str::slug($data['title'],'-'),
