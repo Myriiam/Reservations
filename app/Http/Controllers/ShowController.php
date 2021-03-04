@@ -3,12 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use App\Models\Locality;
 use App\Models\Show;
-use App\Models\Location;
 
-
-class LocationController extends Controller
+class ShowController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,13 +14,13 @@ class LocationController extends Controller
      */
     public function index()
     {
-        $locations = Location::all();   //Récupérer les locations du modèle(table)
-        //dd($locations);
-       
-        return view('location.index',[
-            'locations' => $locations,
-            'resource' => 'locations',
+        $shows = Show::all();
+        
+        return view('show.index',[
+            'shows' => $shows,
+            'resource' => 'spectacles',
         ]);
+
     }
 
     /**
@@ -53,25 +50,14 @@ class LocationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)        
+    public function show($id)
     {
-        $location = Location::find($id);
-       // $shows = Show::all();
-        return view('location.show',[       /** pourquoi dans le tuto, y avait-il un 's' ? */
-            'location' => $location,
-           // 'shows' => $shows,
+        $show = Show::find($id);
+        
+        return view('show.show',[
+            'show' => $show,
+        ]);    
 
-            // à mettre dans le show.blade de location
-      /*   <h2>Liste des spectacles</h2>
-           <ul>
-           @foreach($shows as $show)
-               <li>{{ $show->title }}</li>
-           @endforeach
-           </ul>
-      */
-
-        ]);
-      
     }
 
     /**

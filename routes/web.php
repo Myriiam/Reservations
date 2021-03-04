@@ -36,4 +36,7 @@ Route::get('/locality/{id}', [App\Http\Controllers\LocalityController::class, 's
 //Location
 Route::get('/location', [App\Http\Controllers\LocationController::class, 'index'])->name('location');
 Route::get('/location/{id}', [App\Http\Controllers\LocationController::class, 'show'])->name('location_show');
+//Show
+Route::get('/show', [App\Http\Controllers\ShowController::class, 'index'])->name('show');
+Route::get('/show/{id}', [App\Http\Controllers\ShowController::class, 'show'])->name('show_show');
 

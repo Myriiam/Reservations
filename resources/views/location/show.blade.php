@@ -23,8 +23,8 @@
             <p>Pas de téléphone</p>
             @endif
         </address>
-        
-<!-- show is undefined, rien ne s'affiche dans le navigateur !!! -->
 
+<!-- show is undefined, rien ne s'affiche dans le navigateur !!! -->
+       
 @endsection
 
