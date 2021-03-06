@@ -39,4 +39,7 @@ Route::get('/location/{id}', [App\Http\Controllers\LocationController::class, 's
 //Show
 Route::get('/show', [App\Http\Controllers\ShowController::class, 'index'])->name('show');
 Route::get('/show/{id}', [App\Http\Controllers\ShowController::class, 'show'])->name('show_show');
+//Representation
+Route::get('/representation', [App\Http\Controllers\RepresentationController::class, 'index'])->name('representation_index');
+Route::get('/representation/{id}', [App\Http\Controllers\RepresentationController::class, 'show'])->name('representation_show');
 
