@@ -47,10 +47,20 @@ class Location extends Model
     /**
      * Get the show of the location - relationship
      */
-    public function locationShow()
+    public function shows()
     {
         //return $this->belongsTo('App\Models\Show');
         return $this->hasMany('App\Models\Show');
     }
+
+
+    /**
+     * Get the representations in this location - relationship
+     */
+    public function representations()
+    {
+        return $this->hasMany('App\Models\Representation');
+    }
+
 
 }

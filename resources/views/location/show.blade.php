@@ -4,6 +4,7 @@
 
 @section('content')
     <article>
+   
         <h1>{{ $location->designation }}</h1>
         <address>
             <p>{{ $location->address }}</p>
@@ -25,6 +26,11 @@
         </address>
 
 <!-- show is undefined, rien ne s'affiche dans le navigateur !!! -->
-       
+    <h2>Liste des spectacles</h2>
+        <ul>
+        @foreach($location->shows as $show)
+            <li>{{ $show->title }}</li>
+        @endforeach
+        </ul>
 @endsection
 

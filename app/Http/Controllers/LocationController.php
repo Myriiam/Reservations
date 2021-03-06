@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 //use App\Models\Locality;
-use App\Models\Show;
 use App\Models\Location;
 
 
@@ -56,10 +55,10 @@ class LocationController extends Controller
     public function show($id)        
     {
         $location = Location::find($id);
-       // $shows = Show::all();
+    
         return view('location.show',[       /** pourquoi dans le tuto, y avait-il un 's' ? */
             'location' => $location,
-           // 'shows' => $shows,
+          
 
             // à mettre dans le show.blade de location
       /*   <h2>Liste des spectacles</h2>

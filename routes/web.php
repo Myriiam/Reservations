@@ -22,7 +22,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Artist
-Route::get('/artist', [App\Http\Controllers\ArtistController::class, 'index'])->name('artist');       //Qu'est-ce qu'on met dans le name ?
+Route::get('/artist', [App\Http\Controllers\ArtistController::class, 'index'])->name('artist');       
 Route::get('/artist/{id}', [App\Http\Controllers\ArtistController::class, 'show'])->name('artist_show');
 //Type
 Route::get('/type', [App\Http\Controllers\TypeController::class, 'index'])->name('type');
