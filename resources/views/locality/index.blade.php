@@ -15,8 +15,7 @@
             <tbody>
             @foreach($localities as $locality)
                 <tr>
-                    <td>{{ $locality->postal_code }}</td>
-                    <td>{{ $locality->locality }}</td>
+                    <td><a href="{{ route('locality_show', $locality->id) }}">{{ $locality->postal_code }} {{ $locality->locality }}</a></td>
                 </tr>
             @endforeach
             </tbody>
