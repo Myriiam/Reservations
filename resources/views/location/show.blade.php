@@ -1,8 +1,10 @@
-@extends('layouts.app')
-<!-- Afficher un lieu de spectacle et tous les spectacles qui s’y trouvent -->
-@section('title', 'Fiche d\'un lieu de spectacle')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Fiche d\'un lieu de spectacle') }}
+        </h2>
+    </x-slot>
 
-@section('content')
     <article>
    
         <h1>{{ $location->designation }}</h1>
@@ -32,5 +34,6 @@
             <li>{{ $show->title }}</li>
         @endforeach
         </ul>
-@endsection
+</x-app-layout>
+
 

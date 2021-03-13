@@ -1,7 +1,10 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Fiche d\'un type') }}
+        </h2>
+    </x-slot>
 
-@section('title', 'Fiche d\'un type')
-
-@section('content')
     <h1>{{ $type->type }}</h1>
-@endsection
+</x-app-layout>
+

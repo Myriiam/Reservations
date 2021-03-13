@@ -1,8 +1,10 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Liste des rôles') }}
+        </h2>
+    </x-slot>
 
-@section('title', 'Liste des rôles')
-
-@section('content')
     <h1>Liste des {{ $resource }}</h1>
 
     <table>
@@ -19,4 +21,5 @@
         @endforeach
         </tbody>
     </table>
-@endsection
+</x-app-layout>
+
