@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('title', 'Liste des localités')
 
 @section('content')
@@ -21,4 +22,5 @@
         @endforeach
         </tbody>
     </table>
+
 @endsection
