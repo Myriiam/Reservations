@@ -1,10 +1,11 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Liste des artistes') }}
+        </h2>
+    </x-slot>
 
-@section('title', 'Liste des artistes')
-
-@section('content')
     <h1>Liste des {{ $resource }}</h1>
-
     <table>
         <thead>
             <tr>
@@ -21,4 +22,4 @@
         @endforeach
         </tbody>
     </table>
-@endsection
+</x-app-layout>

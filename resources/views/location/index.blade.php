@@ -1,8 +1,10 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Liste des lieux de spectacle') }}
+        </h2>
+    </x-slot>
 
-@section('title', 'Liste des lieux de spectacle')
-
-@section('content')
     <h1>Liste des {{ $resource }}</h1>
 
     <ul>
@@ -14,4 +16,4 @@
     </li>
     @endforeach
     </ul>
-@endsection
+</x-app-layout>
