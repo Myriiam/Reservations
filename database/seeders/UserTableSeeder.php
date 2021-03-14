@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use DateTime;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -19,6 +20,7 @@ class UserTableSeeder extends Seeder
             'name' => 'Simba',
             'email' => 'epfc@epfc.com',
             'password' => Hash::make('epfcepfc'),
+            'created_at' => new DateTime(),
         ]);
     }
 }
