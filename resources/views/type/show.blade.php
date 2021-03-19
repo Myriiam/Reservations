@@ -6,5 +6,10 @@
     </x-slot>
 
     <h1>{{ $type->type }}</h1>
+@forelse($type->artists as $artist)
+    <p>{{ $artist->firstname }} {{ $artist->lastname }}</p>
+@empty
+    <p>Aucun artiste n'a cette fonction.</p>
+@endforelse
 </x-app-layout>
 
