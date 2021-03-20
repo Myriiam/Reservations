@@ -15,7 +15,6 @@ class ShowController extends Controller
     public function index()
     {
         $shows = Show::all();
-        
         return view('show.index',[
             'shows' => $shows,
             'resource' => 'spectacles',
