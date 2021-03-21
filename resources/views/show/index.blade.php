@@ -4,7 +4,7 @@
             {{ __('Shows List') }}
         </h2>
     </x-slot>
-
+    <x-slot name="header">
     <div>
         <h1>Liste des {{ $resource }}</h1>
 

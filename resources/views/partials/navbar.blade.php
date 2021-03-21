@@ -18,9 +18,9 @@
           </button>
         </div>
         <nav class="hidden md:flex space-x-10">
-          <div class="relative">
+          <div class="relative" x-data="{menu_open:false}">
             <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-            <button type="button" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" aria-expanded="false">
+            <button type="button" @mouseover="menu_open = true" @click="menu_open = !menu_open" @keydown.enter="menu_open = !menu_open"; class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" aria-expanded="false">
               <span>Shows</span>
               <!--
                 Heroicon name: solid/chevron-down
@@ -31,7 +31,7 @@
                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
               </svg>
             </button>
-  
+
             <!--
               'Solutions' flyout menu, show/hide based on flyout menu state.
   
@@ -42,10 +42,10 @@
                 From: "opacity-100 translate-y-0"
                 To: "opacity-0 translate-y-1"
             -->
-            <div class="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+            <div x-show ="menu_open" @mouseover="menu_open = true" @mouseleave="menu_open = false" class="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
               <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                 <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                  <a href="{{ route('location') }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                  <a href="{{ route('show') }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                     <!-- Heroicon name: outline/chart-bar -->
                     <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -151,7 +151,7 @@
             Pricing
           </a>
           <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
-            Docs
+            About us
           </a>
         <!-- Login button | logout button -->          
         </nav>
@@ -165,7 +165,7 @@
           </a>
         @else
           <a href="{{ route('register') }}" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
-            Login
+            Register
           </a>
           <a href="{{ route('login') }}" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
             Login
