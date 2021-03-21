@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Artist;
-use Illuminate\Support\Facades\DB;   //Pour avoir accès à la base de données
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema; 
 
 class ArtistsTableSeeder extends Seeder
 {
@@ -16,8 +17,10 @@ class ArtistsTableSeeder extends Seeder
     public function run()
     {
         //Empty the table first
+        Schema::disableForeignKeyConstraints();
         Artist::truncate();
-        
+        Schema::enableForeignKeyConstraints();
+
         //Define data
        $artists = [
             ['firstname'=>'Daniel','lastname'=>'Marcelin'],
@@ -34,9 +37,9 @@ class ArtistsTableSeeder extends Seeder
             ['firstname'=>'Pierre','lastname'=>'Wayburn'],
             ['firstname'=>'Gwendoline','lastname'=>'Gauthier'],
         ];
-        
+
         //Insert data in the table
-        foreach ($artists as $data) {     
+        foreach ($artists as $data) {
             DB::table('artists')->insert([
                 'firstname' => $data['firstname'],
                 'lastname' => $data['lastname'],

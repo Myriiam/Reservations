@@ -4,10 +4,10 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use App\Models\Location;
 use App\Models\Show;
-
 
 class showsTableSeeder extends Seeder
 {
@@ -18,12 +18,12 @@ class showsTableSeeder extends Seeder
      */
     public function run()
     {
-                //Empty the table first
-                DB::statement('SET FOREIGN_KEY_CHECKS=0');
-                Show::truncate();
-                DB::statement('SET FOREIGN_KEY_CHECKS=1');
-        
-        //Define data
+        //Empty the table first
+        Schema::disableForeignKeyConstraints();
+        Show::truncate();
+        Schema::enableForeignKeyConstraints();
+
+       //Define data
         $shows = [
             [
                 'slug'=>null,
@@ -69,11 +69,11 @@ class showsTableSeeder extends Seeder
                 'price'=>10.50,
             ],
         ];
-        
+
         //Insert data in the table
         foreach ($shows as $data) {
-            $location = Location::firstWhere('slug',$data['location_slug']); 
-            
+            $location = Location::firstWhere('slug',$data['location_slug']);
+
             DB::table('shows')->insert([
                 'slug' => Str::slug($data['title'],'-'),
                 'title' => $data['title'],
@@ -84,6 +84,8 @@ class showsTableSeeder extends Seeder
                 'price' => $data['price'],
             ]);
         }
+
+        Show::factory()->count(200)->create();
     }
 
 }

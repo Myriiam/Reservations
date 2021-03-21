@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use App\Models\Location;
 use App\Models\Locality;
@@ -18,16 +19,15 @@ class LocationsTableSeeder extends Seeder
     public function run()
     {
             //Empty the table first
-  
-            DB::statement('SET FOREIGN_KEY_CHECKS=0');
-            Location::truncate();
-            DB::statement('SET FOREIGN_KEY_CHECKS=1');
-    
+        Schema::disableForeignKeyConstraints();
+        Location::truncate();
+        Schema::enableForeignKeyConstraints();
+
 
             //Define data
             $locations = [
                 [
-                    
+
                     'slug'=>null,
                     'designation'=>'Espace Delvaux / La Vénerie',
                     'address'=>'3 rue Gratès',
@@ -64,7 +64,7 @@ class LocationsTableSeeder extends Seeder
                     'phone'=>'+32 (0)2/274.05.10',
                 ],
             ];
-            
+
             //Insert data in the table
             foreach ($locations as $data) {
                 $locality = Locality::firstWhere('postal_code',$data['locality_postal_code']);

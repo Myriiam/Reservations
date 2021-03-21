@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Type;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class typesTableSeeder extends Seeder
 {
@@ -15,18 +16,19 @@ class typesTableSeeder extends Seeder
      */
     public function run()
     {
-         //Empty the table first
-         Type::truncate();
-        
+        Schema::disableForeignKeyConstraints();
+        Type::truncate();
+        Schema::enableForeignKeyConstraints();
+
          //Define data
         $types = [
              ['type'=>'auteur'],
              ['type'=>'scénographe'],
              ['type'=>'comédien'],
-         
+
         ];
          //Insert data in the table
-         foreach ($types as $data) {     
+         foreach ($types as $data) {
              DB::table('types')->insert([
                  'type' => $data['type'],
              ]);

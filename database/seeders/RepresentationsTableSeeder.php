@@ -7,6 +7,7 @@ use App\Models\Location;
 use App\Models\Show;
 use App\Models\Representation;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class RepresentationsTableSeeder extends Seeder
 {
@@ -17,12 +18,11 @@ class RepresentationsTableSeeder extends Seeder
      */
     public function run()
     {
-        
         //Empty the table first
-        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        Schema::disableForeignKeyConstraints();
         Representation::truncate();
-        DB::statement('SET FOREIGN_KEY_CHECKS=1');
-        
+        Schema::enableForeignKeyConstraints();
+
         //Define data
         $representations = [
             [
@@ -46,17 +46,17 @@ class RepresentationsTableSeeder extends Seeder
                 'when'=>'2012-10-16 20:30',
             ],
         ];
-        
+
         //Insert data in the table
         foreach ($representations as $data) {
             $location = Location::firstWhere('slug',$data['location_slug']);
             $show = Show::firstWhere('slug',$data['show_slug']);
-            
+
             DB::table('representations')->insert([
                 'location_id' => $location->id ?? null,
                 'show_id' => $show->id,
                 'when' => $data['when'],
-            ]);       
+            ]);
         }
     }
 }
