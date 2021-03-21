@@ -30,4 +30,11 @@ class Artist extends Model
      */
     public $timestamps = false;
 
+    /**
+     * Retrieves all types of this $artist.
+     */
+    public function types() {
+      return $this->belongsToMany(Type::class);
+    }
+
 }
