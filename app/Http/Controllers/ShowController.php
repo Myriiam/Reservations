@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Show;
+use Illuminate\Support\Facades\DB;
 
 class ShowController extends Controller
 {
@@ -14,8 +15,8 @@ class ShowController extends Controller
      */
     public function index()
     {
-        $shows = Show::all();
-        
+        $shows = DB::table('shows')->simplePaginate(9);
+
         return view('show.index',[
             'shows' => $shows,
             'resource' => 'spectacles',
@@ -53,10 +54,10 @@ class ShowController extends Controller
     public function show($id)
     {
         $show = Show::find($id);
-        
+
         return view('show.show',[
             'show' => $show,
-        ]);    
+        ]);
 
     }
 

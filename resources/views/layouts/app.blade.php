@@ -29,7 +29,7 @@
             </header>
 
             <!-- Page Content -->
-            <main class="pt-5 pl-10">
+            <main class="p-5">
                 {{ $slot }}
             </main>
         </div>
