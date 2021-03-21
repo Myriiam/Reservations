@@ -19,18 +19,23 @@
         <div class="min-h-screen bg-gray-100">
             {{-- @include('layouts.navigation') --}}
 
+            <!-- Navbar -->
+            @include('partials.navbar')    
             <!-- Page Heading -->
             <header class="bg-white shadow">
                 <div class="container mx-auto px-4">
-                    <!-- Navbar -->
-                    @include('partials.navbar')    
-                    <!--header here-->
+                <!--header here-->
                 </div>  
             </header>
-
             <!-- Page Content -->
             <main class="pt-5 pl-10">
             <!--content here-->
+                <h2>Welcome</h2>
+                <div id="app" style="text-align:left;margin-top:2%;margin-bottom:2%;">
+                    <face text="Welcome to the theater | by Vue Js"></face>
+                </div>
+                <div id="app2"></div>
+                <div id="app3"></div>
             </main>
         </div>
     </body>

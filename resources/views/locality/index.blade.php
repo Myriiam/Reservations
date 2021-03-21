@@ -15,12 +15,12 @@
             </tr>
         </thead>
         <tbody>
-        @foreach($localities as $locality)
-            <tr>
-                <td>{{ $locality->postal_code }}</td>
-                <td><a href="{{ route('locality_show', $locality->id) }}">{{ $locality->locality }}</a></td>
-            </tr>
-        @endforeach
+            @foreach($localities as $locality)
+                <tr>
+                    <td>{{ $locality->postal_code }}</td>
+                    <td><a href="{{ route('locality_show', $locality->id) }}">{{ $locality->locality }}</a></td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </x-app-layout>
