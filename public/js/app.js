@@ -293,7 +293,7 @@ var render = function() {
       "button",
       {
         staticClass:
-          "text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500",
+          "text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500",
         attrs: { type: "button", "aria-expanded": "false" },
         on: {
           mouseover: function($event) {
@@ -376,14 +376,13 @@ var render = function() {
                       {
                         staticClass:
                           "-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50",
-                        attrs: { href: ":link1" }
+                        attrs: { href: "/show" }
                       },
                       [
                         _c(
                           "svg",
                           {
-                            staticClass:
-                              "flex-shrink-0 h-6 w-6 text-indigo-600",
+                            staticClass: "flex-shrink-0 h-6 w-6 text-red-800",
                             attrs: {
                               xmlns: "http://www.w3.org/2000/svg",
                               fill: "none",
@@ -414,14 +413,13 @@ var render = function() {
                       {
                         staticClass:
                           "-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50",
-                        attrs: { href: ":link2" }
+                        attrs: { href: "/location" }
                       },
                       [
                         _c(
                           "svg",
                           {
-                            staticClass:
-                              "flex-shrink-0 h-6 w-6 text-indigo-600",
+                            staticClass: "flex-shrink-0 h-6 w-6 text-red-800",
                             attrs: {
                               xmlns: "http://www.w3.org/2000/svg",
                               fill: "none",
@@ -452,14 +450,13 @@ var render = function() {
                       {
                         staticClass:
                           "-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50",
-                        attrs: { href: ":link3" }
+                        attrs: { href: "/role" }
                       },
                       [
                         _c(
                           "svg",
                           {
-                            staticClass:
-                              "flex-shrink-0 h-6 w-6 text-indigo-600",
+                            staticClass: "flex-shrink-0 h-6 w-6 text-red-800",
                             attrs: {
                               xmlns: "http://www.w3.org/2000/svg",
                               fill: "none",
@@ -490,14 +487,13 @@ var render = function() {
                       {
                         staticClass:
                           "-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50",
-                        attrs: { href: ":link4" }
+                        attrs: { href: "/locality" }
                       },
                       [
                         _c(
                           "svg",
                           {
-                            staticClass:
-                              "flex-shrink-0 h-6 w-6 text-indigo-600",
+                            staticClass: "flex-shrink-0 h-6 w-6 text-red-800",
                             attrs: {
                               xmlns: "http://www.w3.org/2000/svg",
                               fill: "none",
@@ -528,14 +524,13 @@ var render = function() {
                       {
                         staticClass:
                           "-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50",
-                        attrs: { href: ":link5" }
+                        attrs: { href: "/representation" }
                       },
                       [
                         _c(
                           "svg",
                           {
-                            staticClass:
-                              "flex-shrink-0 h-6 w-6 text-indigo-600",
+                            staticClass: "flex-shrink-0 h-6 w-6 text-red-800",
                             attrs: {
                               xmlns: "http://www.w3.org/2000/svg",
                               fill: "none",
