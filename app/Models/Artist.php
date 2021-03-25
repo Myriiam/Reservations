@@ -35,6 +35,7 @@ class Artist extends Model
      */
     public function types() {
       return $this->belongsToMany(Type::class);
+      //return $this->hasMany('App\Models\Type');
     }
 
 }
