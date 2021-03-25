@@ -1,15 +1,20 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h1 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Fiche d\'un type') }}
-        </h2>
+        </h1>
     </x-slot>
 
-    <h1>{{ $type->type }}</h1>
-@forelse($type->artists as $artist)
-    <p>{{ $artist->firstname }} {{ $artist->lastname }}</p>
-@empty
-    <p>Aucun artiste n'a cette fonction.</p>
-@endforelse
+        <h1>{{ $type->type }}</h1>
+            
+        <h2><strong>Liste des artistes</strong></h2>
+        <ul>
+            @forelse($type->artists as $artist)
+                <li>{{ $artist->firstname }} {{ $artist->lastname }}</li>
+            @empty
+                <p>Aucun artiste n'a cette fonction.</p>
+            @endforelse
+        </ul>
+
 </x-app-layout>
 
