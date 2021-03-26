@@ -14,10 +14,10 @@ window.onload = function(e) {
 
     const app3 = new Vue({
         el: '#app3',
-        template: "<h2> {{ welcome }} <strong>{{ name }}</strong> , welcome to the Theater</h2>",
+        template: "<h2> {{ welcome }} <b>{{ name }}</b> , welcome to the Theater</h2>",
         data:{
             welcome:"Hello",
-            name:"Bob",
+            name:"Simba",
         }
     });
 

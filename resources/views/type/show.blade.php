@@ -7,7 +7,7 @@
 
         <h1>{{ $type->type }}</h1>
             
-        <h2><strong>Liste des artistes</strong></h2>
+        <h2>Liste des artistes</h2>
         <ul>
             @forelse($type->artists as $artist)
                 <li>{{ $artist->firstname }} {{ $artist->lastname }}</li>

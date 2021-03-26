@@ -26,7 +26,7 @@
         <p><em>Non réservable</em></p>
         @endif
 
-        <h2><strong>Liste des représentations</strong></h2>
+        <h2>Liste des représentations</h2>
         @if($show->representations->count()>=1)
         <ul>
             @foreach ($show->representations as $representation)
@@ -37,7 +37,7 @@
         <p>Aucune représentation</p>
         @endif
         
-        <h2><strong>Liste des artistes</strong></h2>
+        <h2>Liste des artistes</h2>
         <p><strong>Auteur:</strong>
         @foreach ($collaborateurs['auteur'] as $auteur)
             {{ $auteur->firstname }} 

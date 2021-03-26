@@ -6,7 +6,7 @@
     </x-slot>
     <h1>{{ $artist->firstname }} {{ $artist->lastname }}</h1>
    
-    <h2><strong>Liste des types</strong></h2>
+    <h2>Liste des types</h2>
       <ul>
         @forelse($artist->types as $type)
            <li>{{ $type->type }}</li>
