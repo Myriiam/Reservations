@@ -20,6 +20,6 @@ class Type extends Model
      */
     public function artists() {
         return $this->belongsToMany(Artist::class);
-        return $this->belongsToMany('App\Models\Artist');
+        //return $this->belongsToMany('App\Models\Artist');
     }
 }
