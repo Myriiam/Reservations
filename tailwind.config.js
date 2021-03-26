@@ -18,6 +18,7 @@ module.exports = {
                 transparent: 'transparent',
                 black: '#000',
                 white: '#fff',
+                reservations: '#923333',
                 gray: {
                   100: '#f7fafc',
                   // ...
