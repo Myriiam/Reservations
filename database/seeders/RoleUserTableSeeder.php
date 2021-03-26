@@ -18,7 +18,7 @@ class RoleUserTableSeeder extends Seeder
     public function run()
     {
         Schema::disableForeignKeyConstraints();
-        DB::table('roles_users')->truncate();
+        DB::table('role_user')->truncate();
         Schema::enableForeignKeyConstraints();
 
         $roleUsers = [
@@ -33,7 +33,7 @@ class RoleUserTableSeeder extends Seeder
             $user = User::firstWhere('firstname',$data['users']);
             $role = Role::firstWhere('role',$data['role']);
 
-            DB::table('roles_users')->insert([
+            DB::table('role_user')->insert([
                 'user_id' => $user->id,
                 'role_id' => $role->id,
             ]);
