@@ -8,6 +8,7 @@ import Vue from 'vue';
 
 // New component
 Vue.component('navigation', require('./components/Navigation.vue').default);
+Vue.component('booking', require('./components/Booking.vue').default);
 
 // Instantiation
 window.onload = function(e) {
@@ -21,9 +22,13 @@ window.onload = function(e) {
         }
     });
 
+    //button to drop the show's booking modal -> Booking.vue
+    const app4 = new Vue({
+        el: 'div#app4',
+    });
+    
     //Nav button to drop the menu on large screen -> Navigation.vue
     const app5 = new Vue({
         el: 'div#app5',
     });
-
 }

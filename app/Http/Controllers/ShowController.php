@@ -62,6 +62,28 @@ class ShowController extends Controller
     }
 
     /**
+     * Method to book a show.
+     *
+     * @param  int  $id
+     * @param  int  $quantity
+     * @return \Illuminate\Http\Response
+     */
+    public function booking($id,Request $request)
+    {
+        $show = Show::find($id);
+        $quantity = $request->quantity;
+        $price = $quantity*$show->price;
+
+
+        //dd($price);
+        return view('show.booking',[
+            'show' => $show,
+            'qty' => $quantity,
+            'price' => $price,
+        ]);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
