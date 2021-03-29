@@ -1,4 +1,5 @@
-<h1 align="center">Reservations - A Laravel group project</h1>
+<h1 align="center">Reservations</h1> 
+<h2 align="center">A Laravel group project</h2>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
@@ -13,7 +14,9 @@ Celle-ci gère un catalogue reprenant des spectacles, leurs auteurs et leurs met
 
 <b>L’internaute </b> peut consulter librement le catalogue des spectacles affichant le lieu et les prochaines dates de représentation. Il pourra effectuer des recherches, des tris et des filtres à travers les pages du catalogue.
 
-<b>Le membre</b> pourra réserver des places pour une représentation d’un spectacle, consulter la liste de ses réservations et modifier ses données de profil.
+<b>Le membre</b> peut réserver des places pour une représentation d’un spectacle, consulter la liste de ses réservations (son profil) et modifier ses données de profil.
+
+<b>L’administrateur</b> peut gérer son catalogue à travers un back-office sécurisé. Par exemple, il peut ajouter, modifier et supprimer un spectacle manuellement, importer/exporter des données au format CSV, mais aussi mettre à jour la liste des spectacles grâce aux nouveautés publiées par un Web service tiers.
 
 ## Learning Laravel
 
