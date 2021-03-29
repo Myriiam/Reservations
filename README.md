@@ -11,7 +11,9 @@
 Le projet tourne autour de la gestion des réservations de spectacles d’une société de production.
 Celle-ci gère un catalogue reprenant des spectacles, leurs auteurs et leurs metteurs en scènes, les comédiens, ainsi que les lieux et les dates de représentations.
 
-<strong>L’internaute </strong> peut consulter librement le catalogue des spectacles affichant le lieu et les prochaines dates de représentation. Il pourra effectuer des recherches, des tris et des filtres à travers les pages du catalogue.
+<b>L’internaute </b> peut consulter librement le catalogue des spectacles affichant le lieu et les prochaines dates de représentation. Il pourra effectuer des recherches, des tris et des filtres à travers les pages du catalogue.
+
+<b>Le membre</b> pourra réserver des places pour une représentation d’un spectacle, consulter la liste de ses réservations et modifier ses données de profil.
 
 ## Learning Laravel
 
