@@ -22,9 +22,9 @@ L’application produit d'autre part son propre Web service (une API authentifi�
 
 ## Additional information
 
-<p>Le projet est réalisé avec le framework back-end (PHP, programmation orientée objet) Laravel 8.x Breeze (starter kit pour l'authentification).</p>
-<p>Ainsi, Tailwind est le framework css utilisé.</p>
-<p>Quant au front-end, c'est le framework vue.js qui est exploité.</p>
+Le projet est réalisé avec le framework back-end (PHP, programmation orientée objet) Laravel 8.x Breeze (starter kit pour l'authentification).</br>
+Ainsi, Tailwind est le framework css utilisé.</br>
+Quant au front-end, c'est le framework vue.js qui est exploité.
 
 - **[Tailwind css](https://tailwindcss.com/)**
 - **[Vue js](/https://vuejs.org//)**
@@ -39,10 +39,10 @@ L’application produit d'autre part son propre Web service (une API authentifi�
 
 ## Authors and acknowledgment
 
--Myriam K
--Nathalie S
--Simon O
--Gregory V.O
+-**Myriam K
+-**Nathalie S
+-**Simon O
+-**Gregory V.O
 
 ## License
 
