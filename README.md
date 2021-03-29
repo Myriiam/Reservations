@@ -38,11 +38,12 @@ Quant au front-end, c'est le framework vue.js qui est exploité.
 
 
 ## Authors and acknowledgment
-
-*Myriam K
-*Nathalie S
-*Simon O
-*Gregory V.O
+<ul>
+    <li>Myriam K</li>
+    <li>Nathalie S</li>
+    <li>Simon O</li>
+    <li>Gregory V.O</li>
+</ul>
 
 ## License
 
