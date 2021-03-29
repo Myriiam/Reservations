@@ -14,7 +14,8 @@ Celle-ci gère un catalogue reprenant des spectacles, leurs auteurs et leurs met
 
 <b>L’internaute </b> peut consulter librement le catalogue des spectacles affichant le lieu et les prochaines dates de représentation. Il pourra effectuer des recherches, des tris et des filtres à travers les pages du catalogue.
 
-<b>Le membre</b> peut réserver des places pour une représentation d’un spectacle, consulter la liste de ses réservations (son profil) et modifier ses données de profil.
+<b>Le membre</b> peut réserver des places pour une représentation d’un spectacle (en passant notamment par une plateforme de paiement en ligne comme [Stripe](https://stripe.com/fr-be/)), 
+consulter la liste de ses réservations (son profil) et modifier ses données de profil.
 
 <b>L’administrateur</b> peut gérer son catalogue à travers un back-office sécurisé. Par exemple, il peut ajouter, modifier et supprimer un spectacle manuellement, importer/exporter des données au format CSV, mais aussi mettre à jour la liste des spectacles grâce aux nouveautés publiées par un Web service tiers.
 
