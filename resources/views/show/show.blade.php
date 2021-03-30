@@ -28,8 +28,16 @@
             <form action="{{ route('show_booking', $show->id) }}" method="post">
                 @method("POST")
                 @csrf
+                <select type="select" id="date" name="date">
+                    @if(!empty($representations))
+                        <option value="">--Choisir une date--</option>
+                        @foreach ($representations as $representation)
+                            <option value="{{ !empty($representation->when) ? $representation->when : "" }}">{{ !empty($representation->when) ? $representation->when : "Pas de date disponible" }}</option>
+                        @endforeach
+                    @endif
+                </select>
                 <label for="quantity">Quantité :</label>
-                <input type="number" id="quantity" name="quantity" min="1" max="50" placeholder="1">
+                <input type="number" id="quantity" name="quantity" min="1" max="50" placeholder="0">
                 <button type="submit" class="bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                     Réserver
                 </button>
@@ -37,6 +45,10 @@
             @else
             <p><em>Non réservable</em></p>
             @endif
+            @php
+            if(!empty($message)){echo("<p class='my-5 text-red-800'>".$message."</p>");}
+            if(!empty($message2)){echo("<p class='my-5 text-red-800'>".$message2."</p>");}
+            @endphp
         </div>
     </div>
 
