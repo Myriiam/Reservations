@@ -50,4 +50,13 @@ class Representation extends Model
         return $this->belongsTo('App\Models\Show');
     }
 
+
+    /**
+     * Get the users of the representation
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\Models\User');
+    }
+
 }

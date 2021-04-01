@@ -13,10 +13,13 @@ class Type extends Model
 
     protected $table = 'types';
 
+    public $timestamps = false;
+
     /**
-     * Retrieves all artists of this type.
+     * Retrieves all artists of this type = The artists that are defined by the type
      */
     public function artists() {
         return $this->belongsToMany(Artist::class);
+        //return $this->belongsToMany('App\Models\Artist');
     }
 }

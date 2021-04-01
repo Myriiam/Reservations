@@ -134,11 +134,6 @@
 
     data: () => ({
       menu_open: false,
-      link1: false,
-      link2: false,
-      link3: false,
-      link4: false,
-      link5: false,
     })
   }
 </script>

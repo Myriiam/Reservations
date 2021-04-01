@@ -57,8 +57,16 @@ class ShowController extends Controller
         $show = Show::find($id);
         $representations = DB::table('representations')->where('show_id', $id)->get();
 
+        //Récupérer les artistes du spectacle et les grouper par type
+        $collaborateurs = [];
+        
+        foreach($show->artistTypes as $at) {
+            $collaborateurs[$at->type->type][] = $at->artist;
+        }
+
         return view('show.show',[
             'show' => $show,
+            'collaborateurs' => $collaborateurs,
             'representations' => $representations,
         ]);
     }

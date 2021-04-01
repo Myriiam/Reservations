@@ -5,10 +5,13 @@
         </h2>
     </x-slot>
     <h1>{{ $artist->firstname }} {{ $artist->lastname }}</h1>
-
-@forelse($artist->types as $type)
-    <p>{{ $type->type }}</p>
-@empty
-    <p>Aucun type pour cet artiste.</p>
-@endforelse
+   
+    <h2>Liste des types</h2>
+      <ul>
+        @forelse($artist->types as $type)
+           <li>{{ $type->type }}</li>
+        @empty
+            <p>Aucun type pour cet artiste.</p>
+        @endforelse
+      </ul>
 </x-app-layout>

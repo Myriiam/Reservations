@@ -23,11 +23,30 @@ class UserTableSeeder extends Seeder
         User::truncate();
         Schema::enableForeignKeyConstraints();
 
-        DB::table('users')->insert([
-            'name' => 'Simba',
-            'email' => 'epfc@epfc.com',
-            'password' => Hash::make('epfcepfc'),
-            'created_at' => new DateTime(),
-        ]);
+        //Define data
+        $users = [
+            [
+                'login'=>'epfc',
+                'lastname'=>'Moufassa',
+                'firstname'=>'Simba',
+                'langue'=>'français',
+                'email'=>'epfc@epfc.com',
+                'password'=>'epfcepfc',
+                'email_verified_at' => null,
+            ],
+        ];
+
+        //Insert data in the table
+        foreach ($users as $data) {     
+            DB::table('users')->insert([
+                'login' => $data['login'],
+                'lastname' => $data['lastname'],
+                'firstname' => $data['firstname'],
+                'langue' => $data['langue'],
+                'email' => $data['email'],
+                'password' => $data['password'],
+                'email_verified_at' => $data['email_verified_at'],
+            ]);
+        }
     }
 }
