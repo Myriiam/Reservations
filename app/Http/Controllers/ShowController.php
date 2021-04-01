@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Show;
+use App\Models\Representation;
 use Illuminate\Support\Facades\DB;
 
 class ShowController extends Controller
@@ -51,10 +52,12 @@ class ShowController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, $message=null)
     {
         $show = Show::find($id);
-    //Récupérer les artistes du spectacle et les grouper par type
+        $representations = DB::table('representations')->where('show_id', $id)->get();
+
+        //Récupérer les artistes du spectacle et les grouper par type
         $collaborateurs = [];
         
         foreach($show->artistTypes as $at) {
@@ -64,8 +67,57 @@ class ShowController extends Controller
         return view('show.show',[
             'show' => $show,
             'collaborateurs' => $collaborateurs,
+            'representations' => $representations,
         ]);
+    }
 
+    /**
+     * Method to book a show.
+     *
+     * @param  int  $id
+     * @param  int  $quantity
+     * @return \Illuminate\Http\Response
+     */
+    public function booking($id,Request $request)
+    {
+        $show = Show::find($id);
+        $quantity = $request->quantity;
+        $price = $quantity*$show->price;
+        $date = $request->date;
+        $representations = DB::table('representations')->where('show_id', $id)->get();
+
+        if($quantity < 1 || empty($request->date)){
+            return view('show.show',[
+                'show' => $show,
+                'message' => "Vous n'avez pas remplis tous les champs",
+                'representations' => $representations,
+            ]);
+        }
+
+        return view('show.booking',[
+            'show' => $show,
+            'qty' => $quantity,
+            'price' => $price,
+            'representations' => $representations,
+            'date' => $date,
+        ]);
+    }
+
+    /**
+     * Confirmation method of booking a show.
+     *
+     * @param  int  $id
+     * @param  int  $quantity
+     * @return \Illuminate\Http\Response
+     */
+    public function bookingConfirm($id,Request $request)
+    {
+        $show = Show::find($id);
+
+        return view('show.confirmation',[
+            'show' => $show,
+            'request' => $request,
+        ]);
     }
 
     /**

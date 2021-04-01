@@ -16,20 +16,30 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
-            <!-- Navbar -->
-            @include('partials.navbar')
+            <div class="bg-cover bg-center" style="height:100vh; background-image: url('/images/theatre.jpeg');">
+                <!-- Navbar -->
+                @include('partials.navbar')
 
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="container mx-auto px-4">
-                <!--header here-->
-                </div>  
-            </header>
-            <!-- Page Content -->
-            <main class="pt-5 pl-10">
-            <!--content here-->
-                <!--welcome to user-->
-                <div id="app3"></div>
+                <!-- Page Heading -->
+                <header class="bg-white shadow">
+                    <div class="container mx-auto px-4">
+                    <!--header here-->
+                    </div>  
+                </header>
+                <!-- Page Content -->
+                <main class="pt-5">
+                <!--content here-->
+                <section class="p-32">
+                    <!--welcome to user-->
+                    <div id="app3"></div>
+                </section>
+            </div>
+                <section>
+                    <div>
+                        <h2 class="m-20 text-center text-3xl">Le plus beau théatre d'Europe !</h2>
+                        <p class="text-center">Et c'est peu dire ...</p>
+                    </div>
+                </section>
             </main>
         </div>
     </body>
