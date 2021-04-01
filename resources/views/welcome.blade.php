@@ -29,7 +29,7 @@
                 <!-- Page Content -->
                 <main class="pt-5">
                 <!--content here-->
-                <section class="p-64">
+                <section class="p-32">
                     <!--welcome to user-->
                     <div id="app3"></div>
                 </section>
