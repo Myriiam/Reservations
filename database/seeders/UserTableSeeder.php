@@ -44,7 +44,7 @@ class UserTableSeeder extends Seeder
                 'firstname' => $data['firstname'],
                 'langue' => $data['langue'],
                 'email' => $data['email'],
-                'password' => $data['password'],
+                'password' => Hash::make($data['password']),
                 'email_verified_at' => $data['email_verified_at'],
             ]);
         }
