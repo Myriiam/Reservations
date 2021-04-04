@@ -47,4 +47,7 @@ Route::post('/confirmation/{id}', [App\Http\Controllers\ShowController::class, '
 //Representation
 Route::get('/representation', [App\Http\Controllers\RepresentationController::class, 'index'])->name('representation_index');
 Route::get('/representation/{id}', [App\Http\Controllers\RepresentationController::class, 'show'])->name('representation_show');
+//Payment
+Route::get('/show/{id}/checkout', [App\Http\Controllers\PaymentController::class, 'handleGet'])->name('purchase');
+Route::post('/payment/{id}/payment', [App\Http\Controllers\PaymentController::class, 'handlePost'])->name('payment');
 

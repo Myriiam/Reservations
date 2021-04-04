@@ -85,12 +85,18 @@ class ShowController extends Controller
         $price = $quantity*$show->price;
         $date = $request->date;
         $representations = DB::table('representations')->where('show_id', $id)->get();
+        $collaborateurs = [];
+        
+        foreach($show->artistTypes as $at) {
+            $collaborateurs[$at->type->type][] = $at->artist;
+        }
 
         if($quantity < 1 || empty($request->date)){
             return view('show.show',[
                 'show' => $show,
                 'message' => "Vous n'avez pas remplis tous les champs",
                 'representations' => $representations,
+                'collaborateurs' => $collaborateurs,
             ]);
         }
 
