@@ -17,7 +17,7 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
-        <!--Jquery-->
+        <!--Jquery or other cdn and script files-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     </head>
     <body class="font-sans antialiased">

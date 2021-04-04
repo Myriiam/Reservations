@@ -6,30 +6,7 @@
     </x-slot>
     
     <h1>Paiement de votre réservation</h1>
-
-    <style type="text/css">
-        .container {
-            margin-top: 40px;
-        }
-        .panel-heading {
-        display: inline;
-        font-weight: bold;
-        }
-        .flex-table {
-            display: table;
-        }
-        .display-tr {
-            display: table-row;
-        }
-        .display-td {
-            display: table-cell;
-            vertical-align: middle;
-            width: 55%;
-        }
-    </style>
-</head>
-<body>
-  
+    
 <div class="container">  
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
@@ -42,9 +19,9 @@
                 <div class="panel-body">
   
                     <form role="form" action="{{ route('payment',1) }}" method="post" class="validation"
-                                                     data-cc-on-file="false"
-                                                    data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"
-                                                    id="payment-form">
+                        data-cc-on-file="false"
+                            data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"
+                                id="payment-form">
                         @csrf
   
                         <div class='form-row row'>
@@ -80,15 +57,9 @@
                             </div>
                         </div>
   
-                        <div class='form-row row'>
-                            <div class='col-md-12 hide error form-group'>
-                                <div class='alert-danger alert'>Fix the errors before you begin.</div>
-                            </div>
-                        </div>
-  
                         <div class="row">
                             <div class="col-xs-12">
-                                <button class="btn btn-danger btn-lg btn-block" type="submit">Pay Now (₹100)</button>
+                                <button class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-800 hover:bg-red-700" type="submit">Pay Now (₹100)</button>
                             </div>
                         </div>
                           

@@ -31,14 +31,11 @@ class PaymentController extends Controller
      */
     public function handlePost($id,Request $request)
     {
+        $name = $request->session()->get('show')->title;
+        $qty = $request->session()->get('qty');
+        $price = $request->session()->get('price');
+        $name = $request->session()->get('show->title');
         $show = Show::find($id);
-        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
-        Stripe\Charge::create ([
-                "amount" => 100 * 150,
-                "currency" => "inr",
-                "source" => $request->stripeToken,
-                "description" => "Paiement de votre réservation au Théatre." 
-        ]);
         $representations = DB::table('representations')->where('show_id', $id)->get();
         $collaborateurs = [];
         
@@ -46,14 +43,22 @@ class PaymentController extends Controller
             $collaborateurs[$at->type->type][] = $at->artist;
         }
 
-        if(true){
+        try {
+        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+        Stripe\Charge::create ([
+            "amount" => $price * 100,
+            "currency" => "EUR",
+            "source" => $request->stripeToken,
+            "description" => "Paiement de votre réservation pour la pièce ".$name." au Théatre.",
+        ]);
             return view('show.show',[
                 "show" => $show,
                 "message" => "Le paiement de votre réservation a été éffectué",
                 'collaborateurs' => $collaborateurs,
                 'representations' => $representations,
                 ]);
-        } else {
+            } catch(\Excpetion $ex)
+        {
             return view('show.show',[
                 "show" => $show,
                 "message" => "Une erreur est survenue",

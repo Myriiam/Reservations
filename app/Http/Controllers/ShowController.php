@@ -98,15 +98,21 @@ class ShowController extends Controller
                 'representations' => $representations,
                 'collaborateurs' => $collaborateurs,
             ]);
+        } else {
+            session([
+                'qty' => $quantity,
+                'price' => $price,
+                'representations' => $representations,
+                'date' => $date,
+                'show' => $show,
+                ]);
+            return view('show.booking',[
+                'show' => $show,
+                'qty' => $quantity,
+                'price' => $price,
+                'date' => $date,
+            ]);
         }
-
-        return view('show.booking',[
-            'show' => $show,
-            'qty' => $quantity,
-            'price' => $price,
-            'representations' => $representations,
-            'date' => $date,
-        ]);
     }
 
     /**

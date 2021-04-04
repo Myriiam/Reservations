@@ -18,11 +18,12 @@
                 <input type="hidden" name="price" value="{{ $price }}">
                 
                 <div style="display:flex">
-                    <button type="submit" class="items-start bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">Accepter</button>
+                    <!--<button type="submit" class="items-start bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">Accepter</button>-->
+                    <a class="items-start bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded" href="{{ route('purchase',$show->id) }}">Passer au paiement</a>
                     <booking class="items-end mx-3 items-start bg-transparent hover:bg-red-700 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"></booking>
                 </div>
             </form>
-            <a href="{{ route('purchase',$show->id) }}">Passer au paiement</a>
+            
         </div>
     </div>
 </x-app-layout>
