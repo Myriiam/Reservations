@@ -29,6 +29,12 @@
           <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
             About us
           </a>
+           <!-- Lien du menu vers la page Profil d'un user connecté -->
+           @if(auth()->user() !== null)
+            <a href="{{ route('my_profil') }}" class="text-base font-medium text-gray-500 hover:text-gray-900">
+              My Profil
+            </a>
+          @endif
         <!-- Login button | logout button -->          
         </nav>
         <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
