@@ -50,4 +50,10 @@ Route::get('/representation/{id}', [App\Http\Controllers\RepresentationControlle
 //Payment
 Route::get('/show/{id}/checkout', [App\Http\Controllers\PaymentController::class, 'handleGet'])->name('purchase');
 Route::post('/payment/{id}/payment', [App\Http\Controllers\PaymentController::class, 'handlePost'])->name('payment');
+//Profil
+Route::get('/profil', [App\Http\Controllers\UserController::class, 'profilDisplay'])->middleware(['auth'])->name('my_profil');
 
+/*Route::get('/profil', function () {
+    return view('profil/index');
+})->middleware(['auth'])->name('my_profil');
+*/
