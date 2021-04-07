@@ -27,6 +27,5 @@
             </div>
         </div>
    
-    </main>
-   
+    </main>  
 </x-app-layout>
