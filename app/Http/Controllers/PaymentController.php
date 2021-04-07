@@ -31,10 +31,10 @@ class PaymentController extends Controller
      */
     public function handlePost($id,Request $request)
     {
-        $name = $request->session()->get('show')->title;
         $qty = $request->session()->get('qty');
         $price = $request->session()->get('price');
-        $name = $request->session()->get('show->title');
+        $name = $request->session()->get('show')->title;
+        $date = $request->session()->get('date');
         $show = Show::find($id);
         $representations = DB::table('representations')->where('show_id', $id)->get();
         $collaborateurs = [];
@@ -51,13 +51,17 @@ class PaymentController extends Controller
             "source" => $request->stripeToken,
             "description" => "Paiement de votre réservation pour la pièce ".$name." au Théatre.",
         ]);
-            return view('show.show',[
+            return view('show.confirmation',[
                 "show" => $show,
                 "message" => "Le paiement de votre réservation a été éffectué",
                 'collaborateurs' => $collaborateurs,
                 'representations' => $representations,
+                'date' => $date,
+                'price' => $price,
+                'qty' => $qty,
+                'title' => $name,
                 ]);
-            } catch(\Excpetion $ex)
+            } catch(\Exception $ex)
         {
             return view('show.show',[
                 "show" => $show,
