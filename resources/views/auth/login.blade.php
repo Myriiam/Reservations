@@ -40,6 +40,10 @@
                 </label>
             </div>
 
+            <div class="mt-5">
+                <p>Je n'ai pas encore de compte, <a href="{{ route('register') }}" class="text-red-700 font-bold">Je m'inscris ici</a></p>
+            </div>
+
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
