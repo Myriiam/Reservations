@@ -40,7 +40,25 @@
                         <p class="text-center">Et c'est peu dire ...</p>
                     </div>
                 </section>
+                <section class="flex bg-gray-900 mt-16">
+                    <div class="w-1/2">
+                        <video autoplay muted loop id="video">
+                            <source src="{{ asset('images/show.mp4') }}" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="w-1/2 bg-gray-900 text-center text-white">
+                        <h3 class="font-bold text-3xl pt-20 pb-10">Une expérience unique !</h3>
+                        <p>Assistez aux meilleures pièces d'Europe !</p>
+                        <button class="mt-10 bg-gray-200 hover:bg-gray-500 hover:text-white text-gray-900 font-bold py-2 px-4 rounded-full">
+                            En savoir plus
+                        </button>   
+                    </div>
+                </section>
+                <div class="flex justify-center pt-20 pb-10">
+                    <img class="w-1/4 justify-center" src="{{ asset('images/logo.png') }}" alt="logo du site de theatre Reservation">
+                </div>
             </div>
         </main>
+        @include('partials.footer')
     </body>
 </html>
