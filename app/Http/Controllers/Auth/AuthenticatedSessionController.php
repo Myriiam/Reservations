@@ -42,7 +42,9 @@ class AuthenticatedSessionController extends Controller
         
         if($role === "admin")
         {
-            return redirect('/backoffice');
+            return redirect()->intended(RouteServiceProvider::BACK);
+        } else if($role === "member"){
+            return redirect()->intended(RouteServiceProvider::WELCOME);
         } else {
             return redirect()->intended(RouteServiceProvider::HOME);
         }  
