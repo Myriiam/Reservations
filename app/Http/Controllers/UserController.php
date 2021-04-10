@@ -63,10 +63,12 @@ class UserController extends Controller
        
        //$user = User::find(auth()->user());
        $user = auth()->user();
-       // dd($user->firstname);
+       $roleUser = $user->role;
+       $role = $roleUser[0]['role'];
 
         return view('profil.show',[
             'user' => $user,
+            'role' => $role,
         ]);
     }
 

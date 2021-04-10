@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+//use Illuminate\Support\Facades\DB;
 use Illuminate\Auth\Events\Registered;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
@@ -50,7 +52,10 @@ class RegisteredUserController extends Controller
         ]));
 
         event(new Registered($user));
+    
+        //User become a member 
+        $user->role()->sync(2);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect(RouteServiceProvider::WELCOME);
     }
 }
