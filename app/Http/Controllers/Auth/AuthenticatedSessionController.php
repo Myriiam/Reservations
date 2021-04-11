@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Models\Role;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
@@ -29,10 +31,23 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request)
     {
         $request->authenticate();
-
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        $id = Auth::id();
+
+        //$role = Role::where('user_id','=',$id)->get();
+        $user = User::where('id','=',$id)->first();
+        $roleUser = $user->role;
+        $role = $roleUser[0]['role'];
+        
+        if($role === "admin")
+        {
+            return redirect()->intended(RouteServiceProvider::BACK);
+        } else if($role === "member"){
+            return redirect()->intended(RouteServiceProvider::WELCOME);
+        } else {
+            return redirect()->intended(RouteServiceProvider::HOME);
+        }  
     }
 
     /**

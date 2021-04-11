@@ -17,8 +17,9 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body>
-        <div class="font-sans text-gray-900 antialiased">
+        <div class="font-sans text-gray-900 antialiased pt-5 bg-gray-100">
             {{ $slot }}
         </div>
     </body>
+    @include('partials.footer')
 </html>

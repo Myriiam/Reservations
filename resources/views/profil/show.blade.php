@@ -14,7 +14,7 @@
                         <p> Mon login : {{ $user->login }}</p>
                         <p> Mon email : {{ $user->email }}</p>
                         <p> Langue : {{ $user->langue }}</p>
-                        <p> Mon rôle : {{ $user->roles[0]->role }}</p>
+                        <p> Mon rôle : {{ $role }}</p>
                         <p class="mt-5 mb-2 text-red-600 underline"> Mes spectacles : </p>
                         <ul class="list-disc list-inside">
                         <!-- ajouter le code if(le nombre de spectacle est => 1 alors on affiche les spectacles sinon on écrit aucune repres)-->

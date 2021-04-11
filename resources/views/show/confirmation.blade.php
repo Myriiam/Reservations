@@ -7,8 +7,8 @@
     
     <div class="p-10">
         <h3><b>Votre réservation:</b></h3>
-        <p>Vous avez réservé(e) avec succès {{ $request->qty }} place{{ ($request->qty>1) ? "s" : "" }} pour la pièce de théatre {{ $show->title }} qui aura lieu le {{ $request->date }}.</p>
-        <p>Le total de la réservation s'élève à {{ $request->price }}€. Vous recevrez un e-mail contenant vos tickets qu'il vous faudra présenter à l'accueil du théatre.</p>
+        <p>Vous avez réservé(e) avec succès {{ $qty }} place{{ ($qty>1) ? "s" : "" }} pour la pièce de théatre {{ $title }} qui aura lieu le {{ $date }}.</p>
+        <p>Le total de la réservation s'élève à {{ $price }}€. Vous recevrez un e-mail contenant vos tickets qu'il vous faudra présenter à l'accueil du théatre.</p>
         <a href = "#"><b class="text-red-700">Télécharger votre reservation</b></a>
     </div>
 </x-app-layout>
