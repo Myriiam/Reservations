@@ -25,6 +25,7 @@
         "tailwindcss-children": "^2.1.0"
     },
     "dependencies": {
+        "leaflet": "^1.7.1",
         "vue": "^2.6.12"
     }
 }

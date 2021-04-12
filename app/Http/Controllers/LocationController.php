@@ -55,20 +55,9 @@ class LocationController extends Controller
     public function show($id)        
     {
         $location = Location::find($id);
-    
-        return view('location.show',[       /** pourquoi dans le tuto, y avait-il un 's' ? */
+        //dd($location);
+        return view('location.show',[
             'location' => $location,
-          
-
-            // à mettre dans le show.blade de location
-      /*   <h2>Liste des spectacles</h2>
-           <ul>
-           @foreach($shows as $show)
-               <li>{{ $show->title }}</li>
-           @endforeach
-           </ul>
-      */
-
         ]);
       
     }
