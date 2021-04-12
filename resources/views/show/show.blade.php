@@ -6,7 +6,8 @@
     </x-slot>
     
     <div class="flex mb-4">
-      <div class="w-1/3 px-20">
+      <div class="w-1/4 px-20">
+        <h2 class="py-5"><b class="text-2xl">Infos billeterie</b></h2>
         <p><strong>Prix:</strong> {{ $show->price }} €</p>
 
         @if($show->bookable)
@@ -15,7 +16,7 @@
         <p><em>Non réservable</em></p>
         @endif
 
-        <h2>Liste des représentations</h2>
+        <h2 class="py-5"><b class="text-2xl">Liste des représentations</b></h2>
         @if($show->representations->count()>=1)
         <ul>
             @foreach ($show->representations as $representation)
@@ -23,10 +24,10 @@
             @endforeach
         </ul>
         @else
-        <p>Aucune représentation</p>
+        <p class="text-gray-600">Aucune représentation</p>
         @endif
 
-        <h2>Liste des artistes</h2>
+        <h2 class="py-5"><b class="text-2xl">Liste des artistes</b></h2>
         <p><strong>Auteur:</strong>
         @foreach ($collaborateurs['auteur'] as $auteur)
             {{ $auteur->firstname }} 
@@ -50,23 +51,29 @@
         </p>
 
       </div>
-      <div class="w-1/3 px-20">
-          <h1>{{ $show->title }}</h1>
+      <div class="w-2/4 px-10 flex justify-center">
+        <div>
+          <h1 class="text-4xl font-black mb-5">{{ $show->title }}</h1>
           @if($show->poster_url)
-          <p><img src="{{ asset('images/'.$show->poster_url) }}" alt="{{ $show->title }}" width="200"></p>
+          <img class="object-contain shadow-md" src="{{ asset('images/'.$show->poster_url) }}" alt="{{ $show->title }}" min-width="200">
           @else
           <canvas width="200" height="100" style="border:1px solid #000000;"></canvas>
           @endif
+        </div>
       </div>
-      <div class="w-1/3">
+      <div class="w-1/4">
+        <div class="pl-5 pb-10">
+          <p class="my-5 text-2xl font-black"><b>Lieu de représentation</b></p>
           @if($show->location)
           <p><b>Lieu de création:</b> {{ $show->location->designation }}</p>
           @endif
 
           <p><b>Prix:</b> {{ $show->price }} €</p>
+        </div>
 
           @if($show->bookable)
-          <p class="my-5"><b>Réserver des places</b></p>
+          <div class="bg-white rounded-xl p-5 shadow-md">
+          <p class="my-5 text-3xl font-black"><b>Réserver des places</b></p>
           <form action="{{ route('show_booking', $show->id) }}" method="post">
               @method("POST")
               @csrf
@@ -80,17 +87,18 @@
               </select>
               <label for="quantity">Quantité :</label>
               <input type="number" id="quantity" name="quantity" min="1" max="50" placeholder="0">
-              <button type="submit" class="bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+              <button type="submit" class="mt-5 bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                   Réserver
               </button>
           </form>
           @else
-          <p><em>Non réservable</em></p>
+          <p><em class="text-red-700 pl-5 text-2xl">Non réservable</em></p>
           @endif
           @php
           if(!empty($message)){echo("<p class='my-5 text-red-800'>".$message."</p>");}
           if(!empty($message2)){echo("<p class='my-5 text-red-800'>".$message2."</p>");}
           @endphp
+          </div>
       </div>
     </div>
 
