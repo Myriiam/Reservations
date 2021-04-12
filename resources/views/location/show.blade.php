@@ -33,7 +33,7 @@
             </div>
             <div class="flex bg-gradient-to-r from-gray-100 to-gray-500 flex-grow w-2/3">
                 <div class="rounded-xl overflow-hidden">
-                    <img class="rounded-3xl overflow-hidden mb-10 mr-10 ml-10" src="{{ asset('images/public.jpeg') }}" alt="logo du site">
+                    <img class="rounded-3xl overflow-hidden mb-10 mr-10 ml-10" src="{{ asset('images/public.jpg') }}" alt="logo du site">
                 </div>
             </div>
         </div>
