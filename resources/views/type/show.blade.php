@@ -1,7 +1,20 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h1 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Fiche d\'un type') }}
+        </h1>
+    </x-slot>
 
-@section('title', 'Fiche d\'un type')
+        <h1>{{ $type->type }}</h1>
+            
+        <h2>Liste des artistes</h2>
+        <ul>
+            @forelse($type->artists as $artist)
+                <li>{{ $artist->firstname }} {{ $artist->lastname }}</li>
+            @empty
+                <p>Aucun artiste n'a cette fonction.</p>
+            @endforelse
+        </ul>
 
-@section('content')
-    <h1>{{ $type->type }}</h1>
-@endsection
+</x-app-layout>
+

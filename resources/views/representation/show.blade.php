@@ -1,8 +1,10 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Représentation d\'un spectacle') }}
+        </h2>
+    </x-slot>
 
-@section('title', 'Fiche d\'une représentation')
-
-@section('content')
     <article>
         <h1>Représentation du {{ $date }} à {{ $heure }}</h1>
         <p><strong>Spectacle:</strong> {{ $representation->show->title }}</p>
@@ -16,4 +18,4 @@
         <em>à déterminer</em>
         @endif
         </p>
-@endsection
+</x-app-layout>

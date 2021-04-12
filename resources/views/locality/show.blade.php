@@ -1,8 +1,10 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Liste des localités') }}
+        </h2>
+    </x-slot>
 
-@section('title', 'Liste des localités')
-
-@section('content')
     <h1>{{ $locality->postal_code }} {{ $locality->locality }}</h1>
     
     <ul>
@@ -11,4 +13,5 @@
         <li>{{ $location->designation }}</li>
     @endforeach
     </ul>
-@endsection
+</x-app-layout>
+

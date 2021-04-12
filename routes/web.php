@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Artist
@@ -39,7 +42,21 @@ Route::get('/location/{id}', [App\Http\Controllers\LocationController::class, 's
 //Show
 Route::get('/show', [App\Http\Controllers\ShowController::class, 'index'])->name('show');
 Route::get('/show/{id}', [App\Http\Controllers\ShowController::class, 'show'])->name('show_show');
+Route::post('/show/{id}', [App\Http\Controllers\ShowController::class, 'booking'])->name('show_booking');
+Route::get('/confirmation/{id}', [App\Http\Controllers\ShowController::class, 'bookingConfirm'])->middleware(['auth'])->name('show_booking_confirm');
 //Representation
 Route::get('/representation', [App\Http\Controllers\RepresentationController::class, 'index'])->name('representation_index');
 Route::get('/representation/{id}', [App\Http\Controllers\RepresentationController::class, 'show'])->name('representation_show');
+//Payment
+Route::get('/show/{id}/checkout', [App\Http\Controllers\PaymentController::class, 'handleGet'])->middleware(['auth'])->name('purchase');
+Route::post('/payment/{id}/payment', [App\Http\Controllers\PaymentController::class, 'handlePost'])->middleware(['auth'])->name('payment');
+//Profil
+Route::get('/profil', [App\Http\Controllers\UserController::class, 'profilDisplay'])->middleware(['auth'])->name('my_profil');
+//Dashboard
+Route::get('/backoffice', [App\Http\Controllers\BackofficeController::class, 'index'])->middleware(['auth'])->name('backoffice');
+Route::get('/backoffice/transactions', [App\Http\Controllers\BackofficeController::class, 'transactions'])->middleware(['auth'])->name('transactions');
 
+/*Route::get('/profil', function () {
+    return view('profil/index');
+})->middleware(['auth'])->name('my_profil');
+*/

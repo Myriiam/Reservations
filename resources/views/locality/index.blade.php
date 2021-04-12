@@ -1,9 +1,10 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-bold text-xl text-gray-800 leading-tight">
+            {{ __('Liste des localités') }}
+        </h2>
+    </x-slot>
 
-
-@section('title', 'Liste des localités')
-
-@section('content')
     <h1>Liste des {{ $resource }}</h1>
 
     <table>
@@ -14,13 +15,13 @@
             </tr>
         </thead>
         <tbody>
-        @foreach($localities as $locality)
-            <tr>
-                <td>{{ $locality->postal_code }}</td>
-                <td><a href="{{ route('locality_show', $locality->id) }}">{{ $locality->locality }}</a></td>
-            </tr>
-        @endforeach
+            @foreach($localities as $locality)
+                <tr>
+                    <td>{{ $locality->postal_code }}</td>
+                    <td><a href="{{ route('locality_show', $locality->id) }}">{{ $locality->locality }}</a></td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
+</x-app-layout>
 
-@endsection
