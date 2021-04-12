@@ -27,6 +27,9 @@
                     <p>Pas de téléphone</p>
                     @endif
                 </address>
+                <div class="mt-10">
+                <a href={{ route('location') }} class="px-5 py-4 bg-gray-400 text-center rounded-md text-white text-sm focus:border-transparent hover:bg-red-700">Retour vers les autres salles</a>
+                </div>
             </div>
             <div class="flex bg-gradient-to-r from-gray-100 to-gray-500 flex-grow w-2/3">
                 <div class="rounded-xl overflow-hidden">

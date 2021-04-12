@@ -1,9 +1,13 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+            <div class="flex justify-center py-5">
+                <div>
+                <a href="/">
+                    <x-application-logo class=" text-gray-500" />
+                </a>
+                </div>
+            </div>
         </x-slot>
 
         <!-- Validation Errors -->
@@ -20,7 +24,7 @@
             </div>
 
             <!-- Firstname -->
-            <div>
+            <div class="mt-4">
                 <x-label for="firstname" :value="__('Firstname')" />
 
                 <x-input id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus />

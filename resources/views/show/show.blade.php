@@ -99,6 +99,9 @@
           if(!empty($message2)){echo("<p class='my-5 text-red-800'>".$message2."</p>");}
           @endphp
           </div>
+          <div class="mt-10">
+            <a href={{ route('show') }} class="px-5 py-4 bg-gray-400 text-center rounded-md text-white text-sm focus:border-transparent hover:bg-gray-700">Retour vers les spectacles</a>
+          </div>
       </div>
     </div>
 
