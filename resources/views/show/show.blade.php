@@ -72,6 +72,7 @@
         </div>
 
           @if($show->bookable)
+          <div>
           <div class="bg-white rounded-xl p-5 shadow-md">
           <p class="my-5 text-3xl font-black"><b>Réserver des places</b></p>
           <form action="{{ route('show_booking', $show->id) }}" method="post">
@@ -87,7 +88,7 @@
               </select>
               <label for="quantity">Quantité :</label>
               <input type="number" id="quantity" name="quantity" min="1" max="50" placeholder="0">
-              <button type="submit" class="mt-5 bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+              <button type="submit" class="mt-5 bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md">
                   Réserver
               </button>
           </form>
@@ -98,10 +99,16 @@
           if(!empty($message)){echo("<p class='my-5 text-red-800'>".$message."</p>");}
           if(!empty($message2)){echo("<p class='my-5 text-red-800'>".$message2."</p>");}
           @endphp
-          </div>
+          
+          @if($show->bookable)
           <div class="mt-10">
-            <a href={{ route('show') }} class="px-5 py-4 bg-gray-400 text-center rounded-md text-white text-sm focus:border-transparent hover:bg-gray-700">Retour vers les spectacles</a>
+            <a href={{ route('show') }} class="px-4 py-2 bg-gray-400 text-center rounded-md text-white text-sm focus:border-transparent hover:bg-gray-700">Retour vers les spectacles</a>
           </div>
+          @else
+          <div class="mt-10 ml-5">
+            <a href={{ route('show') }} class="px-4 py-2 bg-gray-400 text-center rounded-md text-white text-sm focus:border-transparent hover:bg-gray-700">Retour vers les spectacles</a>
+          </div>
+          @endif
       </div>
     </div>
 
