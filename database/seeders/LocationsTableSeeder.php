@@ -33,8 +33,8 @@ class LocationsTableSeeder extends Seeder
                 'locality_id' =>null,
                 'website'=>'https://www.lavenerie.be',
                 'phone'=>'+32 (0)2/663.85.50',
-                'latitude' => 54.720,
-                'longitude' => 4.29,
+                'latitude' => 50.809,
+                'longitude' => 4.40,
             ],
             [
                 'slug'=>null,
@@ -44,8 +44,8 @@ class LocationsTableSeeder extends Seeder
                 'locality_id' =>null,
                 'website'=>null,
                 'phone'=>null,
-                'latitude' => 58.720,
-                'longitude' => 5.39
+                'latitude' => 50.848,
+                'longitude' => 4.353
             ],
             [
                 'slug'=>null,
@@ -55,8 +55,8 @@ class LocationsTableSeeder extends Seeder
                 'locality_id' =>null,
                 'website'=>'http://www.lasamaritaine.be/',
                 'phone'=>null,
-                'latitude' => 50.720,
-                'longitude' => 4.39
+                'latitude' => 50.840,
+                'longitude' => 4.350
             ],
             [
                 'slug'=>null,
@@ -66,8 +66,8 @@ class LocationsTableSeeder extends Seeder
                 'locality_id' =>null,
                 'website'=>'http://www.espacemagh.be',
                 'phone'=>'+32 (0)2/274.05.10',
-                'latitude' => 52.720,
-                'longitude' => 4.99
+                'latitude' => 50.843,
+                'longitude' => 4.346
             ],
         ];
 
