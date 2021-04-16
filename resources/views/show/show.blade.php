@@ -78,16 +78,16 @@
           <form action="{{ route('show_booking', $show->id) }}" method="post">
               @method("POST")
               @csrf
-              <select type="select" id="date" name="date">
+              <select class="mb-3" type="select" id="date" name="date">
                   @if(!empty($representations))
-                      <option value="">--Choisir une date--</option>
+                      <option value="">Choisir une date</option>
                       @foreach ($representations as $representation)
                           <option value="{{ !empty($representation->when) ? $representation->when : "" }}">{{ !empty($representation->when) ? $representation->when : "Pas de date disponible" }}</option>
                       @endforeach
                   @endif
-              </select>
-              <label for="quantity">Quantité :</label>
-              <input type="number" id="quantity" name="quantity" min="1" max="50" placeholder="0">
+              </select><br>
+              <label class="pl-1" for="quantity">Quantité :</label>
+              <input type="number" id="quantity" name="quantity" min="1" max="50" placeholder="0"><br>
               <button type="submit" class="mt-5 bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md">
                   Réserver
               </button>

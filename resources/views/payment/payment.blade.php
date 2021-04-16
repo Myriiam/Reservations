@@ -59,7 +59,7 @@
   
                         <div class="row">
                             <div class="col-xs-12">
-                                <button class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-800 hover:bg-red-700" type="submit">Pay Now (₹100)</button>
+                                <button class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-800 hover:bg-red-700" type="submit">Pay Now</button>
                             </div>
                         </div>
                           
