@@ -41,8 +41,9 @@ Route::get('/location', [App\Http\Controllers\LocationController::class, 'index'
 Route::get('/location/{id}', [App\Http\Controllers\LocationController::class, 'show'])->name('location_show');
 //Show
 Route::get('/show', [App\Http\Controllers\ShowController::class, 'index'])->name('show');
-Route::get('/show/{id}', [App\Http\Controllers\ShowController::class, 'show'])->name('show_show');
-Route::post('/show/{id}', [App\Http\Controllers\ShowController::class, 'booking'])->name('show_booking');
+Route::get('/show/sort', [App\Http\Controllers\ShowController::class, 'sort'])->name('sort_show');
+Route::get('/show/{slug}', [App\Http\Controllers\ShowController::class, 'show'])->name('show_show');
+Route::post('/show/{slug}', [App\Http\Controllers\ShowController::class, 'booking'])->name('show_booking');
 Route::post('/confirmation/{id}', [App\Http\Controllers\ShowController::class, 'bookingConfirm'])->name('show_booking_confirm');
 //Representation
 Route::get('/representation', [App\Http\Controllers\RepresentationController::class, 'index'])->name('representation_index');
