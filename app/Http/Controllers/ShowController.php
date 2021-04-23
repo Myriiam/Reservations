@@ -49,13 +49,13 @@ class ShowController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($id, $message=null)
+    public function show($slug, $message=null)
     {
-        $show = Show::find($id);
-        $representations = DB::table('representations')->where('show_id', $id)->get();
+        $show = Show::firstWhere('slug', $slug);
+        $representations = DB::table('representations')->where('show_id', $show->id)->get();
 
         //Récupérer les artistes du spectacle et les grouper par type
         $collaborateurs = [];
@@ -129,6 +129,32 @@ class ShowController extends Controller
         return view('show.confirmation',[
             'show' => $show,
             'request' => $request,
+        ]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function sort(Request $request)
+    {
+        $test = $request->input('sortType');
+        switch ($test) {
+            case 'price': 
+                $paginatedShows = Show::orderBy('price', 'asc')->paginate(12);
+                break;
+            case 'bookable': 
+                $paginatedShows = Show::orderBy('bookable', 'desc')->paginate(12);
+                break;
+            default:
+                $paginatedShows = DB::table('shows')->simplePaginate(12);
+        }
+
+        return view('show.index',[
+            'shows' => $paginatedShows,
+            'resource' => 'spectacles',
         ]);
     }
 
