@@ -16,14 +16,14 @@
             <div class="mt-4">
                 <x-label for="login" :value="__('Login')" />
 
-                <x-input id="login" class="block mt-1 w-full" type="login" name="login" :value="old('login')" required />
+                <x-input id="login" class="block mt-1 w-full" type="login" name="login" :value="old('login')" required autofocus/>
             </div>
 
             <!-- Firstname -->
             <div>
                 <x-label for="firstname" :value="__('Firstname')" />
 
-                <x-input id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus />
+                <x-input id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required />
             </div>
 
              <!-- Lastname -->
