@@ -66,7 +66,6 @@ class LocationsTableSeeder extends Seeder
         //Insert data in the table
         foreach ($locations as $data) {
             $locality = Locality::firstWhere('postal_code',$data['locality_postal_code']);
-           // $idLocality =  $locality->id;
             DB::table('locations')->insert([
                 'slug' => Str::slug($data['designation'],'-'),
                 'designation' => $data['designation'],
