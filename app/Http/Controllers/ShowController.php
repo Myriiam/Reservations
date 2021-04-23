@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Show;
 use App\Models\Representation;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cache;
 
 class ShowController extends Controller
 {
@@ -141,12 +142,23 @@ class ShowController extends Controller
     public function sort(Request $request)
     {
         $test = $request->input('sortType');
-        switch ($test) {
-            case 'price': 
+
+        if ($test) {
+            Cache::put('sort', $test, );
+        }
+
+        switch (Cache::get('sort')) {
+            case 'priceAsc': 
                 $paginatedShows = Show::orderBy('price', 'asc')->paginate(12);
                 break;
-            case 'bookable': 
-                $paginatedShows = Show::orderBy('bookable', 'desc')->paginate(12);
+            case 'priceDesc': 
+                $paginatedShows = Show::orderBy('price', 'desc')->paginate(12);
+                break;
+            case 'titleAsc': 
+                $paginatedShows = Show::orderBy('title', 'asc')->paginate(12);
+                break;
+            case 'titleDesc': 
+                $paginatedShows = Show::orderBy('title', 'desc')->paginate(12);
                 break;
             default:
                 $paginatedShows = DB::table('shows')->simplePaginate(12);

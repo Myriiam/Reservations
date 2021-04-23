@@ -8,9 +8,10 @@
         <label for="sortType">Trier par:</label>
         <select name="sortType" id="sortType" >
             <option value="">- Choisir -</option>
-            <option value="date">Date</option>
-            <option value="price">Prix</option>
-            <option value="locality">Localité</option>
+            <option value="priceAsc">Prix croissant</option>
+            <option value="priceDesc">Prix décroissant</option>
+            <option value="titleAsc">Titre A-Z</option>
+            <option value="titleDesc">Titre Z-A</option>
         </select>
         <input type="submit" value="Envoyer">
     </form>
