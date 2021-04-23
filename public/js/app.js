@@ -236,12 +236,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      menu_open: false,
-      link1: false,
-      link2: false,
-      link3: false,
-      link4: false,
-      link5: false
+      menu_open: false
     };
   }
 });
@@ -269,10 +264,10 @@ vue__WEBPACK_IMPORTED_MODULE_0__.default.component('booking', __webpack_require_
 window.onload = function (e) {
   var app3 = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     el: '#app3',
-    template: "<h2 class='text-center text-white text-5xl'> {{ welcome }} <strong>{{ name }}</strong> , welcome to the Theater</h2>",
+    template: "<h2 class='text-center text-white text-5xl'> {{ welcome }} <b>{{ name }}</b> , welcome to the Theater</h2>",
     data: {
       welcome: "Hello",
-      name: "Bob"
+      name: "Simba"
     }
   }); //button to drop the show's booking modal -> Booking.vue
 

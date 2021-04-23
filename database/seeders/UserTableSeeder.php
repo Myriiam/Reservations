@@ -27,8 +27,8 @@ class UserTableSeeder extends Seeder
         $users = [
             [
                 'login'=>'epfc',
-                'lastname'=>'Moufassa',
                 'firstname'=>'Simba',
+                'lastname'=>'Moufassa', 
                 'langue'=>'français',
                 'email'=>'epfc@epfc.com',
                 'password'=>'epfcepfc',
@@ -40,8 +40,8 @@ class UserTableSeeder extends Seeder
         foreach ($users as $data) {     
             DB::table('users')->insert([
                 'login' => $data['login'],
-                'lastname' => $data['lastname'],
                 'firstname' => $data['firstname'],
+                'lastname' => $data['lastname'],   
                 'langue' => $data['langue'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),

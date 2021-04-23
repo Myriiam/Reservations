@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
         <div class="flex justify-start lg:w-0 lg:flex-1">
-          <a href="#">
+          <a href="{{ route('home') }}">
             <span class="sr-only">Workflow</span>
             <img class="h-14 w-auto sm:h-24" src="{{ asset('images/logo.png') }}" alt="">
           </a>
@@ -29,17 +29,32 @@
           <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
             About us
           </a>
+           <!-- Lien du menu vers la page Profil d'un user connecté -->
+           @if(auth()->user() !== null)
+            <a href="{{ route('my_profil') }}" class="text-base font-medium text-gray-500 hover:text-gray-900">
+              My Profil
+            </a>
+          @endif
         <!-- Login button | logout button -->          
         </nav>
         <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
         @auth
-          <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
+          <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-800 hover:bg-red-700"">
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
             Logout
           </a>
-        @else
+        <!-- Profile dropdown -->
+        <div class="ml-3 relative">
+          <div>
+            <button type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-expanded="false" aria-haspopup="true">
+              <span class="sr-only">Open user menu</span>
+              <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+            </button>
+          </div>
+
+       @else
           <a href="{{ route('register') }}" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
             Register
           </a>
