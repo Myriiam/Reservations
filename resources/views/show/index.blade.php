@@ -23,13 +23,12 @@
                     <img class="object-scale-down rounded-md max-h-60" src={{ asset('images/'.$show->poster_url) }} alt="Photo du spectacle {{ $show->title }}" />
                     <p class="text-center leading-relaxed">{{ $show->description }}</p>
                     <span class="text-center">{{ $show->price }}€</span>
-                    <a href={{ route('show_show', $show->id) }} class="px-5 py-4 bg-gray-400 text-center rounded-md text-white text-sm focus:border-transparent hover:bg-red-700">Plus d'infos</a>
+                    <a href={{ route('show_show', $show->slug) }} class="px-5 py-4 bg-gray-400 text-center rounded-md text-white text-sm focus:border-transparent hover:bg-red-700">Plus d'infos</a>
                 </div>
             @endforeach
         </div>
         <div class="flex flex-row justify-between m-7">
-            <a class="px-5 py-4 bg-gray-900 rounded-md text-white text-sm focus:border-transparent" href="{{ $shows->previousPageUrl() }}">Page précédente</a> 
-            <a class="px-5 py-4 bg-gray-900 rounded-md text-white text-sm focus:border-transparent" href="{{ $shows->nextPageUrl() }}">Page suivante</a>
+            {{ ($shows->onEachSide(1)->links()) }}
         </div>
     </div>
 </x-app-layout>
