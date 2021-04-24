@@ -33,6 +33,8 @@ class LocationsTableSeeder extends Seeder
                 'locality_id' =>null,
                 'website'=>'https://www.lavenerie.be',
                 'phone'=>'+32 (0)2/663.85.50',
+                'latitude' => 50.809,
+                'longitude' => 4.40,
             ],
             [
                 'slug'=>null,
@@ -42,6 +44,8 @@ class LocationsTableSeeder extends Seeder
                 'locality_id' =>null,
                 'website'=>null,
                 'phone'=>null,
+                'latitude' => 50.848,
+                'longitude' => 4.353
             ],
             [
                 'slug'=>null,
@@ -51,6 +55,8 @@ class LocationsTableSeeder extends Seeder
                 'locality_id' =>null,
                 'website'=>'http://www.lasamaritaine.be/',
                 'phone'=>null,
+                'latitude' => 50.840,
+                'longitude' => 4.350
             ],
             [
                 'slug'=>null,
@@ -60,6 +66,8 @@ class LocationsTableSeeder extends Seeder
                 'locality_id' =>null,
                 'website'=>'http://www.espacemagh.be',
                 'phone'=>'+32 (0)2/274.05.10',
+                'latitude' => 50.843,
+                'longitude' => 4.346
             ],
         ];
 
@@ -73,6 +81,8 @@ class LocationsTableSeeder extends Seeder
                 'locality_id' => $locality->id,	//Référence à la table localities
                 'website' => $data['website'],
                 'phone' => $data['phone'],
+                'latitude' => $data['latitude'],
+                'longitude' => $data['longitude'],
             ]);
         }
     }

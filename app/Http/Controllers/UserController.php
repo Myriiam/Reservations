@@ -69,6 +69,7 @@ class UserController extends Controller
         return view('profil.show',[
             'user' => $user,
             'role' => $role,
+            'resource' => 'Profil utilisateur',
         ]);
     }
 
