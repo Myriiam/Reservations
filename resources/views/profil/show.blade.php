@@ -31,11 +31,9 @@
                             @foreach($user->representations as $representation)
                                 @if($representation->when > $today)
                                     <p>Représentations à venir :</p>
+                                @elseif($representation->when < $today)
+                                    <p>Représentations passées :</p>
                                 @endif
-                                @if($representation->when < $today)
-                                <p>Représentations passées :</p>
-                                @endif
-
                             @endforeach 
 
                             <ul class="list-disc list-inside">
