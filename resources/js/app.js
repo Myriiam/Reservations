@@ -15,9 +15,9 @@ window.onload = function(e) {
 
     const app3 = new Vue({
         el: '#app3',
-        template: "<h2 class='text-center text-white text-5xl'> {{ welcome }} <b>{{ name }}</b> , welcome to the Theater</h2>",
+        template: "<h2 class='text-center text-white text-5xl'> {{ welcome }} <b>{{ name }}</b> , bienvenue au théatre</h2>",
         data:{
-            welcome:"Hello",
+            welcome:"Bonjour",
             name:"Simba",
         }
     });

@@ -22,7 +22,8 @@ class CreateLocationsTable extends Migration
             $table->bigInteger('locality_id')->unsigned();
             $table->string('website',255)->nullable();
             $table->string('phone',30)->nullable();
-
+            $table->decimal('longitude', 10, 5)->nullable();
+            $table->decimal('latitude', 10, 5)->nullable();
         });
 
         Schema::table('locations', function (Blueprint $table) {

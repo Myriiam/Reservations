@@ -58,5 +58,4 @@ class Representation extends Model
     {
         return $this->belongsToMany('App\Models\User');
     }
-
 }
