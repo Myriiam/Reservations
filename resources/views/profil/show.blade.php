@@ -1,8 +1,9 @@
 <x-app-layout>
-    <x-slot name="header"></x-slot>
+    <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Profile Page') }}  
+            {{ __($resource) }}  
     </h2>
+    </x-slot>
     <main class= "content">
         <div class= 'flex items-center justify-center'>
             <div class= 'bg-white w-2/3 mt-10 mb-10 rounded-lg border-2 border-red-600'>

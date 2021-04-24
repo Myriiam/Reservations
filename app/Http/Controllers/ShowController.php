@@ -53,7 +53,7 @@ class ShowController extends Controller
      * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($slug, $message=null)
+    public function show($slug)
     {
         $show = Show::firstWhere('slug', $slug);
         $representations = DB::table('representations')->where('show_id', $show->id)->get();
@@ -76,7 +76,7 @@ class ShowController extends Controller
      * Method to book a show.
      *
      * @param  int  $id
-     * @param  int  $quantity
+     * @param  request  $request
      * @return \Illuminate\Http\Response
      */
     public function booking($id,Request $request)
@@ -85,7 +85,7 @@ class ShowController extends Controller
         $quantity = $request->quantity;
         $price = $quantity*$show->price;
         $date = $request->date;
-        $representations = DB::table('representations')->where('show_id', $id)->get();
+        $representations = DB::table('representations')->where('show_id', $id)->where('when', $date)->get();
         $collaborateurs = [];
         
         foreach($show->artistTypes as $at) {
@@ -120,7 +120,7 @@ class ShowController extends Controller
      * Confirmation method of booking a show.
      *
      * @param  int  $id
-     * @param  int  $quantity
+     * @param  request  $request
      * @return \Illuminate\Http\Response
      */
     public function bookingConfirm($id,Request $request)

@@ -11,9 +11,22 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <!--CDN alpine JS-->
         <!--<!script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></!script>-->
-        <!--CDN VueJs -->
+        <!--CDN Leaflet -->
+            
+            <!--Only required for location/show page-->
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+            crossorigin=""/>
+            <!-- Scripts -->
+            <!-- Make sure you put this AFTER Leaflet's CSS -->
+            <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+            <script src="{{ asset('js/leaflet.js') }}" defer></script>
+
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>

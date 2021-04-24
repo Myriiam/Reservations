@@ -59,7 +59,7 @@
   
       </div>
       <p class="mt-8 text-center text-base text-gray-100">
-        &copy; 2020 EPFC | Reservations.
+        &copy; 2021 EPFC | Reservations.
       </p>
     </div>
   </footer>
