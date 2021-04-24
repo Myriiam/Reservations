@@ -20,6 +20,7 @@ class Location extends Model
         'locality_id',
         'website',
         'phone',
+        'geolocation',
     ];
 
    /**

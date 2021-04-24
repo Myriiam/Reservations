@@ -20,7 +20,13 @@
                 <div style="display:flex">
                     <!--<button type="submit" class="items-start bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">Accepter</button>-->
                     <a class="items-start bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded" href="{{ route('purchase',$show->id) }}">Passer au paiement</a>
-                    <booking class="items-end mx-3 items-start bg-transparent hover:bg-red-700 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"></booking>
+                    <booking class="mx-3 bg-transparent hover:bg-red-700 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+                        <div class="relative" style="cursor: pointer;">
+                            <p aria-expanded="false">
+                            <span>Annuler</span>
+                            </p>
+                        </div>
+                    </booking>
                 </div>
             </form>
             
