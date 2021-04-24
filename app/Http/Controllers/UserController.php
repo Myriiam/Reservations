@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 
 
@@ -67,12 +68,13 @@ class UserController extends Controller
     
        $roleUser = $user->role;
        //dd($roleUser);
- 
+       $today = Carbon::today();
 
         return view('profil.show',[
             'user' => $user,
             'roleUser' => $roleUser,
             'resource' => 'Profil utilisateur',
+            'today' => $today,
         ]);
     }
 

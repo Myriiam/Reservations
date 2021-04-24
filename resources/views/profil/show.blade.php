@@ -28,6 +28,16 @@
                         @if (count($user->representations) == 0) 
                         <p>Acune représentation pour le moment</p>
                         @else
+                            @foreach($user->representations as $representation)
+                                @if($representation->when > $today)
+                                    <p>Représentations à venir :</p>
+                                @endif
+                                @if($representation->when < $today)
+                                <p>Représentations passées :</p>
+                                @endif
+
+                            @endforeach 
+
                             <ul class="list-disc list-inside">
                             <!-- ajouter le code if(le nombre de spectacle est => 1 alors on affiche les spectacles sinon on écrit aucune repres)-->
                                 @foreach ($user->representations as $allShows)

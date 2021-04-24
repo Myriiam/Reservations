@@ -52,7 +52,7 @@ class RepresentationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
+    {   
         $representation = Representation::find($id);
         $date = Carbon::parse($representation->when)->format('d/m/Y');
         $heure = Carbon::parse($representation->when)->format('G:i');
