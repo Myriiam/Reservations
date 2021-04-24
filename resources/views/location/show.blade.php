@@ -16,13 +16,13 @@
                     </p>
         
                     @if($location->website)
-                    <p><a href="{{ $location->website }}" target="_blank" class="hover:text-red-800">{{ $location->website }}</a></p>
+                    <p><a href="{{ $location->website }}" target="_blank" class="hover:text-red-500; text-red-900">{{ $location->website }}</a></p>
                     @else
                     <p>Pas de site web</p>
                     @endif
                     
                     @if($location->phone)
-                    <p><a href="tel:{{ $location->phone }}" class="hover:text-red-800">{{ $location->phone }}</a></p>
+                    <p><a href="tel:{{ $location->phone }}" class="hover:text-red-500; text-red-900">{{ $location->phone }}</a></p>
                     @else
                     <p>Pas de téléphone</p>
                     @endif
@@ -77,7 +77,7 @@
          zoomOffset: -1
      }).addTo(mymap);
  
-
+     L.marker(geolocation).addTo(mymap)
      var popup = L.popup()
      .setLatLng(geolocation)
      .setContent("<img src='/images/logo.png'>Le théatre choisi se situe <b>ici</b>.<br><p>Ce beau théatre est situé à une latitude de:"+<?= $location->latitude ?>+" et une lontitude de :"+<?= $location->longitude ?>+".</p>")

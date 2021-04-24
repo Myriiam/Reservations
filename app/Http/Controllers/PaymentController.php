@@ -37,14 +37,10 @@ class PaymentController extends Controller
         $price = $request->session()->get('price');
         $name = $request->session()->get('show')->title;
         $date = $request->session()->get('date');
+        $collaborateurs = $request->session()->get('collaborateurs');
         $show = Show::find($id);
         $user = Auth::id();
         $representations = $request->session()->get('representations');
-        $collaborateurs = [];
-        
-        foreach($show->artistTypes as $at) {
-            $collaborateurs[$at->type->type][] = $at->artist;
-        }
 
         try {
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
