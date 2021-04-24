@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Fiche d\'un spectacle') }}
+            {{ __('Fiche du spectacle ') }}{{ $show->title }}
         </h2>
     </x-slot>
     
@@ -78,36 +78,39 @@
           <form action="{{ route('show_booking', $show->id) }}" method="post">
               @method("POST")
               @csrf
-              <select type="select" id="date" name="date">
+              <select class="mb-3" type="select" id="date" name="place">
+                <option value="">Choisir une salle</option>
+              </select><br>
+              <select class="mb-3" type="select" id="date" name="date">
                   @if(!empty($representations))
-                      <option value="">--Choisir une date--</option>
+                      <option value="">{{ !empty($representation->when) ? "Choisir une date" : "Date inconnue" }}</option>
                       @foreach ($representations as $representation)
                           <option value="{{ !empty($representation->when) ? $representation->when : "" }}">{{ !empty($representation->when) ? $representation->when : "Pas de date disponible" }}</option>
                       @endforeach
                   @endif
-              </select>
-              <label for="quantity">Quantité :</label>
-              <input type="number" id="quantity" name="quantity" min="1" max="50" placeholder="0">
+              </select><br>
+              <label class="pl-1" for="quantity">Quantité :</label>
+              <input type="number" id="quantity" name="quantity" min="1" max="50" placeholder="0"><br>
               <button type="submit" class="mt-5 bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md">
                   Réserver
               </button>
           </form>
           @else
-          <p><em class="text-red-700 pl-5 text-2xl">Non réservable</em></p>
+            <p><em class="text-red-700 pl-5 text-2xl">Non réservable</em></p>
           @endif
           @php
-          if(!empty($message)){echo("<p class='my-5 text-red-800'>".$message."</p>");}
-          if(!empty($message2)){echo("<p class='my-5 text-red-800'>".$message2."</p>");}
+            if(!empty($message)){echo("<p class='my-5 text-red-800'>".$message."</p>");}
+            if(!empty($message2)){echo("<p class='my-5 text-red-800'>".$message2."</p>");}
           @endphp
           
           @if($show->bookable)
-          <div class="mt-10">
-            <a href={{ route('show') }} class="px-4 py-2 bg-gray-400 text-center rounded-md text-white text-sm focus:border-transparent hover:bg-gray-700">Retour vers les spectacles</a>
-          </div>
+            <div class="mt-10">
+              <a href={{ route('show') }} class="px-4 py-2 bg-gray-400 text-center rounded-md text-white text-sm focus:border-transparent hover:bg-gray-700">Retour vers les spectacles</a>
+            </div>
           @else
-          <div class="mt-10 ml-5">
-            <a href={{ route('show') }} class="px-4 py-2 bg-gray-400 text-center rounded-md text-white text-sm focus:border-transparent hover:bg-gray-700">Retour vers les spectacles</a>
-          </div>
+            <div class="mt-10 ml-5">
+              <a href={{ route('show') }} class="px-4 py-2 bg-gray-400 text-center rounded-md text-white text-sm focus:border-transparent hover:bg-gray-700">Retour vers les spectacles</a>
+            </div>
           @endif
       </div>
     </div>
