@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Representation;
 use Illuminate\Http\Request;
 use Stripe;
 use Session;
 use App\Models\Show;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class PaymentController extends Controller
@@ -36,7 +38,8 @@ class PaymentController extends Controller
         $name = $request->session()->get('show')->title;
         $date = $request->session()->get('date');
         $show = Show::find($id);
-        $representations = DB::table('representations')->where('show_id', $id)->get();
+        $user = Auth::id();
+        $representations = $request->session()->get('representations');
         $collaborateurs = [];
         
         foreach($show->artistTypes as $at) {
@@ -51,6 +54,10 @@ class PaymentController extends Controller
             "source" => $request->stripeToken,
             "description" => "Paiement de votre réservation pour la pièce ".$name." au Théatre.",
         ]);
+            DB::table('representation_user')->insert([
+                ['user_id' => $user, 'representation_id' => $representations[0]->id],
+            ]);
+
             return view('show.confirmation',[
                 "show" => $show,
                 "message" => "Le paiement de votre réservation a été éffectué",
@@ -60,8 +67,8 @@ class PaymentController extends Controller
                 'price' => $price,
                 'qty' => $qty,
                 'title' => $name,
-                ]);
-            } catch(\Exception $ex)
+            ]);
+        } catch(\Exception $ex)
         {
             return view('show.show',[
                 "show" => $show,

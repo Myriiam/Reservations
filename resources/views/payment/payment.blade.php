@@ -51,8 +51,8 @@
               <button class="px-6 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-800 hover:bg-red-700" type="submit">Payer</button>
           </div>
       </div>
-      </form>
-      </div>
+    </form>
+  </div>
 
 <!-- Stripe -->
 
