@@ -264,9 +264,9 @@ vue__WEBPACK_IMPORTED_MODULE_0__.default.component('booking', __webpack_require_
 window.onload = function (e) {
   var app3 = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     el: '#app3',
-    template: "<h2 class='text-center text-white text-5xl'> {{ welcome }} <b>{{ name }}</b> , welcome to the Theater</h2>",
+    template: "<h2 class='text-center text-white text-5xl'> {{ welcome }} <b>{{ name }}</b> , bienvenue au théatre</h2>",
     data: {
-      welcome: "Hello",
+      welcome: "Bonjour",
       name: "Simba"
     }
   }); //button to drop the show's booking modal -> Booking.vue
@@ -568,7 +568,7 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                Conffirmer\n                "
+                                "\n                Confirmer\n                "
                               )
                             ]
                           ),
@@ -975,7 +975,7 @@ var render = function() {
                           ),
                           _vm._v(" "),
                           _c("span", { staticClass: "ml-3" }, [
-                            _vm._v("Watch a show")
+                            _vm._v("Regarder une pièce")
                           ])
                         ]
                       )
@@ -1017,7 +1017,7 @@ var render = function() {
                           ),
                           _vm._v(" "),
                           _c("span", { staticClass: "ml-3" }, [
-                            _vm._v("Contact Sales")
+                            _vm._v("Contactez nous")
                           ])
                         ]
                       )
@@ -1042,7 +1042,7 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "mt-1 text-sm text-gray-500" }, [
-        _vm._v("\n              All info about shows.\n            ")
+        _vm._v("\n              Les pièces de théatre.\n            ")
       ])
     ])
   },
@@ -1052,11 +1052,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "ml-4" }, [
       _c("p", { staticClass: "text-base font-medium text-gray-900" }, [
-        _vm._v("\n              Locations\n            ")
+        _vm._v("\n              Salles de spectacle\n            ")
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "mt-1 text-sm text-gray-500" }, [
-        _vm._v("\n              All info about locations.\n            ")
+        _vm._v("\n              Toutes les finformations.\n            ")
       ])
     ])
   },
@@ -1070,7 +1070,7 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "mt-1 text-sm text-gray-500" }, [
-        _vm._v("\n              Different types of roles.\n            ")
+        _vm._v("\n              Les roles possibles.\n            ")
       ])
     ])
   },
@@ -1080,11 +1080,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "ml-4" }, [
       _c("p", { staticClass: "text-base font-medium text-gray-900" }, [
-        _vm._v("\n              Locality\n            ")
+        _vm._v("\n              Localités\n            ")
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "mt-1 text-sm text-gray-500" }, [
-        _vm._v("\n              All about localities.\n            ")
+        _vm._v("\n              Ou voir un spectacle.\n            ")
       ])
     ])
   },
@@ -1094,11 +1094,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "ml-4" }, [
       _c("p", { staticClass: "text-base font-medium text-gray-900" }, [
-        _vm._v("\n              Representations\n            ")
+        _vm._v("\n              Représentations\n            ")
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "mt-1 text-sm text-gray-500" }, [
-        _vm._v("\n              Shows with diversity.\n            ")
+        _vm._v("\n              Les spectacles actuels.\n            ")
       ])
     ])
   }

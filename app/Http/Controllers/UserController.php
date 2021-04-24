@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
@@ -63,12 +64,14 @@ class UserController extends Controller
        
        //$user = User::find(auth()->user());
        $user = auth()->user();
+    
        $roleUser = $user->role;
-       $role = $roleUser[0]['role'];
+       //dd($roleUser);
+ 
 
         return view('profil.show',[
             'user' => $user,
-            'role' => $role,
+            'roleUser' => $roleUser,
             'resource' => 'Profil utilisateur',
         ]);
     }

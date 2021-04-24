@@ -64,6 +64,7 @@ class ShowController extends Controller
         foreach($show->artistTypes as $at) {
             $collaborateurs[$at->type->type][] = $at->artist;
         }
+        session(['collaborateurs' => $collaborateurs]);
 
         return view('show.show',[
             'show' => $show,
