@@ -132,7 +132,7 @@
 <script>
   export default {
 
-    computed: () => ({
+    data: () => ({
       menu_open: false,
     })
   }
