@@ -142,24 +142,24 @@ class ShowController extends Controller
      */
     public function sort(Request $request)
     {
-        $test = $request->input('sortType');
+        $sortType = $request->input('sortType');
 
-        if ($test) {
-            Cache::put('sort', $test, );
-        }
-
-        switch (Cache::get('sort')) {
+        switch ($sortType) {
             case 'priceAsc': 
                 $paginatedShows = Show::orderBy('price', 'asc')->paginate(12);
+                $paginatedShows->withPath('sort?sortType=priceAsc');
                 break;
             case 'priceDesc': 
                 $paginatedShows = Show::orderBy('price', 'desc')->paginate(12);
+                $paginatedShows->withPath('sort?sortType=priceDesc');
                 break;
             case 'titleAsc': 
                 $paginatedShows = Show::orderBy('title', 'asc')->paginate(12);
+                $paginatedShows->withPath('sort?sortType=titleAsc');
                 break;
             case 'titleDesc': 
                 $paginatedShows = Show::orderBy('title', 'desc')->paginate(12);
+                $paginatedShows->withPath('sort?sortType=titleDesc');
                 break;
             default:
                 $paginatedShows = DB::table('shows')->simplePaginate(12);
