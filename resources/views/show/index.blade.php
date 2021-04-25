@@ -4,18 +4,19 @@
             Liste des {{ $resource }}
         </h2>
     </x-slot>
-    <form method="GET" action={{ route('sort_show') }}>
-        <label for="sortType">Trier par:</label>
-        <select name="sortType" id="sortType" >
-            <option value="">- Choisir -</option>
-            <option value="priceAsc">Prix croissant</option>
-            <option value="priceDesc">Prix décroissant</option>
-            <option value="titleAsc">Titre A-Z</option>
-            <option value="titleDesc">Titre Z-A</option>
-        </select>
-        <input type="submit" value="Envoyer">
-    </form>
+    
     <div class="p-10">
+        <form class="mb-10 ml-12" method="GET" action={{ route('sort_show') }}>
+            <label for="sortType">Trier par:</label>
+            <select name="sortType" id="sortType" >
+                <option value="">- Choisir -</option>
+                <option value="priceAsc">Prix croissant</option>
+                <option value="priceDesc">Prix décroissant</option>
+                <option value="titleAsc">Titre A-Z</option>
+                <option value="titleDesc">Titre Z-A</option>
+            </select>
+            <input type="submit" value="Envoyer">
+        </form>
         <div class="flex flex-row flex-wrap justify-around">
             @foreach($shows as $show)
                 <div class="flex flex-col justify-between bg-white m-2 p-8 rounded-xl xl:w-1/4 sm:w-5/12 w-full shadow-md">
