@@ -43,13 +43,15 @@ class PaymentController extends Controller
         $representations = $request->session()->get('representations');
 
         try {
-        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
-        Stripe\Charge::create ([
-            "amount" => $price * 100,
-            "currency" => "EUR",
-            "source" => $request->stripeToken,
-            "description" => "Paiement de votre réservation pour la pièce ".$name." au Théatre.",
-        ]);
+            Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+            
+            Stripe\Charge::create ([
+                "amount" => $price * 100,
+                "currency" => "EUR",
+                "source" => $request->stripeToken,
+                "description" => "Paiement de votre réservation pour la pièce ".$name." au Théatre.",
+            ]);
+
             DB::table('representation_user')->insert([
                 ['user_id' => $user, 'representation_id' => $representations[0]->id],
             ]);
@@ -64,8 +66,7 @@ class PaymentController extends Controller
                 'qty' => $qty,
                 'title' => $name,
             ]);
-        } catch(\Exception $ex)
-        {
+        } catch(\Exception $ex) {
             return view('show.show',[
                 "show" => $show,
                 "message" => "Une erreur est survenue",

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Show;
 use App\Models\Representation;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cache;
 
 class ShowController extends Controller
 {
@@ -49,14 +50,13 @@ class ShowController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @param  varchar  $message
+     * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($id, $message=null)
+    public function show($slug)
     {
-        $show = Show::find($id);
-        $representations = DB::table('representations')->where('show_id', $id)->get();
+        $show = Show::firstWhere('slug', $slug);
+        $representations = DB::table('representations')->where('show_id', $show->id)->get();
 
         //Récupérer les artistes du spectacle et les grouper par type
         $collaborateurs = [];
@@ -131,6 +131,43 @@ class ShowController extends Controller
         return view('show.confirmation',[
             'show' => $show,
             'request' => $request,
+        ]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function sort(Request $request)
+    {
+        $sortType = $request->input('sortType');
+
+        switch ($sortType) {
+            case 'priceAsc': 
+                $paginatedShows = Show::orderBy('price', 'asc')->paginate(12);
+                $paginatedShows->withPath('sort?sortType=priceAsc');
+                break;
+            case 'priceDesc': 
+                $paginatedShows = Show::orderBy('price', 'desc')->paginate(12);
+                $paginatedShows->withPath('sort?sortType=priceDesc');
+                break;
+            case 'titleAsc': 
+                $paginatedShows = Show::orderBy('title', 'asc')->paginate(12);
+                $paginatedShows->withPath('sort?sortType=titleAsc');
+                break;
+            case 'titleDesc': 
+                $paginatedShows = Show::orderBy('title', 'desc')->paginate(12);
+                $paginatedShows->withPath('sort?sortType=titleDesc');
+                break;
+            default:
+                $paginatedShows = DB::table('shows')->simplePaginate(12);
+        }
+
+        return view('show.index',[
+            'shows' => $paginatedShows,
+            'resource' => 'spectacles',
         ]);
     }
 
