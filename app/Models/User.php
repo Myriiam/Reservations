@@ -26,6 +26,8 @@ class User extends Authenticatable
         'password',
     ];
 
+    protected $table = 'filament_users';
+
     /**
      * The attributes that should be hidden for arrays.
      *

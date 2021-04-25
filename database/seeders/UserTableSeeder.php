@@ -28,24 +28,24 @@ class UserTableSeeder extends Seeder
             [
                 'login'=>'epfc',
                 'firstname'=>'Simba',
-                'lastname'=>'Moufassa', 
+                'lastname'=>'Moufassa',
+                'name' => 'Le lion',
                 'langue'=>'français',
                 'email'=>'epfc@epfc.com',
                 'password'=>'epfcepfc',
-                'email_verified_at' => null,
             ],
         ];
 
         //Insert data in the table
         foreach ($users as $data) {     
-            DB::table('users')->insert([
+            DB::table('filament_users')->insert([
                 'login' => $data['login'],
                 'firstname' => $data['firstname'],
+                'name' => $data['name'],
                 'lastname' => $data['lastname'],   
                 'langue' => $data['langue'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
-                'email_verified_at' => $data['email_verified_at'],
             ]);
         }
     }
