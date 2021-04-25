@@ -147,7 +147,34 @@ class ArtistTypeShowTableSeeder extends Seeder
                 'show_slug'=>'manneke',
             ],
         ];
+
+        $artistTypeShowsSecond = [];
         
+        for ($i = 5; $i <= 204; $i++) {
+            $show_id = Show::all()->random()->id;
+
+            if($show_id > 5) {
+                $artistTypeShowsSecond[] = [
+                    'artistType_id' => ArtistType::all()->random()->id,
+                    'show_id' => $show_id,
+                ];
+            }
+        }
+
+        foreach ($artistTypeShowsSecond as $data) {
+            $artistType = ArtistType::where([
+                ['id','=', $data['artistType_id']],
+            ])->first();
+            
+            $show = Show::firstWhere('id', $data['show_id']);
+            
+            DB::table('artist_type_show')->insert([
+                'artist_type_id' => $artistType->id,
+                'show_id' => $show->id,
+            ]);
+        }
+
+
         //Insert data in the table
         foreach ($artistTypeShows as $data) {
             $artist = Artist::where([

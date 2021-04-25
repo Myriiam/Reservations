@@ -17,7 +17,7 @@ class ShowController extends Controller
      */
     public function index()
     {
-        $shows = DB::table('shows')->simplePaginate(12);
+        $shows = DB::table('shows')->paginate(12);
 
         return view('show.index',[
             'shows' => $shows,
