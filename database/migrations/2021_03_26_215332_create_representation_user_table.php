@@ -19,10 +19,10 @@ class CreateRepresentationUserTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('representation_id')->unsigned();
             
-            //$table->foreign('user_id')->references('id')->on('users')
-                    //->onDelete('restrict')->onUpdate('cascade');
-            //$table->foreign('representation_id')->references('id')->on('representations')
-                    //->onDelete('restrict')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')
+                    ->onDelete('restrict')->onUpdate('cascade');
+            $table->foreign('representation_id')->references('id')->on('representations')
+                    ->onDelete('restrict')->onUpdate('cascade');
 
         });
     }

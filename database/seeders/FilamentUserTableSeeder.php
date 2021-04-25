@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 
-class UserTableSeeder extends Seeder
+class FilamentUserTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -26,19 +26,21 @@ class UserTableSeeder extends Seeder
         //Define data
         $users = [
             [
+                'name'=>'epfc',
                 'login'=>'epfc',
-                'firstname'=>'Simba',
-                'lastname'=>'Moufassa',
+                'firstname'=>'Jean',
+                'lastname'=>'Luc',
                 'langue'=>'français',
-                'email'=>'epfc@epfc.com',
+                'email'=>'admin@epfc.com',
                 'password'=>'epfcepfc',
             ],
         ];
 
         //Insert data in the table
         foreach ($users as $data) {     
-            DB::table('users')->insert([
+            DB::table('filament_users')->insert([
                 'login' => $data['login'],
+                'name' => $data['name'],
                 'firstname' => $data['firstname'],
                 'lastname' => $data['lastname'],   
                 'langue' => $data['langue'],

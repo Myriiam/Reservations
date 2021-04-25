@@ -27,8 +27,8 @@ class RoleUserTableSeeder extends Seeder
             ],
         ];
 
-        //Insert data in the table
-        foreach ($roleUsers as $data) {   
+        //Insert data in the table 
+         foreach ($roleUsers as $data) {   
 
             $user = User::firstWhere('firstname',$data['users']);
             $role = Role::firstWhere('role',$data['role']);
