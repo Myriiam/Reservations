@@ -26,7 +26,7 @@
                         @include('partials.navbar')
                         <div class="container mx-auto px-4">
                         <!--header here-->
-                        </div>  
+                        </div>
                     </header>
                     <!-- Page Content -->
                     <section class="mt-32 bg-opacity-0">

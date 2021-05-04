@@ -23,7 +23,6 @@ class ShowController extends Controller
             'shows' => $shows,
             'resource' => 'spectacles',
         ]);
-
     }
 
     /**
