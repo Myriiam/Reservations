@@ -7,7 +7,7 @@
 
     <div class="p-10">
         <p>Vous allez réserver <b>{{ $qty }}</b> {{ ($qty>1) ? "places" : "place" }} pour le spectacle <b>{{ $show->title }}</b> . Le montant total de votre réservation s'élève à <b class="text-red-800">{{ $price }}€.</b> La pièce aura lieu le <b>{{ $date }}</b></p>
-        <div id="app4"> 
+        <div id="app3"> 
             <h2 class="mt-5 mb-2"><b>Confirmez votre réservation ?</b></h2>
             <p class="mt-5 mb-2">Je valide ma réservation et je passe au paiement.</p> 
             <form action="{{ route('purchase', $show->id) }}" method="post">

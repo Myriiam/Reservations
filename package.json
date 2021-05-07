@@ -22,7 +22,7 @@
         "postcss-import": "^12.0.1",
         "tailwindcss": "^2.1.2",
         "tailwindcss-children": "^2.1.0",
-        "vue-loader": "^15.9.5",
+        "vue-loader": "^16.2.0",
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {

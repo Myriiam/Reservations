@@ -31,7 +31,13 @@
                     <!-- Page Content -->
                     <section class="mt-32 bg-opacity-0">
                         <!--welcome to user-->
-                        <div id="app3"></div>
+                        <div id="app">
+
+                            <div class="text-center" style="color:white; font-size:3em;">
+                                <hello-world/>
+                            </div>
+ 
+                        </div>
                     </section>
                 </div>
                 <section>
