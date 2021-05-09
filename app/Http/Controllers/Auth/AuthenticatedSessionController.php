@@ -35,8 +35,8 @@ class AuthenticatedSessionController extends Controller
 
         $id = Auth::id();
 
-        //$role = Role::where('user_id','=',$id)->get();
         $user = User::where('id','=',$id)->first();
+        session(['user' => $user]);
         $roleUser = $user->role;
         $role = $roleUser[0]['role'];
         
