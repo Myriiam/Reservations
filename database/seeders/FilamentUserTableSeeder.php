@@ -18,10 +18,6 @@ class FilamentUserTableSeeder extends Seeder
      */
     public function run()
     {
-        //Empty the table first
-        Schema::disableForeignKeyConstraints();
-        User::truncate();
-        Schema::enableForeignKeyConstraints();
 
         //Define data
         $users = [
