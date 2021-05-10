@@ -37,7 +37,6 @@ class PaymentController extends Controller
         $price = $request->session()->get('price');
         $name = $request->session()->get('show')->title;
         $date = $request->session()->get('date');
-        $collaborateurs = $request->session()->get('collaborateurs');
         $show = Show::find($id);
         $user = Auth::id();
         $representations = $request->session()->get('representations');
@@ -59,7 +58,6 @@ class PaymentController extends Controller
             return view('show.confirmation',[
                 "show" => $show,
                 "message" => "Le paiement de votre réservation a été éffectué",
-                'collaborateurs' => $collaborateurs,
                 'representations' => $representations,
                 'date' => $date,
                 'price' => $price,
@@ -70,7 +68,6 @@ class PaymentController extends Controller
             return view('show.show',[
                 "show" => $show,
                 "message" => "Une erreur est survenue",
-                'collaborateurs' => $collaborateurs,
                 'representations' => $representations,
                 ]);
         }

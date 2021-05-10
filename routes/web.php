@@ -54,7 +54,3 @@ Route::get('/show/{id}/checkout', [App\Http\Controllers\PaymentController::class
 Route::post('/payment/{id}', [App\Http\Controllers\PaymentController::class, 'handlePost'])->middleware(['auth'])->name('payment');
 //Profil
 Route::get('/profil', [App\Http\Controllers\UserController::class, 'profilDisplay'])->middleware(['auth'])->name('my_profil');
-//Dashboard
-Route::get('/backoffice', [App\Http\Controllers\BackofficeController::class, 'index'])->middleware(['auth'])->name('backoffice');
-Route::get('/backoffice/transactions', [App\Http\Controllers\BackofficeController::class, 'transactions'])->middleware(['auth'])->name('transactions');
-

@@ -1,34 +1,17 @@
-/**
- * VueJs
- */
+import { createApp } from 'vue'
 
-// Declaration
-//window.Vue = require('vue');
-import Vue from 'vue';
+import HelloWorld from './components/HelloWorld.vue';
+import Navigation from './components/Navigation.vue';
+import Booking from './components/Booking.vue';
 
-// New component
-Vue.component('navigation', require('./components/Navigation.vue').default);
-Vue.component('booking', require('./components/Booking.vue').default);
+const app = createApp({});
+app.component('hello-world', HelloWorld)
+    .mount('#app');
 
-// Instantiation
-window.onload = function(e) {
+const app2 = createApp({});
+app2.component('navigation', Navigation)
+    .mount('#app2');
 
-    const app3 = new Vue({
-        el: '#app3',
-        template: "<h2 class='text-center text-white text-5xl'> {{ welcome }} <b>{{ name }}</b> , bienvenue au théatre</h2>",
-        data:{
-            welcome:"Bonjour",
-            name:"Simba",
-        }
-    });
-
-    //button to drop the show's booking modal -> Booking.vue
-    const app4 = new Vue({
-        el: 'div#app4',
-    });
-    
-    //Nav button to drop the menu on large screen -> Navigation.vue
-    const app5 = new Vue({
-        el: 'div#app5',
-    });
-}
+const app3 = createApp({});
+app3.component('booking', Booking)
+    .mount('#app3');

@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     
-    <div class="p-10">
+    <div class="p-10"></div>
         <form class="mb-10 ml-12" method="GET" action={{ route('sort_show') }}>
             <label for="sortType">Trier par:</label>
             <select name="sortType" id="sortType" >
@@ -17,6 +17,7 @@
             </select>
             <input type="submit" value="Envoyer">
         </form>
+
         <div class="flex flex-row flex-wrap justify-around">
             @foreach($shows as $show)
                 <div class="flex flex-col justify-between bg-white m-2 p-8 rounded-xl xl:w-1/4 sm:w-5/12 w-full shadow-md">
@@ -28,6 +29,7 @@
                 </div>
             @endforeach
         </div>
+
         <div class="flex flex-row justify-center m-7">
             {{ ($shows->onEachSide(1)->links()) }}
         </div>

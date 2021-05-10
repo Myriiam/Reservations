@@ -35,6 +35,8 @@ class UserTableSeeder extends Seeder
             ],
         ];
 
+
+
         //Insert data in the table
         foreach ($users as $data) {     
             DB::table('users')->insert([
