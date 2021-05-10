@@ -33,10 +33,13 @@
                         <!--welcome to user-->
                         <div id="app">
 
-                            <div class="text-center" style="color:white; font-size:3em;">
+                            <div class="pt-24 text-center drop-shadow-lg" style="color:white; font-size:3.3em;">
                                 <hello-world/>
                             </div>
  
+                        </div>
+                        <div style="position: absolute; bottom: 20px; margin-left:49%;">
+                            <img class="arrow animate-bounce w-12 h-12" style="margin:auto;" src="{{ asset('images/arrow.svg') }}" alt="arrow picto">
                         </div>
                     </section>
                 </div>

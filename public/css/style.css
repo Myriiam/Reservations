@@ -8,3 +8,14 @@ height: 600px;
 margin-top: 20px;
 z-index:0;
 }
+
+/*
+Background login, register, ..
+========
+*/
+.fond{
+    background-image: url('../images/theatre.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -30,7 +30,7 @@
 
     </head>
     <body>
-        <div class="font-sans text-gray-900 antialiased pt-5 bg-gray-100">
+        <div class="font-sans text-gray-900 antialiased bg-gray-100">
             {{ $slot }}
         </div>
     </body>

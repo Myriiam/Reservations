@@ -14765,8 +14765,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      greeting: 'Hello World from Vue 3!'
+      welcome: 'Le théâtre est né de l\'Histoire !',
+      welcomes: ['Le théâtre et la vie peuvent parfois ne faire qu\'un', 'Nous voulons de la vie au théâtre, et du théâtre dans la vie', 'Le théâtre doit être ce que le théâtre n\'est pas', 'La vie est un théâtre et il n\'y a qu\'une seule représentation', 'Le théâtre, c\'est l\'insécable qui vient dans le fragmenté', 'Le théâtre est né de l\'Histoire !'],
+      counter: 0
     };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    setInterval(function () {
+      _this.welcome = _this.welcomes[_this.counter++];
+
+      if (_this.counter === _this.welcomes.length) {
+        _this.counter = 0;
+      }
+    }, 3000);
   }
 });
 
@@ -14917,7 +14930,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("h1", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.greeting), 1
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("h1", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.welcome), 1
   /* TEXT */
   );
 }
