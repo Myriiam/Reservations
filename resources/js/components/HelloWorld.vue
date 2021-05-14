@@ -21,7 +21,7 @@ export default {
             if(this.counter === this.welcomes.length){
                 this.counter = 0
             }
-        }, 3000)
+        }, 5000)
     }
 }
 </script>

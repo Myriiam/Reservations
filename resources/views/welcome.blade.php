@@ -29,11 +29,11 @@
                         </div>
                     </header>
                     <!-- Page Content -->
-                    <section class="mt-32 bg-opacity-0">
+                    <section class="bg-opacity-0">
                         <!--welcome to user-->
                         <div id="app">
 
-                            <div class="pt-24 text-center drop-shadow-lg" style="color:white; font-size:3.3em;">
+                            <div class="text-center" style="color:white; font-size:2.5em; margin-top: 35vh; transform: translateY(-40%);">
                                 <hello-world/>
                             </div>
  
