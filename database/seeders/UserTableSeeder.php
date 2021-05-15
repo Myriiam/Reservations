@@ -28,13 +28,14 @@ class UserTableSeeder extends Seeder
             [
                 'login'=>'epfc',
                 'firstname'=>'Simba',
-                'lastname'=>'Moufassa', 
+                'lastname'=>'Moufassa',
                 'langue'=>'français',
                 'email'=>'epfc@epfc.com',
                 'password'=>'epfcepfc',
-                'email_verified_at' => null,
             ],
         ];
+
+
 
         //Insert data in the table
         foreach ($users as $data) {     
@@ -45,7 +46,6 @@ class UserTableSeeder extends Seeder
                 'langue' => $data['langue'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
-                'email_verified_at' => $data['email_verified_at'],
             ]);
         }
     }

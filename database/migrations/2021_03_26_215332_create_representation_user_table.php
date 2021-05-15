@@ -16,8 +16,8 @@ class CreateRepresentationUserTable extends Migration
         Schema::create('representation_user', function (Blueprint $table) {
             $table->id();
           
-            $table->foreignId('user_id');
-            $table->foreignId('representation_id');
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('representation_id')->unsigned();
             
             $table->foreign('user_id')->references('id')->on('users')
                     ->onDelete('restrict')->onUpdate('cascade');

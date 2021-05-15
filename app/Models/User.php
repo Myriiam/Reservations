@@ -7,10 +7,12 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Filament\Models\Concerns\IsFilamentUser;
+use Filament\Models\Contracts\FilamentUser;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
-    use HasFactory, Notifiable, Billable;
+    use IsFilamentUser, HasFactory, Notifiable, Billable;
 
     /**
      * The attributes that are mass assignable.
@@ -25,6 +27,9 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+
+    protected $table = 'users';
+    
 
     /**
      * The attributes that should be hidden for arrays.

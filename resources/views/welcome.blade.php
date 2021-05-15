@@ -26,12 +26,21 @@
                         @include('partials.navbar')
                         <div class="container mx-auto px-4">
                         <!--header here-->
-                        </div>  
+                        </div>
                     </header>
                     <!-- Page Content -->
-                    <section class="mt-32 bg-opacity-0">
+                    <section class="bg-opacity-0">
                         <!--welcome to user-->
-                        <div id="app3"></div>
+                        <div id="app">
+
+                            <div class="text-center" style="color:white; font-size:2.5em; margin-top: 35vh; transform: translateY(-40%);">
+                                <hello-world/>
+                            </div>
+ 
+                        </div>
+                        <div style="position: absolute; bottom: 20px; margin-left:49%;">
+                            <img class="arrow animate-bounce w-12 h-12" style="margin:auto;" src="{{ asset('images/arrow.svg') }}" alt="arrow picto">
+                        </div>
                     </section>
                 </div>
                 <section>
