@@ -1,5 +1,6 @@
 <?php
 
+use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,3 +55,7 @@ Route::get('/show/{id}/checkout', [App\Http\Controllers\PaymentController::class
 Route::post('/payment/{id}', [App\Http\Controllers\PaymentController::class, 'handlePost'])->middleware(['auth'])->name('payment');
 //Profil
 Route::get('/profil', [App\Http\Controllers\UserController::class, 'profilDisplay'])->middleware(['auth'])->name('my_profil');
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

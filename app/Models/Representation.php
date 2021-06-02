@@ -58,4 +58,12 @@ class Representation extends Model
     {
         return $this->belongsToMany('App\Models\User');
     }
+
+    /**
+     * The User's representation(s) user - Relationship.
+     */
+    public function userRu()
+    {
+        return $this->hasMany('App\Models\RepresentationUser');
+    }
 }

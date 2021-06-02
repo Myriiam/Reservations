@@ -14779,7 +14779,7 @@ __webpack_require__.r(__webpack_exports__);
       if (_this.counter === _this.welcomes.length) {
         _this.counter = 0;
       }
-    }, 3000);
+    }, 5000);
   }
 });
 

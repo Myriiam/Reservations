@@ -35,7 +35,7 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'login' => ['required', 'string', 'unique:users'],
+            'name' => ['required', 'string', 'unique:users'],
             'firstname' => ['required', 'string', 'max:255'],
             'lastname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -45,7 +45,7 @@ class RegisteredUserController extends Controller
         Auth::login($user = User::create([
             'firstname' => $request->firstname,
             'lastname' => $request->lastname,
-            'login' => $request->login,
+            'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]));
@@ -53,7 +53,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
     
         //User become a member 
-        $user->role()->sync(2);
+        //$user->role()->sync(2);
 
         return redirect(RouteServiceProvider::WELCOME);
     }

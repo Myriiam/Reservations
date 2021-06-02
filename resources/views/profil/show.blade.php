@@ -14,16 +14,6 @@
                         <p> Mon login : {{ $user->login }}</p>
                         <p> Mon email : {{ $user->email }}</p>
                         <p> Langue : {{ $user->langue }}</p>
-                        @if (count($roleUser) > 1) 
-                            <p class="mt-5 mb-2 text-red-600 underline"> Mes rôles :</p>
-                        @else
-                            <p class="mt-5 mb-2 text-red-600 underline"> Mon rôle : </p>;
-                        @endif
-                        <ul class="list-disc list-inside">
-                            @foreach ($roleUser as $roles)
-                              <li>{{ $roles->role }}</li>  
-                            @endforeach
-                        </ul>
                         <p class="mt-5 mb-2 text-red-600 underline"> Mes spectacles : </p>
                         @if (count($user->representations) == 0) 
                         <p>Acune représentation pour le moment</p>

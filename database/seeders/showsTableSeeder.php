@@ -85,7 +85,7 @@ class showsTableSeeder extends Seeder
             ]);
         }
 
-        Show::factory()->count(200)->create();
+        Show::factory()->count(20)->create();
     }
 
 }

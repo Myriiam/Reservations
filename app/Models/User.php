@@ -6,13 +6,11 @@ use Laravel\Cashier\Billable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Filament\Models\Concerns\IsFilamentUser;
-use Filament\Models\Contracts\FilamentUser;
+//use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable implements FilamentUser
+class User extends \TCG\Voyager\Models\User
 {
-    use IsFilamentUser, HasFactory, Notifiable, Billable;
+    use HasFactory, Notifiable, Billable;
 
     /**
      * The attributes that are mass assignable.
@@ -20,7 +18,7 @@ class User extends Authenticatable implements FilamentUser
      * @var array
      */
     protected $fillable = [
-        'login',
+        'name',
         'firstname',
         'lastname',
         'langue',
@@ -50,14 +48,6 @@ class User extends Authenticatable implements FilamentUser
         'email_verified_at' => 'datetime',
     ];
 
-     /**
-     * The user's role(s) - relationship.
-     */
-    public function role()
-    {
-        return $this->belongsToMany('App\Models\Role');
-    }
-
 
      /**
      * The User's representation(s) - Relationship.
@@ -65,6 +55,14 @@ class User extends Authenticatable implements FilamentUser
     public function representations()
     {
         return $this->belongsToMany('App\Models\Representation');
+    }
+
+    /**
+     * The User's representation(s) - Relationship.
+     */
+    public function userRu()
+    {
+        return $this->hasMany('App\Models\RepresentationUser');
     }
 
 }
