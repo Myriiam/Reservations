@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 02 juin 2021 à 09:59
+-- Généré le : mer. 02 juin 2021 à 10:55
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.4.10
 
@@ -661,7 +661,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (32, '2021_03_05_002137_create_representations_table', 1),
 (33, '2021_03_19_181402_create_artist_type_table', 1),
 (34, '2021_03_25_223519_create_artist_type_show_table', 1),
-(35, '2021_03_26_215332_create_representation_user_table', 1);
+(36, '2021_03_26_215332_create_representation_user_table', 2);
 
 -- --------------------------------------------------------
 
@@ -877,15 +877,9 @@ CREATE TABLE `representation_user` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `representation_id` bigint(20) UNSIGNED NOT NULL,
-  `places` int(11) DEFAULT NULL
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `representation_user`
---
-
-INSERT INTO `representation_user` (`id`, `user_id`, `representation_id`, `places`) VALUES
-(1, 1, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -1549,7 +1543,7 @@ ALTER TABLE `menu_items`
 -- AUTO_INCREMENT pour la table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT pour la table `permissions`
@@ -1567,7 +1561,7 @@ ALTER TABLE `representations`
 -- AUTO_INCREMENT pour la table `representation_user`
 --
 ALTER TABLE `representation_user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `roles`
