@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 02 juin 2021 à 10:55
+-- Généré le : jeu. 03 juin 2021 à 14:44
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.4.10
 
@@ -589,15 +589,15 @@ CREATE TABLE `menu_items` (
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
 (1, 1, 'Tableau de bord', '', '_self', '', NULL, NULL, 1, '2021-06-01 11:15:52', '2021-06-01 11:15:52', 'voyager.dashboard', NULL),
 (2, 1, 'Médiathèque', '', '_self', 'voyager-images', NULL, 5, 1, '2021-06-01 11:15:52', '2021-06-01 21:43:10', 'voyager.media.index', NULL),
-(3, 1, 'Utilisateurs', '', '_self', 'voyager-person', NULL, NULL, 3, '2021-06-01 11:15:52', '2021-06-01 21:42:58', 'voyager.users.index', NULL),
-(4, 1, 'Rôles', '', '_self', 'voyager-lock', NULL, 3, 1, '2021-06-01 11:15:52', '2021-06-01 21:42:58', 'voyager.roles.index', NULL),
-(5, 1, 'Outils', '', '_self', 'voyager-tools', NULL, NULL, 4, '2021-06-01 11:15:52', '2021-06-01 21:43:10', NULL, NULL),
+(3, 1, 'Utilisateurs', '', '_self', 'voyager-person', NULL, 25, 1, '2021-06-01 11:15:52', '2021-06-03 07:44:10', 'voyager.users.index', NULL),
+(4, 1, 'Rôles', '', '_self', 'voyager-lock', NULL, 25, 2, '2021-06-01 11:15:52', '2021-06-03 07:44:15', 'voyager.roles.index', NULL),
+(5, 1, 'Outils', '', '_self', 'voyager-tools', NULL, NULL, 4, '2021-06-01 11:15:52', '2021-06-03 07:44:10', NULL, NULL),
 (6, 1, 'Créateur de menus', '', '_self', 'voyager-list', NULL, 5, 2, '2021-06-01 11:15:52', '2021-06-01 21:43:10', 'voyager.menus.index', NULL),
 (7, 1, 'Base de données', '', '_self', 'voyager-data', NULL, 5, 3, '2021-06-01 11:15:52', '2021-06-01 21:43:10', 'voyager.database.index', NULL),
 (8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 4, '2021-06-01 11:15:52', '2021-06-01 21:43:10', 'voyager.compass.index', NULL),
 (9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 5, '2021-06-01 11:15:52', '2021-06-01 21:43:10', 'voyager.bread.index', NULL),
-(10, 1, 'Paramètres', '', '_self', 'voyager-settings', NULL, NULL, 6, '2021-06-01 11:15:52', '2021-06-01 21:43:10', 'voyager.settings.index', NULL),
-(11, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, NULL, 5, '2021-06-01 11:15:52', '2021-06-01 21:43:10', 'voyager.hooks', NULL),
+(10, 1, 'Paramètres', '', '_self', 'voyager-settings', NULL, NULL, 6, '2021-06-01 11:15:52', '2021-06-03 07:44:10', 'voyager.settings.index', NULL),
+(11, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, NULL, 5, '2021-06-01 11:15:52', '2021-06-03 07:44:10', 'voyager.hooks', NULL),
 (13, 1, 'Artists', '', '_self', '[', NULL, 21, 4, '2021-06-01 16:31:52', '2021-06-01 21:25:55', 'voyager.artists.index', NULL),
 (14, 1, 'Localities', '', '_self', NULL, NULL, 21, 6, '2021-06-01 16:58:41', '2021-06-01 21:26:06', 'voyager.localities.index', NULL),
 (15, 1, 'Locations', '', '_self', NULL, NULL, 21, 5, '2021-06-01 16:59:09', '2021-06-01 21:26:06', 'voyager.locations.index', NULL),
@@ -608,7 +608,9 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (20, 1, 'Representation Users', '', '_self', NULL, NULL, 21, 1, '2021-06-01 20:41:20', '2021-06-01 21:25:48', 'voyager.representation-user.index', NULL),
 (21, 1, 'Données', '', '_self', 'voyager-folder', '#000000', NULL, 2, '2021-06-01 21:22:48', '2021-06-01 21:27:04', NULL, ''),
 (22, 2, 'CustomLink', '', '_blank', 'voyager-eye', '#000000', NULL, 1, '2021-06-01 21:40:07', '2021-06-01 21:40:30', 'home', NULL),
-(23, 1, 'Vers le site', '', '_blank', 'voyager-eye', '#000000', NULL, 7, '2021-06-01 21:41:33', '2021-06-01 21:43:10', 'home', NULL);
+(23, 1, 'Vers le site', '', '_blank', 'voyager-eye', '#000000', NULL, 7, '2021-06-01 21:41:33', '2021-06-03 07:44:10', 'home', NULL),
+(24, 1, 'Données', '', '_self', NULL, '#000000', NULL, 8, '2021-06-03 06:04:37', '2021-06-03 07:44:10', NULL, ''),
+(25, 1, 'Utilisateurs', '', '_self', 'voyager-person', '#000000', NULL, 3, '2021-06-03 07:43:59', '2021-06-03 07:44:07', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -661,7 +663,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (32, '2021_03_05_002137_create_representations_table', 1),
 (33, '2021_03_19_181402_create_artist_type_table', 1),
 (34, '2021_03_25_223519_create_artist_type_show_table', 1),
-(36, '2021_03_26_215332_create_representation_user_table', 2);
+(35, '2021_03_26_215332_create_representation_user_table', 1);
 
 -- --------------------------------------------------------
 
@@ -877,8 +879,7 @@ CREATE TABLE `representation_user` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `representation_id` bigint(20) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `places` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1258,17 +1259,21 @@ CREATE TABLE `users` (
   `stripe_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `card_brand` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `card_last_four` varchar(4) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `trial_ends_at` timestamp NULL DEFAULT NULL
+  `trial_ends_at` timestamp NULL DEFAULT NULL,
+  `firstname` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lastname` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `langue` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'FR'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`, `stripe_id`, `card_brand`, `card_last_four`, `trial_ends_at`) VALUES
-(1, 1, 'epfc', 'epfc@epfc.com', 'users/default.png', NULL, '$2y$10$ej/I18rcZ0BRCBy6SdkbieANeYn8Fk4i6wpp5i3/4ryG.GAcVRt4m', NULL, NULL, NULL, '2021-06-01 11:12:25', NULL, NULL, NULL, NULL),
-(3, 1, 'luc', 'luc@luc.com', 'users/default.png', NULL, '$2y$10$wbNxSb9DH2rF5dEdd.HF2OmfOo8Iq14eBvA1.MHtVLjBPoEE/5Nzq', NULL, '{\"locale\":\"fr\"}', '2021-06-01 16:56:23', '2021-06-01 16:56:23', NULL, NULL, NULL, NULL),
-(4, 2, 'Grégory Van Ossel', 'vanosselgregory@gmail.com', 'users/default.png', NULL, '$2y$10$DU.2TfuP6axkMC6XzP3vRuCIQoCMv3PpbSiTYQSigNn5FXBzKbFEG', NULL, NULL, '2021-06-01 21:48:35', '2021-06-01 21:48:35', NULL, NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`, `stripe_id`, `card_brand`, `card_last_four`, `trial_ends_at`, `firstname`, `lastname`, `langue`) VALUES
+(1, 1, 'epfc223', 'epfc@epfc.com', 'users\\June2021\\ncl7dCgXj92Oz9E6DjPA.png', NULL, '$2y$10$ej/I18rcZ0BRCBy6SdkbieANeYn8Fk4i6wpp5i3/4ryG.GAcVRt4m', NULL, '{\"locale\":\"fr\"}', NULL, '2021-06-03 10:25:54', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 1, 'luc', 'luc@luc.com', 'users/default.png', NULL, '$2y$10$wbNxSb9DH2rF5dEdd.HF2OmfOo8Iq14eBvA1.MHtVLjBPoEE/5Nzq', NULL, '{\"locale\":\"fr\"}', '2021-06-01 16:56:23', '2021-06-01 16:56:23', NULL, NULL, NULL, NULL, NULL, NULL, 'FR'),
+(4, 2, 'Grégory Van Ossel', 'vanosselgregory@gmail.com', 'users/default.png', NULL, '$2y$10$DU.2TfuP6axkMC6XzP3vRuCIQoCMv3PpbSiTYQSigNn5FXBzKbFEG', NULL, NULL, '2021-06-01 21:48:35', '2021-06-01 21:48:35', NULL, NULL, NULL, NULL, NULL, NULL, 'FR'),
+(5, 2, 'jcvd2', 'jc@vd.com', 'users\\June2021\\5hkewYDr3kxztR0HX7TY.gif', NULL, '$2y$10$pE3LWJLQRSiJeehNGcEx3.H/SgrfWA94hf7DBuqGKKhDIZLknwV3.', NULL, '{\"locale\":\"fr\"}', '2021-06-03 10:26:55', '2021-06-03 10:27:36', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1537,13 +1542,13 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT pour la table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT pour la table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT pour la table `permissions`
@@ -1561,7 +1566,7 @@ ALTER TABLE `representations`
 -- AUTO_INCREMENT pour la table `representation_user`
 --
 ALTER TABLE `representation_user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `roles`
@@ -1609,7 +1614,7 @@ ALTER TABLE `types`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Contraintes pour les tables déchargées

@@ -24,10 +24,11 @@ class User extends \TCG\Voyager\Models\User
         'langue',
         'email',
         'password',
+        'avatar',
     ];
 
     protected $table = 'users';
-    
+
 
     /**
      * The attributes that should be hidden for arrays.
@@ -64,5 +65,4 @@ class User extends \TCG\Voyager\Models\User
     {
         return $this->hasMany('App\Models\RepresentationUser');
     }
-
 }

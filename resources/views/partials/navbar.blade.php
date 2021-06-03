@@ -22,7 +22,7 @@
       <div id="app2">
         <div>
           <navigation>
-            <!--The content of this componant will be another one after component chargement-->    
+            <!--The content of this componant will be another one after component chargement-->
             <div class="relative">
             <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
             <button type="button" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" aria-expanded="false">
@@ -57,11 +57,11 @@
             Mon profil
           </a>
         @endif
-      <!-- Login button | logout button -->          
+      <!-- Login button | logout button -->
       </nav>
       <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
       @auth
-        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-800 hover:bg-red-700"">
+        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-800 hover:bg-red-700">
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
               @csrf
           </form>
@@ -72,7 +72,7 @@
         <div>
           <button type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-expanded="false" aria-haspopup="true">
             <span class="sr-only">Open user menu</span>
-            <img class="h-8 w-8 rounded-full" src="{{ asset('images/avatar/simba.jpeg') }}" alt="">
+            <img class="h-8 w-8 rounded-full" src="{{ asset('storage/'.auth()->user()->avatar) }}" alt="">
           </button>
         </div>
      @else
