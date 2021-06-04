@@ -61,7 +61,7 @@ class User extends \TCG\Voyager\Models\User
     /**
      * The User's representation(s) - Relationship.
      */
-    public function userRu()
+    public function representationUser()
     {
         return $this->hasMany('App\Models\RepresentationUser');
     }

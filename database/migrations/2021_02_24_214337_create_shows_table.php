@@ -22,7 +22,6 @@ class CreateShowsTable extends Migration
             $table->bigInteger('location_id')->unsigned()->nullable();
             $table->boolean('bookable');
             $table->decimal('price',10,2);
-           
         });
 
         Schema::table('shows', function (Blueprint $table) {

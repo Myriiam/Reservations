@@ -15,6 +15,8 @@ class RepresentationUser extends Model
         'user_id',
     ];
 
+    public $timestamps = true;
+
     /**
      * The table associated with the model.
      *
@@ -22,7 +24,7 @@ class RepresentationUser extends Model
      */
     protected $table = 'representation_user';
 
-    
+
     /**
      * Get all about the purchases of the user - relationship
      */

@@ -11,16 +11,16 @@
                 <h1 class="text-3xl font-black text-gray-800 pb-5">{{ $location->designation }}</h1>
                 <address>
                     <p>{{ $location->address }}</p>
-                    <p>{{ $location->locality->postal_code }} 
+                    <p>{{ $location->locality->postal_code }}
                     {{ $location->locality->locality }}
                     </p>
-        
+
                     @if($location->website)
                     <p><a href="{{ $location->website }}" target="_blank" class="hover:text-red-500; text-red-900">{{ $location->website }}</a></p>
                     @else
                     <p>Pas de site web</p>
                     @endif
-                    
+
                     @if($location->phone)
                     <p><a href="tel:{{ $location->phone }}" class="hover:text-red-500; text-red-900">{{ $location->phone }}</a></p>
                     @else
@@ -62,9 +62,9 @@
     /**
      * Script to show map on homepage with Leaflet JS
      */
-    let geolocation = []; 
-    geolocation.push( <?= $location->latitude ?> ); 
-    geolocation.push( <?= $location->longitude ?> ); 
+    let geolocation = [];
+    geolocation.push( <?= $location->latitude ?> );
+    geolocation.push( <?= $location->longitude ?> );
     console.log(geolocation);
     var mymap = L.map('mapid').setView(geolocation, 12);
 
@@ -76,7 +76,7 @@
          tileSize: 512,
          zoomOffset: -1
      }).addTo(mymap);
- 
+
      L.marker(geolocation).addTo(mymap)
      var popup = L.popup()
      .setLatLng(geolocation)

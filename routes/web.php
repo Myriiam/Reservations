@@ -56,10 +56,7 @@ Route::post('/payment/{id}', [App\Http\Controllers\PaymentController::class, 'ha
 //Profil
 Route::get('/profil', [App\Http\Controllers\UserController::class, 'profilDisplay'])->middleware(['auth'])->name('my_profil');
 Route::get('/profil/{id}/edit', [App\Http\Controllers\UserController::class, 'edit'])->middleware(['auth'])->name('edit_profil');
-Route::post('/profil/{id}/update2', [App\Http\Controllers\UserController::class, 'update'])->middleware(['auth'])->name('update_profil');
-$namespacePrefix = '\\'.config('voyager.controllers.namespace').'\\';
-Route::post('/profil/{id}/update', ['uses' => $namespacePrefix.'VoyagerController@upload',  'as' => 'upload']);
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
+//Back office
+Route::group(['prefix' => 'admin'], function () { Voyager::routes(); });
+//Flux RSS
+Route::feeds();

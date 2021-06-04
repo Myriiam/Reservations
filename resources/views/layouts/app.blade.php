@@ -15,7 +15,7 @@
         <!--CDN alpine JS-->
         <!--<!script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></!script>-->
         <!--CDN Leaflet -->
-            
+
             <!--Only required for location/show page-->
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
             integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -32,6 +32,7 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         <!--Jquery or other cdn and script files-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <x-feed-links />
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -41,9 +42,9 @@
             <header class="bg-white shadow">
                 <div class="container mx-auto px-4">
                     <!-- Navbar -->
-                    @include('partials.navbar')    
+                    @include('partials.navbar')
                     {{ $header }}
-                </div>  
+                </div>
             </header>
 
             <!-- Page Content -->
@@ -51,6 +52,6 @@
                 {{ $slot }}
             </main>
         </div>
-        @include('partials.footer')    
+        @include('partials.footer')
     </body>
 </html>

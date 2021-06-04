@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Show extends Model
 {
-    
+
     use HasFactory;
         /**
      * The attributes that are mass assignable.
@@ -22,6 +22,8 @@ class Show extends Model
         'location_id',
         'bookable',
         'price',
+        'created_at',
+        'updated_at',
     ];
 
    /**
@@ -36,8 +38,8 @@ class Show extends Model
      *
      * @var bool
      */
-    public $timestamps = false;
-    
+    public $timestamps = true;
+
     /**
      * Get the location of the show - relationship
      */
