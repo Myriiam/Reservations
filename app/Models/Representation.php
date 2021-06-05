@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Representation extends Model
 {
     use HasFactory;
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -18,6 +18,10 @@ class Representation extends Model
         'show_id',
         'when',
         'location_id',
+        'created_at',
+        'price',
+        'places',
+        'bookable',
     ];
 
    /**
@@ -32,8 +36,8 @@ class Representation extends Model
      *
      * @var bool
      */
-    public $timestamps = false;
-    
+    public $timestamps = true;
+
     /**
      * Get the actual location of the representation
      */
@@ -41,7 +45,7 @@ class Representation extends Model
     {
         return $this->belongsTo('App\Models\Location');
     }
-    
+
     /**
      * Get the show of the representation
      */

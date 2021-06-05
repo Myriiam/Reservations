@@ -21,7 +21,6 @@ class Show extends Model
         'poster_url',
         'location_id',
         'bookable',
-        'price',
         'created_at',
         'updated_at',
     ];

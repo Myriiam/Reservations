@@ -34,7 +34,6 @@ class showsTableSeeder extends Seeder
                 'poster_url'=>'ayiti.jpg',
                 'location_slug'=>'espace-delvaux-la-venerie',
                 'bookable'=>true,
-                'price'=>8.50,
             ],
            [
                 'slug'=>null,
@@ -44,7 +43,6 @@ class showsTableSeeder extends Seeder
                 'poster_url'=>'cible.jpg',
                 'location_slug'=>'dexia-art-center',
                 'bookable'=>true,
-                'price'=>9.00,
             ],
             [
                 'slug'=>null,
@@ -56,7 +54,6 @@ class showsTableSeeder extends Seeder
                 'poster_url'=>'claudebelgesaison220.jpg',
                 'location_slug'=>null,
                 'bookable'=>false,
-                'price'=>5.50,
             ],
             [
                 'slug'=>null,
@@ -66,7 +63,6 @@ class showsTableSeeder extends Seeder
                 'poster_url'=>'wayburn.jpg',
                 'location_slug'=>'la-samaritaine',      //Pourquoi location_slug et pas location_id ????????
                 'bookable'=>true,
-                'price'=>10.50,
             ],
         ];
 
@@ -81,7 +77,6 @@ class showsTableSeeder extends Seeder
                 'poster_url' => $data['poster_url'],
                 'location_id' => $location->id ?? null,
                 'bookable' => $data['bookable'],
-                'price' => $data['price'],
             ]);
         }
 
