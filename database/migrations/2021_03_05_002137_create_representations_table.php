@@ -20,7 +20,7 @@ class CreateRepresentationsTable extends Migration
             $table->foreignId('show_id')->unsigned();
             $table->datetime('when');
             $table->decimal('price',10,2);
-            $table->tinyInteger('places');
+            $table->integer('places');
             $table->boolean('bookable');
             $table->timestamps();
 

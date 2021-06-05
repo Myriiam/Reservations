@@ -16,7 +16,7 @@ class SettingsTableSeeder extends Seeder
         if (!$setting->exists) {
             $setting->fill([
                 'display_name' => __('voyager::seeders.settings.site.title'),
-                'value'        => __('voyager::seeders.settings.site.title'),
+                'value'        => 'Réservations',
                 'details'      => '',
                 'type'         => 'text',
                 'order'        => 1,
@@ -28,7 +28,7 @@ class SettingsTableSeeder extends Seeder
         if (!$setting->exists) {
             $setting->fill([
                 'display_name' => __('voyager::seeders.settings.site.description'),
-                'value'        => __('voyager::seeders.settings.site.description'),
+                'value'        => 'Boutique de réservations de places de théâtre',
                 'details'      => '',
                 'type'         => 'text',
                 'order'        => 2,
@@ -76,7 +76,7 @@ class SettingsTableSeeder extends Seeder
         if (!$setting->exists) {
             $setting->fill([
                 'display_name' => __('voyager::seeders.settings.admin.title'),
-                'value'        => 'Voyager',
+                'value'        => 'Réservations',
                 'details'      => '',
                 'type'         => 'text',
                 'order'        => 1,

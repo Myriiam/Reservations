@@ -1,4 +1,11 @@
 {
     "last_remote_check": 1622537153,
-    "hooks": []
+    "hooks": {
+        "ext-bread-fields-fix": {
+            "name": "ext-bread-fields-fix",
+            "description": "Fix Issue Delete, Multiple fields Extended FormFields",
+            "version": "dev-master",
+            "enabled": false
+        }
+    }
 }
