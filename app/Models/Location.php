@@ -36,7 +36,7 @@ class Location extends Model
      * @var bool
      */
     public $timestamps = false;
-    
+
     /**
      * Get the locality of the location - relationship
      */
@@ -62,6 +62,4 @@ class Location extends Model
     {
         return $this->hasMany('App\Models\Representation');
     }
-
-
 }

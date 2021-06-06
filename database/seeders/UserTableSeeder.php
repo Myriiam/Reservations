@@ -26,7 +26,7 @@ class UserTableSeeder extends Seeder
         //Define data
         $users = [
             [
-                'login'=>'epfc',
+                'name'=>'epfc',
                 'firstname'=>'Simba',
                 'lastname'=>'Moufassa',
                 'langue'=>'français',
@@ -40,7 +40,7 @@ class UserTableSeeder extends Seeder
         //Insert data in the table
         foreach ($users as $data) {     
             DB::table('users')->insert([
-                'login' => $data['login'],
+                'name' => $data['name'],
                 'firstname' => $data['firstname'],
                 'lastname' => $data['lastname'],   
                 'langue' => $data['langue'],

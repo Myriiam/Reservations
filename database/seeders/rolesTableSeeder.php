@@ -3,35 +3,34 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Role;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
+use TCG\Voyager\Models\Role;
 
-class rolesTableSeeder extends Seeder
+class RolesTableSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
-     *
-     * @return void
+     * Auto generated seed file.
      */
     public function run()
     {
-        Schema::disableForeignKeyConstraints();
-        Role::truncate();
-        Schema::enableForeignKeyConstraints();
+        $role = Role::firstOrNew(['name' => 'admin']);
+        if (!$role->exists) {
+            $role->fill([
+                'display_name' => __('voyager::seeders.roles.admin'),
+            ])->save();
+        }
 
-         //Define data
-        $roles = [
-             ['role'=>'admin'],
-             ['role'=>'member'],
-             ['role'=>'affiliate'],
+        $role = Role::firstOrNew(['name' => 'user']);
+        if (!$role->exists) {
+            $role->fill([
+                'display_name' => __('voyager::seeders.roles.user'),
+            ])->save();
+        }
 
-        ];
-         //Insert data in the table
-         foreach ($roles as $data) {
-             DB::table('roles')->insert([
-                 'role' => $data['role'],
-             ]);
-         }
+        $role = Role::firstOrNew(['name' => 'affiliate']);
+        if (!$role->exists) {
+            $role->fill([
+                'display_name' => __('voyager::seeders.roles.affiliate'),
+            ])->save();
+        }
     }
 }
