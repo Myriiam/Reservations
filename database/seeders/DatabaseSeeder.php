@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call([
-    
+
+            SqlFileSeeder::class,
             ArtistsTableSeeder::class,
             TypesTableSeeder::class, 
             LocalitiesTableSeeder::class,
@@ -26,7 +27,7 @@ class DatabaseSeeder extends Seeder
             ArtistTypeTableSeeder::class, 
             ArtistTypeShowTableSeeder::class, 
             RepresentationUserTableSeeder::class, 
-            VoyagerDatabaseSeeder::class,
+            //VoyagerDatabaseSeeder::class,
             
             //SqlFileSeeder::class,  //You need to have a clean DB with name 'reservations' and then let's seed
         ]);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : Dim 06 juin 2021 à 14:31
+-- Généré le : Dim 06 juin 2021 à 14:55
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.4.10
 
@@ -865,6 +865,9 @@ CREATE TABLE `representations` (
   `location_id` bigint(20) UNSIGNED DEFAULT NULL,
   `show_id` bigint(20) UNSIGNED NOT NULL,
   `when` datetime NOT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
+  `places` int(11) DEFAULT NULL,
+  `bookable` tinyint(1) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -872,11 +875,11 @@ CREATE TABLE `representations` (
 -- Déchargement des données de la table `representations`
 --
 
-INSERT INTO `representations` (`id`, `location_id`, `show_id`, `when`, `created_at`) VALUES
-(1, 1, 1, '2012-10-12 13:30:00', '2021-06-05 09:21:03'),
-(2, 2, 1, '2012-10-12 20:30:00', '2021-06-05 09:21:03'),
-(3, NULL, 2, '2012-10-02 20:30:00', '2021-06-05 09:21:03'),
-(4, NULL, 3, '2012-10-16 20:30:00', '2021-06-05 09:21:03');
+INSERT INTO `representations` (`id`, `location_id`, `show_id`, `when`, `price`, `places`, `bookable`, `created_at`) VALUES
+(1, 1, 1, '2012-10-12 13:30:00', '10.50', 120, 1, '2021-06-06 12:54:48'),
+(2, 2, 1, '2012-10-12 20:30:00', '9.50', 80, 1, '2021-06-06 12:54:48'),
+(3, NULL, 2, '2012-10-02 20:30:00', '12.50', 100, 1, '2021-06-06 12:54:48'),
+(4, NULL, 3, '2012-10-16 20:30:00', '11.00', 150, 1, '2021-06-06 12:54:48');
 
 -- --------------------------------------------------------
 
