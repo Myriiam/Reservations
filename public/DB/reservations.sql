@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 05 juin 2021 à 20:17
+-- Généré le : Dim 06 juin 2021 à 11:52
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.4.10
 
@@ -20,9 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `reservations`
 --
-
-/*CREATE DATABASE `reservations` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;*/
-/*USE `reservations`;*/
 
 -- --------------------------------------------------------
 
@@ -110,219 +107,184 @@ CREATE TABLE `artist_type_show` (
 --
 
 INSERT INTO `artist_type_show` (`id`, `artist_type_id`, `show_id`) VALUES
-(1, 1, 27),
-(2, 15, 80),
-(3, 7, 99),
-(4, 9, 13),
-(5, 19, 199),
-(6, 2, 26),
-(7, 10, 65),
-(8, 6, 145),
-(9, 9, 139),
-(10, 7, 42),
-(11, 15, 176),
-(12, 2, 21),
-(13, 5, 48),
-(14, 15, 21),
-(15, 15, 147),
-(16, 5, 182),
-(17, 20, 103),
-(18, 12, 84),
-(19, 6, 115),
-(20, 19, 65),
-(21, 13, 39),
-(22, 3, 106),
-(23, 13, 37),
-(24, 6, 161),
-(25, 10, 112),
-(26, 13, 52),
-(27, 5, 202),
-(28, 17, 96),
-(29, 16, 139),
-(30, 18, 150),
-(31, 8, 55),
-(32, 11, 99),
-(33, 12, 89),
-(34, 15, 151),
-(35, 15, 35),
-(36, 6, 204),
-(37, 2, 54),
-(38, 5, 143),
-(39, 20, 189),
-(40, 7, 40),
-(41, 14, 99),
-(42, 9, 120),
-(43, 7, 183),
-(44, 2, 202),
-(45, 11, 173),
-(46, 6, 56),
-(47, 2, 172),
-(48, 3, 81),
-(49, 11, 106),
-(50, 8, 15),
-(51, 12, 112),
-(52, 8, 183),
-(53, 9, 67),
-(54, 6, 185),
-(55, 19, 149),
-(56, 9, 13),
-(57, 20, 9),
-(58, 8, 104),
-(59, 2, 202),
-(60, 6, 125),
-(61, 20, 88),
-(62, 8, 86),
-(63, 7, 64),
-(64, 14, 40),
-(65, 7, 112),
-(66, 14, 180),
-(67, 2, 142),
-(68, 6, 114),
-(69, 4, 110),
-(70, 3, 59),
-(71, 17, 189),
-(72, 8, 179),
-(73, 17, 83),
-(74, 14, 148),
-(75, 10, 72),
-(76, 15, 157),
-(77, 8, 9),
-(78, 19, 71),
-(79, 8, 146),
-(80, 5, 50),
-(81, 6, 167),
-(82, 16, 14),
-(83, 12, 58),
-(84, 7, 35),
-(85, 19, 82),
-(86, 20, 137),
-(87, 9, 180),
-(88, 7, 167),
-(89, 16, 145),
-(90, 13, 185),
-(91, 1, 189),
-(92, 18, 170),
-(93, 16, 51),
-(94, 17, 148),
-(95, 18, 144),
-(96, 11, 45),
-(97, 6, 70),
-(98, 13, 100),
-(99, 2, 164),
-(100, 12, 9),
-(101, 5, 200),
-(102, 14, 167),
-(103, 15, 81),
-(104, 10, 185),
-(105, 3, 167),
-(106, 10, 73),
-(107, 8, 102),
-(108, 5, 97),
-(109, 1, 12),
-(110, 6, 60),
-(111, 3, 146),
-(112, 13, 117),
-(113, 4, 89),
-(114, 20, 63),
-(115, 12, 92),
-(116, 5, 140),
-(117, 15, 128),
-(118, 18, 94),
-(119, 19, 104),
-(120, 4, 57),
-(121, 18, 164),
-(122, 13, 136),
-(123, 11, 108),
-(124, 17, 65),
-(125, 16, 139),
-(126, 20, 167),
-(127, 5, 57),
-(128, 5, 133),
-(129, 6, 195),
-(130, 11, 8),
-(131, 9, 103),
-(132, 9, 161),
-(133, 14, 143),
-(134, 3, 98),
-(135, 2, 100),
-(136, 16, 114),
-(137, 19, 182),
-(138, 13, 148),
-(139, 18, 147),
-(140, 6, 107),
-(141, 18, 146),
-(142, 15, 67),
-(143, 19, 62),
-(144, 6, 191),
-(145, 17, 10),
-(146, 12, 18),
-(147, 15, 128),
-(148, 9, 135),
-(149, 16, 35),
-(150, 4, 60),
-(151, 13, 30),
-(152, 17, 92),
-(153, 10, 159),
-(154, 2, 85),
-(155, 14, 90),
-(156, 7, 61),
-(157, 17, 194),
-(158, 20, 198),
-(159, 2, 139),
-(160, 9, 164),
-(161, 2, 65),
-(162, 18, 82),
-(163, 16, 103),
-(164, 11, 125),
-(165, 4, 204),
-(166, 20, 72),
-(167, 19, 38),
-(168, 10, 116),
-(169, 17, 190),
-(170, 19, 50),
-(171, 19, 56),
-(172, 4, 40),
-(173, 16, 158),
-(174, 14, 29),
-(175, 15, 34),
-(176, 9, 10),
-(177, 11, 24),
-(178, 20, 157),
-(179, 12, 31),
-(180, 16, 49),
-(181, 5, 81),
-(182, 7, 66),
-(183, 12, 132),
-(184, 5, 174),
-(185, 20, 175),
-(186, 3, 81),
-(187, 6, 87),
-(188, 1, 22),
-(189, 18, 16),
-(190, 3, 64),
-(191, 18, 189),
-(192, 18, 164),
-(193, 15, 188),
-(194, 1, 1),
-(195, 2, 1),
-(196, 3, 1),
-(197, 4, 1),
-(198, 5, 1),
-(199, 6, 2),
-(200, 7, 2),
-(201, 8, 2),
-(202, 9, 2),
-(203, 10, 2),
-(204, 11, 2),
-(205, 12, 2),
-(206, 13, 3),
-(207, 14, 3),
-(208, 15, 3),
-(209, 16, 4),
-(210, 17, 4),
-(211, 4, 4),
-(212, 19, 4),
-(213, 20, 4);
+(1, 12, 20),
+(2, 3, 17),
+(3, 8, 8),
+(4, 5, 18),
+(5, 14, 10),
+(6, 16, 12),
+(7, 4, 24),
+(8, 17, 17),
+(9, 12, 23),
+(10, 16, 20),
+(11, 13, 18),
+(12, 17, 7),
+(13, 7, 6),
+(14, 6, 17),
+(15, 13, 14),
+(16, 10, 17),
+(17, 11, 7),
+(18, 19, 14),
+(19, 10, 17),
+(20, 5, 23),
+(21, 1, 17),
+(22, 17, 17),
+(23, 6, 7),
+(24, 11, 14),
+(25, 4, 15),
+(26, 13, 21),
+(27, 6, 7),
+(28, 7, 21),
+(29, 6, 22),
+(30, 6, 23),
+(31, 1, 6),
+(32, 7, 15),
+(33, 2, 7),
+(34, 14, 20),
+(35, 2, 15),
+(36, 18, 11),
+(37, 3, 12),
+(38, 4, 22),
+(39, 4, 22),
+(40, 16, 7),
+(41, 14, 15),
+(42, 13, 22),
+(43, 9, 18),
+(44, 17, 8),
+(45, 4, 6),
+(46, 15, 13),
+(47, 7, 17),
+(48, 20, 9),
+(49, 9, 13),
+(50, 1, 10),
+(51, 3, 23),
+(52, 7, 14),
+(53, 6, 9),
+(54, 15, 22),
+(55, 10, 9),
+(56, 7, 15),
+(57, 15, 6),
+(58, 20, 13),
+(59, 14, 13),
+(60, 8, 14),
+(61, 19, 17),
+(62, 18, 9),
+(63, 4, 8),
+(64, 9, 8),
+(65, 14, 12),
+(66, 7, 22),
+(67, 10, 13),
+(68, 12, 6),
+(69, 6, 23),
+(70, 8, 6),
+(71, 1, 21),
+(72, 17, 16),
+(73, 18, 7),
+(74, 18, 20),
+(75, 1, 12),
+(76, 13, 7),
+(77, 5, 15),
+(78, 16, 11),
+(79, 11, 11),
+(80, 1, 21),
+(81, 5, 9),
+(82, 12, 19),
+(83, 15, 16),
+(84, 12, 21),
+(85, 19, 11),
+(86, 18, 19),
+(87, 18, 11),
+(88, 12, 24),
+(89, 2, 11),
+(90, 6, 12),
+(91, 2, 9),
+(92, 12, 6),
+(93, 10, 7),
+(94, 12, 23),
+(95, 20, 21),
+(96, 17, 8),
+(97, 8, 11),
+(98, 7, 8),
+(99, 11, 12),
+(100, 9, 14),
+(101, 10, 8),
+(102, 20, 16),
+(103, 14, 21),
+(104, 4, 7),
+(105, 13, 21),
+(106, 3, 9),
+(107, 11, 10),
+(108, 13, 19),
+(109, 14, 17),
+(110, 6, 17),
+(111, 8, 9),
+(112, 19, 15),
+(113, 3, 6),
+(114, 18, 22),
+(115, 18, 22),
+(116, 7, 8),
+(117, 10, 21),
+(118, 20, 7),
+(119, 10, 13),
+(120, 3, 6),
+(121, 3, 10),
+(122, 18, 14),
+(123, 5, 12),
+(124, 13, 12),
+(125, 3, 13),
+(126, 4, 10),
+(127, 9, 7),
+(128, 5, 12),
+(129, 20, 19),
+(130, 18, 17),
+(131, 4, 11),
+(132, 14, 19),
+(133, 14, 17),
+(134, 16, 21),
+(135, 9, 14),
+(136, 7, 8),
+(137, 17, 15),
+(138, 6, 24),
+(139, 2, 8),
+(140, 13, 9),
+(141, 19, 21),
+(142, 13, 21),
+(143, 5, 8),
+(144, 20, 19),
+(145, 20, 21),
+(146, 8, 7),
+(147, 18, 24),
+(148, 1, 11),
+(149, 7, 24),
+(150, 9, 20),
+(151, 7, 8),
+(152, 4, 22),
+(153, 13, 19),
+(154, 20, 11),
+(155, 8, 20),
+(156, 18, 13),
+(157, 6, 11),
+(158, 3, 24),
+(159, 1, 1),
+(160, 2, 1),
+(161, 3, 1),
+(162, 4, 1),
+(163, 5, 1),
+(164, 6, 2),
+(165, 7, 2),
+(166, 8, 2),
+(167, 9, 2),
+(168, 10, 2),
+(169, 11, 2),
+(170, 12, 2),
+(171, 13, 3),
+(172, 14, 3),
+(173, 15, 3),
+(174, 16, 4),
+(175, 17, 4),
+(176, 4, 4),
+(177, 19, 4),
+(178, 20, 4);
 
 -- --------------------------------------------------------
 
@@ -351,17 +313,17 @@ CREATE TABLE `data_rows` (
 --
 
 INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, `required`, `browse`, `read`, `edit`, `add`, `delete`, `details`, `order`) VALUES
-(1, 1, 'id', 'number', 'ID', 1, 0, 0, 0, 0, 0, '{}', 1),
-(2, 1, 'name', 'text', 'Nom', 1, 1, 1, 1, 1, 1, '{}', 2),
-(3, 1, 'email', 'text', 'Email', 1, 1, 1, 1, 1, 1, '{}', 3),
-(4, 1, 'password', 'password', 'Mot de passe', 1, 0, 0, 1, 1, 0, '{}', 4),
-(5, 1, 'remember_token', 'text', 'Token de rappel', 0, 0, 0, 0, 0, 0, '{}', 5),
-(6, 1, 'created_at', 'timestamp', 'Créé le', 0, 1, 1, 0, 0, 0, '{}', 6),
-(7, 1, 'updated_at', 'timestamp', 'Mis à jour le', 0, 0, 0, 0, 0, 0, '{}', 7),
-(8, 1, 'avatar', 'image', 'Avatar', 0, 1, 1, 1, 1, 1, '{}', 8),
-(9, 1, 'user_belongsto_role_relationship', 'relationship', 'Rôle', 0, 1, 1, 1, 1, 0, '{\"model\":\"TCG\\\\Voyager\\\\Models\\\\Role\",\"table\":\"roles\",\"type\":\"belongsTo\",\"column\":\"role_id\",\"key\":\"id\",\"label\":\"display_name\",\"pivot_table\":\"roles\",\"pivot\":\"0\",\"taggable\":\"0\"}', 10),
+(1, 1, 'id', 'number', 'ID', 1, 0, 0, 0, 0, 0, NULL, 1),
+(2, 1, 'name', 'text', 'Nom', 1, 1, 1, 1, 1, 1, NULL, 2),
+(3, 1, 'email', 'text', 'Email', 1, 1, 1, 1, 1, 1, NULL, 3),
+(4, 1, 'password', 'password', 'Mot de passe', 1, 0, 0, 1, 1, 0, NULL, 4),
+(5, 1, 'remember_token', 'text', 'Token de rappel', 0, 0, 0, 0, 0, 0, NULL, 5),
+(6, 1, 'created_at', 'timestamp', 'Créé le', 0, 1, 1, 0, 0, 0, NULL, 6),
+(7, 1, 'updated_at', 'timestamp', 'Mis à jour le', 0, 0, 0, 0, 0, 0, NULL, 7),
+(8, 1, 'avatar', 'image', 'Avatar', 0, 1, 1, 1, 1, 1, NULL, 8),
+(9, 1, 'user_belongsto_role_relationship', 'relationship', 'Rôle', 0, 1, 1, 1, 1, 0, '{\"model\":\"TCG\\\\Voyager\\\\Models\\\\Role\",\"table\":\"roles\",\"type\":\"belongsTo\",\"column\":\"role_id\",\"key\":\"id\",\"label\":\"display_name\",\"pivot_table\":\"roles\",\"pivot\":0}', 10),
 (10, 1, 'user_belongstomany_role_relationship', 'relationship', 'Roles', 0, 1, 1, 1, 1, 0, '{\"model\":\"TCG\\\\Voyager\\\\Models\\\\Role\",\"table\":\"roles\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"display_name\",\"pivot_table\":\"user_roles\",\"pivot\":\"1\",\"taggable\":\"0\"}', 11),
-(11, 1, 'settings', 'hidden', 'Settings', 0, 0, 0, 0, 0, 0, '{}', 12),
+(11, 1, 'settings', 'hidden', 'Settings', 0, 0, 0, 0, 0, 0, NULL, 12),
 (12, 2, 'id', 'number', 'ID', 1, 0, 0, 0, 0, 0, NULL, 1),
 (13, 2, 'name', 'text', 'Nom', 1, 1, 1, 1, 1, 1, NULL, 2),
 (14, 2, 'created_at', 'timestamp', 'Créé le', 0, 0, 0, 0, 0, 0, NULL, 3),
@@ -371,71 +333,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (18, 3, 'created_at', 'timestamp', 'Créé le', 0, 0, 0, 0, 0, 0, NULL, 3),
 (19, 3, 'updated_at', 'timestamp', 'Mis à jour le', 0, 0, 0, 0, 0, 0, NULL, 4),
 (20, 3, 'display_name', 'text', 'Nom d\'affichage', 1, 1, 1, 1, 1, 1, NULL, 5),
-(21, 1, 'role_id', 'text', 'Rôle', 0, 1, 1, 1, 1, 1, '{}', 9),
-(30, 6, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(31, 6, 'firstname', 'text', 'Firstname', 1, 1, 1, 1, 1, 1, '{}', 2),
-(32, 6, 'lastname', 'text', 'Lastname', 1, 1, 1, 1, 1, 1, '{}', 3),
-(33, 7, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(34, 7, 'postal_code', 'text', 'Postal Code', 1, 1, 1, 1, 1, 1, '{}', 2),
-(35, 7, 'locality', 'text', 'Locality', 1, 1, 1, 1, 1, 1, '{}', 3),
-(36, 8, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(37, 8, 'slug', 'text', 'Slug', 1, 1, 1, 1, 1, 1, '{}', 3),
-(38, 8, 'designation', 'text', 'Designation', 1, 1, 1, 1, 1, 1, '{}', 4),
-(39, 8, 'address', 'text', 'Address', 1, 1, 1, 1, 1, 1, '{}', 5),
-(40, 8, 'locality_id', 'text', 'Locality Id', 1, 1, 1, 1, 1, 1, '{}', 2),
-(41, 8, 'website', 'text', 'Website', 0, 1, 1, 1, 1, 1, '{}', 6),
-(42, 8, 'phone', 'text', 'Phone', 0, 1, 1, 1, 1, 1, '{}', 7),
-(43, 8, 'longitude', 'text', 'Longitude', 0, 1, 1, 1, 1, 1, '{}', 8),
-(44, 8, 'latitude', 'text', 'Latitude', 0, 1, 1, 1, 1, 1, '{}', 9),
-(45, 9, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(46, 9, 'type', 'text', 'Type', 1, 1, 1, 1, 1, 1, '{}', 2),
-(47, 10, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(48, 10, 'artist_id', 'text', 'Artist Id', 1, 1, 1, 1, 1, 1, '{}', 2),
-(49, 10, 'type_id', 'text', 'Type Id', 1, 1, 1, 1, 1, 1, '{}', 3),
-(50, 6, 'artist_belongstomany_type_relationship', 'relationship', 'types', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Type\",\"table\":\"types\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"id\",\"pivot_table\":\"artist_type\",\"pivot\":\"1\",\"taggable\":null}', 4),
-(51, 7, 'locality_hasmany_location_relationship', 'relationship', 'locations', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Location\",\"table\":\"locations\",\"type\":\"hasMany\",\"column\":\"locality_id\",\"key\":\"id\",\"label\":\"designation\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 4),
-(52, 11, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(53, 11, 'slug', 'text', 'Slug', 1, 1, 1, 1, 1, 1, '{}', 3),
-(54, 11, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 4),
-(55, 11, 'description', 'text', 'Description', 1, 1, 1, 1, 1, 1, '{}', 5),
-(56, 11, 'poster_url', 'text', 'Poster Url', 1, 1, 1, 1, 1, 1, '{}', 6),
-(57, 11, 'location_id', 'text', 'Location Id', 0, 1, 1, 1, 1, 1, '{}', 2),
-(58, 11, 'bookable', 'text', 'Bookable', 1, 1, 1, 1, 1, 1, '{}', 7),
-(59, 11, 'price', 'text', 'Price', 1, 1, 1, 1, 1, 1, '{}', 8),
-(60, 12, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(61, 12, 'location_id', 'text', 'Location Id', 0, 1, 1, 1, 1, 1, '{}', 2),
-(62, 12, 'show_id', 'text', 'Show Id', 1, 1, 1, 1, 1, 1, '{}', 3),
-(63, 12, 'when', 'text', 'When', 1, 1, 1, 1, 1, 1, '{}', 4),
-(64, 15, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(65, 15, 'user_id', 'text', 'User Id', 1, 1, 1, 1, 1, 1, '{}', 2),
-(66, 15, 'representation_id', 'text', 'Representation Id', 1, 1, 1, 1, 1, 1, '{}', 3),
-(67, 15, 'places', 'text', 'Places', 0, 1, 1, 1, 1, 1, '{}', 4),
-(68, 10, 'artist_type_belongstomany_type_relationship', 'relationship', 'types', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Type\",\"table\":\"types\",\"type\":\"belongsTo\",\"column\":\"type_id\",\"key\":\"id\",\"label\":\"type\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 4),
-(69, 10, 'artist_type_belongsto_artist_relationship', 'relationship', 'artists', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Artist\",\"table\":\"artists\",\"type\":\"belongsTo\",\"column\":\"artist_id\",\"key\":\"id\",\"label\":\"firstname\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 5),
-(70, 10, 'artist_type_belongstomany_show_relationship', 'relationship', 'shows', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Show\",\"table\":\"shows\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"artist_type_show\",\"pivot\":\"1\",\"taggable\":\"0\"}', 6),
-(71, 8, 'location_belongsto_locality_relationship', 'relationship', 'localities', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Locality\",\"table\":\"localities\",\"type\":\"belongsTo\",\"column\":\"locality_id\",\"key\":\"id\",\"label\":\"locality\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 10),
-(72, 8, 'location_hasmany_show_relationship', 'relationship', 'shows', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Show\",\"table\":\"shows\",\"type\":\"hasMany\",\"column\":\"location_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 11),
-(73, 8, 'location_hasmany_representation_relationship', 'relationship', 'representations', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Representation\",\"table\":\"representations\",\"type\":\"hasMany\",\"column\":\"location_id\",\"key\":\"id\",\"label\":\"when\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 12),
-(74, 9, 'type_belongstomany_artist_relationship', 'relationship', 'artists', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Artist\",\"table\":\"artists\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"firstname\",\"pivot_table\":\"artist_type\",\"pivot\":\"1\",\"taggable\":\"0\"}', 3),
-(75, 1, 'user_belongstomany_representation_relationship', 'relationship', 'representations', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Representation\",\"table\":\"representations\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"id\",\"pivot_table\":\"representation_user\",\"pivot\":\"1\",\"taggable\":\"0\"}', 13),
-(76, 1, 'user_hasmany_representation_user_relationship', 'relationship', 'representation_user', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\RepresentationUser\",\"table\":\"representation_user\",\"type\":\"hasMany\",\"column\":\"user_id\",\"key\":\"id\",\"label\":\"places\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 14),
-(77, 1, 'firstname', 'text', 'Firstname', 0, 1, 1, 1, 1, 1, '{}', 4),
-(78, 1, 'lastname', 'text', 'Lastname', 0, 1, 1, 1, 1, 1, '{}', 5),
-(79, 1, 'langue', 'text', 'Langue', 1, 1, 1, 1, 1, 1, '{}', 6),
-(80, 1, 'email_verified_at', 'timestamp', 'Email Verified At', 0, 1, 1, 1, 1, 1, '{}', 9),
-(81, 1, 'stripe_id', 'text', 'Stripe Id', 0, 1, 1, 1, 1, 1, '{}', 15),
-(82, 1, 'card_brand', 'text', 'Card Brand', 0, 1, 1, 1, 1, 1, '{}', 16),
-(83, 1, 'card_last_four', 'text', 'Card Last Four', 0, 1, 1, 1, 1, 1, '{}', 17),
-(84, 1, 'trial_ends_at', 'timestamp', 'Trial Ends At', 0, 1, 1, 1, 1, 1, '{}', 18),
-(85, 11, 'show_belongsto_location_relationship', 'relationship', 'locations', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Location\",\"table\":\"locations\",\"type\":\"belongsTo\",\"column\":\"location_id\",\"key\":\"id\",\"label\":\"designation\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 9),
-(86, 11, 'show_hasmany_representation_relationship', 'relationship', 'representations', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Representation\",\"table\":\"representations\",\"type\":\"hasMany\",\"column\":\"show_id\",\"key\":\"id\",\"label\":\"when\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 10),
-(87, 11, 'show_belongstomany_artist_type_relationship', 'relationship', 'artist_type', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\ArtistType\",\"table\":\"artist_type\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"type_id\",\"pivot_table\":\"artist_type_show\",\"pivot\":\"1\",\"taggable\":\"0\"}', 11),
-(88, 12, 'representation_belongsto_location_relationship', 'relationship', 'locations', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Location\",\"table\":\"locations\",\"type\":\"belongsTo\",\"column\":\"location_id\",\"key\":\"id\",\"label\":\"designation\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 5),
-(89, 12, 'representation_belongsto_show_relationship', 'relationship', 'shows', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Show\",\"table\":\"shows\",\"type\":\"belongsTo\",\"column\":\"show_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 6),
-(90, 12, 'representation_belongstomany_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\User\",\"table\":\"users\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"representation_user\",\"pivot\":\"1\",\"taggable\":\"0\"}', 7),
-(91, 12, 'representation_hasmany_representation_user_relationship', 'relationship', 'representation_user', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\RepresentationUser\",\"table\":\"representation_user\",\"type\":\"hasMany\",\"column\":\"representation_id\",\"key\":\"id\",\"label\":\"places\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 8),
-(92, 15, 'representation_user_belongsto_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"user_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 5),
-(93, 15, 'representation_user_belongsto_representation_relationship', 'relationship', 'representations', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Representation\",\"table\":\"representations\",\"type\":\"belongsTo\",\"column\":\"representation_id\",\"key\":\"id\",\"label\":\"when\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 6);
+(21, 1, 'role_id', 'text', 'Rôle', 1, 1, 1, 1, 1, 1, NULL, 9);
 
 -- --------------------------------------------------------
 
@@ -466,17 +364,9 @@ CREATE TABLE `data_types` (
 --
 
 INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `display_name_plural`, `icon`, `model_name`, `policy_name`, `controller`, `description`, `generate_permissions`, `server_side`, `details`, `created_at`, `updated_at`) VALUES
-(1, 'users', 'users', 'Utilisateur', 'Utilisateurs', 'voyager-person', 'TCG\\Voyager\\Models\\User', 'TCG\\Voyager\\Policies\\UserPolicy', 'TCG\\Voyager\\Http\\Controllers\\VoyagerUserController', NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2021-06-01 11:15:51', '2021-06-01 21:09:24'),
-(2, 'menus', 'menus', 'Menu', 'Menus', 'voyager-list', 'TCG\\Voyager\\Models\\Menu', NULL, '', '', 1, 0, NULL, '2021-06-01 11:15:51', '2021-06-01 11:15:51'),
-(3, 'roles', 'roles', 'Rôle', 'Rôles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, 'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController', '', 1, 0, NULL, '2021-06-01 11:15:51', '2021-06-01 11:15:51'),
-(6, 'artists', 'artists', 'Artist', 'Artists', '[', 'App\\Models\\Artist', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2021-06-01 16:31:51', '2021-06-01 16:31:51'),
-(7, 'localities', 'localities', 'Locality', 'Localities', NULL, 'App\\Models\\Locality', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-06-01 16:58:40', '2021-06-01 20:57:12'),
-(8, 'locations', 'locations', 'Location', 'Locations', NULL, 'App\\Models\\Location', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-06-01 16:59:09', '2021-06-01 21:01:32'),
-(9, 'types', 'types', 'Type', 'Types', NULL, 'App\\Models\\Type', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-06-01 16:59:40', '2021-06-01 21:03:20'),
-(10, 'artist_type', 'artist-type', 'Artist Type', 'Artist Types', NULL, 'App\\Models\\ArtistType', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-06-01 17:00:21', '2021-06-01 20:54:22'),
-(11, 'shows', 'shows', 'Show', 'Shows', NULL, 'App\\Models\\Show', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":\"id\",\"scope\":null}', '2021-06-01 17:15:52', '2021-06-01 21:12:21'),
-(12, 'representations', 'representations', 'Representation', 'Representations', NULL, 'App\\Models\\Representation', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-06-01 17:17:00', '2021-06-01 21:20:47'),
-(15, 'representation_user', 'representation-user', 'Representation User', 'Representation Users', NULL, 'App\\Models\\RepresentationUser', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-06-01 20:41:20', '2021-06-01 21:20:04');
+(1, 'users', 'users', 'Utilisateur', 'Utilisateurs', 'voyager-person', 'TCG\\Voyager\\Models\\User', 'TCG\\Voyager\\Policies\\UserPolicy', 'TCG\\Voyager\\Http\\Controllers\\VoyagerUserController', '', 1, 0, NULL, '2021-06-06 06:41:54', '2021-06-06 06:41:54'),
+(2, 'menus', 'menus', 'Menu', 'Menus', 'voyager-list', 'TCG\\Voyager\\Models\\Menu', NULL, '', '', 1, 0, NULL, '2021-06-06 06:41:54', '2021-06-06 06:41:54'),
+(3, 'roles', 'roles', 'Rôle', 'Rôles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, 'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController', '', 1, 0, NULL, '2021-06-06 06:41:54', '2021-06-06 06:41:54');
 
 -- --------------------------------------------------------
 
@@ -560,8 +450,7 @@ CREATE TABLE `menus` (
 --
 
 INSERT INTO `menus` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'admin', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(2, 'user', '2021-06-01 15:51:11', '2021-06-01 15:51:11');
+(1, 'admin', '2021-06-06 06:41:54', '2021-06-06 06:41:54');
 
 -- --------------------------------------------------------
 
@@ -590,30 +479,16 @@ CREATE TABLE `menu_items` (
 --
 
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
-(1, 1, 'Tableau de bord', '', '_self', '', NULL, NULL, 1, '2021-06-01 11:15:52', '2021-06-01 11:15:52', 'voyager.dashboard', NULL),
-(2, 1, 'Médiathèque', '', '_self', 'voyager-images', NULL, 5, 1, '2021-06-01 11:15:52', '2021-06-01 21:43:10', 'voyager.media.index', NULL),
-(3, 1, 'Utilisateurs', '', '_self', 'voyager-person', NULL, 25, 1, '2021-06-01 11:15:52', '2021-06-03 07:44:10', 'voyager.users.index', NULL),
-(4, 1, 'Rôles', '', '_self', 'voyager-lock', NULL, 25, 2, '2021-06-01 11:15:52', '2021-06-03 07:44:15', 'voyager.roles.index', NULL),
-(5, 1, 'Outils', '', '_self', 'voyager-tools', NULL, NULL, 4, '2021-06-01 11:15:52', '2021-06-03 07:44:10', NULL, NULL),
-(6, 1, 'Créateur de menus', '', '_self', 'voyager-list', NULL, 5, 2, '2021-06-01 11:15:52', '2021-06-01 21:43:10', 'voyager.menus.index', NULL),
-(7, 1, 'Base de données', '', '_self', 'voyager-data', NULL, 5, 3, '2021-06-01 11:15:52', '2021-06-01 21:43:10', 'voyager.database.index', NULL),
-(8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 4, '2021-06-01 11:15:52', '2021-06-01 21:43:10', 'voyager.compass.index', NULL),
-(9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 5, '2021-06-01 11:15:52', '2021-06-01 21:43:10', 'voyager.bread.index', NULL),
-(10, 1, 'Paramètres', '', '_self', 'voyager-settings', NULL, NULL, 6, '2021-06-01 11:15:52', '2021-06-03 07:44:10', 'voyager.settings.index', NULL),
-(11, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, NULL, 5, '2021-06-01 11:15:52', '2021-06-03 07:44:10', 'voyager.hooks', NULL),
-(13, 1, 'Artists', '', '_self', '[', NULL, 21, 4, '2021-06-01 16:31:52', '2021-06-01 21:25:55', 'voyager.artists.index', NULL),
-(14, 1, 'Localities', '', '_self', NULL, NULL, 21, 6, '2021-06-01 16:58:41', '2021-06-01 21:26:06', 'voyager.localities.index', NULL),
-(15, 1, 'Locations', '', '_self', NULL, NULL, 21, 5, '2021-06-01 16:59:09', '2021-06-01 21:26:06', 'voyager.locations.index', NULL),
-(16, 1, 'Types', '', '_self', NULL, NULL, 21, 7, '2021-06-01 16:59:40', '2021-06-01 21:25:55', 'voyager.types.index', NULL),
-(17, 1, 'Artist Types', '', '_self', NULL, NULL, 21, 8, '2021-06-01 17:00:21', '2021-06-01 21:25:55', 'voyager.artist-type.index', NULL),
-(18, 1, 'Shows', '', '_self', NULL, NULL, 21, 3, '2021-06-01 17:15:52', '2021-06-01 21:25:55', 'voyager.shows.index', NULL),
-(19, 1, 'Representations', '', '_self', NULL, NULL, 21, 2, '2021-06-01 17:17:00', '2021-06-01 21:25:52', 'voyager.representations.index', NULL),
-(20, 1, 'Representation Users', '', '_self', NULL, NULL, 21, 1, '2021-06-01 20:41:20', '2021-06-01 21:25:48', 'voyager.representation-user.index', NULL),
-(21, 1, 'Données', '', '_self', 'voyager-folder', '#000000', NULL, 2, '2021-06-01 21:22:48', '2021-06-01 21:27:04', NULL, ''),
-(22, 2, 'CustomLink', '', '_blank', 'voyager-eye', '#000000', NULL, 1, '2021-06-01 21:40:07', '2021-06-01 21:40:30', 'home', NULL),
-(23, 1, 'Vers le site', '', '_blank', 'voyager-eye', '#000000', NULL, 7, '2021-06-01 21:41:33', '2021-06-03 07:44:10', 'home', NULL),
-(24, 1, 'Données', '', '_self', NULL, '#000000', NULL, 8, '2021-06-03 06:04:37', '2021-06-03 07:44:10', NULL, ''),
-(25, 1, 'Utilisateurs', '', '_self', 'voyager-person', '#000000', NULL, 3, '2021-06-03 07:43:59', '2021-06-03 07:44:07', NULL, '');
+(1, 1, 'Tableau de bord', '', '_self', 'voyager-boat', NULL, NULL, 1, '2021-06-06 06:41:54', '2021-06-06 06:41:54', 'voyager.dashboard', NULL),
+(2, 1, 'Médiathèque', '', '_self', 'voyager-images', NULL, NULL, 5, '2021-06-06 06:41:54', '2021-06-06 06:41:54', 'voyager.media.index', NULL),
+(3, 1, 'Utilisateurs', '', '_self', 'voyager-person', NULL, NULL, 3, '2021-06-06 06:41:54', '2021-06-06 06:41:54', 'voyager.users.index', NULL),
+(4, 1, 'Rôles', '', '_self', 'voyager-lock', NULL, NULL, 2, '2021-06-06 06:41:54', '2021-06-06 06:41:54', 'voyager.roles.index', NULL),
+(5, 1, 'Outils', '', '_self', 'voyager-tools', NULL, NULL, 9, '2021-06-06 06:41:54', '2021-06-06 06:41:54', NULL, NULL),
+(6, 1, 'Créateur de menus', '', '_self', 'voyager-list', NULL, 5, 10, '2021-06-06 06:41:54', '2021-06-06 06:41:54', 'voyager.menus.index', NULL),
+(7, 1, 'Base de données', '', '_self', 'voyager-data', NULL, 5, 11, '2021-06-06 06:41:54', '2021-06-06 06:41:54', 'voyager.database.index', NULL),
+(8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 12, '2021-06-06 06:41:54', '2021-06-06 06:41:54', 'voyager.compass.index', NULL),
+(9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 13, '2021-06-06 06:41:54', '2021-06-06 06:41:54', 'voyager.bread.index', NULL),
+(10, 1, 'Paramètres', '', '_self', 'voyager-settings', NULL, NULL, 14, '2021-06-06 06:41:54', '2021-06-06 06:41:54', 'voyager.settings.index', NULL);
 
 -- --------------------------------------------------------
 
@@ -666,15 +541,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (32, '2021_03_05_002137_create_representations_table', 1),
 (33, '2021_03_19_181402_create_artist_type_table', 1),
 (34, '2021_03_25_223519_create_artist_type_show_table', 1),
-(35, '2021_03_26_215332_create_representation_user_table', 1),
-(36, '2021_06_04_163020_create_agent_table', 2),
-(37, '2021_06_04_164937_update_user_table', 3),
-(38, '2021_06_04_165157_update_user_relations_agent_table', 4),
-(39, '2021_06_04_170740_update_artist_table', 5),
-(40, '2021_06_04_170748_update_artist_relation_table', 6),
-(41, '2021_06_04_175357_create_favorites_locations_table', 7),
-(42, '2021_06_04_175622_update_users_table', 8),
-(43, '2021_06_04_181900_update_favorites_locations_table', 9);
+(35, '2021_03_26_215332_create_representation_user_table', 1);
 
 -- --------------------------------------------------------
 
@@ -707,72 +574,31 @@ CREATE TABLE `permissions` (
 --
 
 INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`) VALUES
-(1, 'browse_admin', NULL, '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(2, 'browse_bread', NULL, '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(3, 'browse_database', NULL, '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(4, 'browse_media', NULL, '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(5, 'browse_compass', NULL, '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(6, 'browse_menus', 'menus', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(7, 'read_menus', 'menus', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(8, 'edit_menus', 'menus', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(9, 'add_menus', 'menus', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(10, 'delete_menus', 'menus', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(11, 'browse_roles', 'roles', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(12, 'read_roles', 'roles', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(13, 'edit_roles', 'roles', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(14, 'add_roles', 'roles', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(15, 'delete_roles', 'roles', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(16, 'browse_users', 'users', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(17, 'read_users', 'users', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(18, 'edit_users', 'users', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(19, 'add_users', 'users', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(20, 'delete_users', 'users', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(21, 'browse_settings', 'settings', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(22, 'read_settings', 'settings', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(23, 'edit_settings', 'settings', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(24, 'add_settings', 'settings', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(25, 'delete_settings', 'settings', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(26, 'browse_hooks', NULL, '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(32, 'browse_artists', 'artists', '2021-06-01 16:31:52', '2021-06-01 16:31:52'),
-(33, 'read_artists', 'artists', '2021-06-01 16:31:52', '2021-06-01 16:31:52'),
-(34, 'edit_artists', 'artists', '2021-06-01 16:31:52', '2021-06-01 16:31:52'),
-(35, 'add_artists', 'artists', '2021-06-01 16:31:52', '2021-06-01 16:31:52'),
-(36, 'delete_artists', 'artists', '2021-06-01 16:31:52', '2021-06-01 16:31:52'),
-(37, 'browse_localities', 'localities', '2021-06-01 16:58:40', '2021-06-01 16:58:40'),
-(38, 'read_localities', 'localities', '2021-06-01 16:58:41', '2021-06-01 16:58:41'),
-(39, 'edit_localities', 'localities', '2021-06-01 16:58:41', '2021-06-01 16:58:41'),
-(40, 'add_localities', 'localities', '2021-06-01 16:58:41', '2021-06-01 16:58:41'),
-(41, 'delete_localities', 'localities', '2021-06-01 16:58:41', '2021-06-01 16:58:41'),
-(42, 'browse_locations', 'locations', '2021-06-01 16:59:09', '2021-06-01 16:59:09'),
-(43, 'read_locations', 'locations', '2021-06-01 16:59:09', '2021-06-01 16:59:09'),
-(44, 'edit_locations', 'locations', '2021-06-01 16:59:09', '2021-06-01 16:59:09'),
-(45, 'add_locations', 'locations', '2021-06-01 16:59:09', '2021-06-01 16:59:09'),
-(46, 'delete_locations', 'locations', '2021-06-01 16:59:09', '2021-06-01 16:59:09'),
-(47, 'browse_types', 'types', '2021-06-01 16:59:40', '2021-06-01 16:59:40'),
-(48, 'read_types', 'types', '2021-06-01 16:59:40', '2021-06-01 16:59:40'),
-(49, 'edit_types', 'types', '2021-06-01 16:59:40', '2021-06-01 16:59:40'),
-(50, 'add_types', 'types', '2021-06-01 16:59:40', '2021-06-01 16:59:40'),
-(51, 'delete_types', 'types', '2021-06-01 16:59:40', '2021-06-01 16:59:40'),
-(52, 'browse_artist_type', 'artist_type', '2021-06-01 17:00:21', '2021-06-01 17:00:21'),
-(53, 'read_artist_type', 'artist_type', '2021-06-01 17:00:21', '2021-06-01 17:00:21'),
-(54, 'edit_artist_type', 'artist_type', '2021-06-01 17:00:21', '2021-06-01 17:00:21'),
-(55, 'add_artist_type', 'artist_type', '2021-06-01 17:00:21', '2021-06-01 17:00:21'),
-(56, 'delete_artist_type', 'artist_type', '2021-06-01 17:00:21', '2021-06-01 17:00:21'),
-(57, 'browse_shows', 'shows', '2021-06-01 17:15:52', '2021-06-01 17:15:52'),
-(58, 'read_shows', 'shows', '2021-06-01 17:15:52', '2021-06-01 17:15:52'),
-(59, 'edit_shows', 'shows', '2021-06-01 17:15:52', '2021-06-01 17:15:52'),
-(60, 'add_shows', 'shows', '2021-06-01 17:15:52', '2021-06-01 17:15:52'),
-(61, 'delete_shows', 'shows', '2021-06-01 17:15:52', '2021-06-01 17:15:52'),
-(62, 'browse_representations', 'representations', '2021-06-01 17:17:00', '2021-06-01 17:17:00'),
-(63, 'read_representations', 'representations', '2021-06-01 17:17:00', '2021-06-01 17:17:00'),
-(64, 'edit_representations', 'representations', '2021-06-01 17:17:00', '2021-06-01 17:17:00'),
-(65, 'add_representations', 'representations', '2021-06-01 17:17:00', '2021-06-01 17:17:00'),
-(66, 'delete_representations', 'representations', '2021-06-01 17:17:00', '2021-06-01 17:17:00'),
-(67, 'browse_representation_user', 'representation_user', '2021-06-01 20:41:20', '2021-06-01 20:41:20'),
-(68, 'read_representation_user', 'representation_user', '2021-06-01 20:41:20', '2021-06-01 20:41:20'),
-(69, 'edit_representation_user', 'representation_user', '2021-06-01 20:41:20', '2021-06-01 20:41:20'),
-(70, 'add_representation_user', 'representation_user', '2021-06-01 20:41:20', '2021-06-01 20:41:20'),
-(71, 'delete_representation_user', 'representation_user', '2021-06-01 20:41:20', '2021-06-01 20:41:20');
+(1, 'browse_admin', NULL, '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(2, 'browse_bread', NULL, '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(3, 'browse_database', NULL, '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(4, 'browse_media', NULL, '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(5, 'browse_compass', NULL, '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(6, 'browse_menus', 'menus', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(7, 'read_menus', 'menus', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(8, 'edit_menus', 'menus', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(9, 'add_menus', 'menus', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(10, 'delete_menus', 'menus', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(11, 'browse_roles', 'roles', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(12, 'read_roles', 'roles', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(13, 'edit_roles', 'roles', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(14, 'add_roles', 'roles', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(15, 'delete_roles', 'roles', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(16, 'browse_users', 'users', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(17, 'read_users', 'users', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(18, 'edit_users', 'users', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(19, 'add_users', 'users', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(20, 'delete_users', 'users', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(21, 'browse_settings', 'settings', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(22, 'read_settings', 'settings', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(23, 'edit_settings', 'settings', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(24, 'add_settings', 'settings', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(25, 'delete_settings', 'settings', '2021-06-06 06:41:55', '2021-06-06 06:41:55');
 
 -- --------------------------------------------------------
 
@@ -791,7 +617,6 @@ CREATE TABLE `permission_role` (
 
 INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (1, 1),
-(1, 2),
 (2, 1),
 (3, 1),
 (4, 1),
@@ -815,47 +640,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (22, 1),
 (23, 1),
 (24, 1),
-(25, 1),
-(32, 1),
-(33, 1),
-(34, 1),
-(35, 1),
-(36, 1),
-(37, 1),
-(38, 1),
-(39, 1),
-(40, 1),
-(41, 1),
-(42, 1),
-(43, 1),
-(44, 1),
-(45, 1),
-(46, 1),
-(47, 1),
-(48, 1),
-(49, 1),
-(50, 1),
-(51, 1),
-(52, 1),
-(53, 1),
-(54, 1),
-(55, 1),
-(56, 1),
-(57, 1),
-(58, 1),
-(59, 1),
-(60, 1),
-(61, 1),
-(62, 1),
-(63, 1),
-(64, 1),
-(65, 1),
-(66, 1),
-(67, 1),
-(68, 1),
-(69, 1),
-(70, 1),
-(71, 1);
+(25, 1);
 
 -- --------------------------------------------------------
 
@@ -868,18 +653,22 @@ CREATE TABLE `representations` (
   `location_id` bigint(20) UNSIGNED DEFAULT NULL,
   `show_id` bigint(20) UNSIGNED NOT NULL,
   `when` datetime NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `price` decimal(10,2) NOT NULL,
+  `places` int(11) NOT NULL,
+  `bookable` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `representations`
 --
 
-INSERT INTO `representations` (`id`, `location_id`, `show_id`, `when`, `created_at`) VALUES
-(1, 1, 1, '2012-10-12 13:30:00', '2021-06-05 09:21:03'),
-(2, 2, 1, '2012-10-12 20:30:00', '2021-06-05 09:21:03'),
-(3, NULL, 2, '2012-10-02 20:30:00', '2021-06-05 09:21:03'),
-(4, NULL, 3, '2012-10-16 20:30:00', '2021-06-05 09:21:03');
+INSERT INTO `representations` (`id`, `location_id`, `show_id`, `when`, `price`, `places`, `bookable`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, '2012-10-12 13:30:00', '10.50', 120, 1, NULL, NULL),
+(2, 2, 1, '2012-10-12 20:30:00', '9.50', 80, 1, NULL, NULL),
+(3, NULL, 2, '2012-10-02 20:30:00', '12.50', 100, 1, NULL, NULL),
+(4, NULL, 3, '2012-10-16 20:30:00', '11.00', 150, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -890,17 +679,15 @@ INSERT INTO `representations` (`id`, `location_id`, `show_id`, `when`, `created_
 CREATE TABLE `representation_user` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
-  `representation_id` bigint(20) UNSIGNED NOT NULL,
-  `places` int(11) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `representation_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `representation_user`
 --
 
-INSERT INTO `representation_user` (`id`, `user_id`, `representation_id`, `places`, `created_at`) VALUES
-(3, 1, 1, NULL, '2021-06-05 07:37:05');
+INSERT INTO `representation_user` (`id`, `user_id`, `representation_id`) VALUES
+(1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -921,9 +708,9 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'Administrator', '2021-06-01 11:12:25', '2021-06-01 11:12:25'),
-(2, 'user', 'Utilisateur standard', '2021-06-01 11:15:52', '2021-06-01 11:15:52'),
-(3, 'affiliate', 'Utilisateur possédant des droits spéciaux', '2021-06-01 11:15:52', '2021-06-01 11:15:52');
+(1, 'admin', 'Administrateur', '2021-06-06 06:41:54', '2021-06-06 06:41:54'),
+(2, 'user', 'Utilisateur standard', '2021-06-06 06:41:55', '2021-06-06 06:41:55'),
+(3, 'affiliate', 'voyager::seeders.roles.affiliate', '2021-06-06 06:41:55', '2021-06-06 06:41:55');
 
 -- --------------------------------------------------------
 
@@ -948,15 +735,15 @@ CREATE TABLE `settings` (
 
 INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`, `order`, `group`) VALUES
 (1, 'site.title', 'Titre du site', 'Réservations', '', 'text', 1, 'Site'),
-(2, 'site.description', 'Description du site', 'Boutique de réservations de place de théâtre.', '', 'text', 2, 'Site'),
-(3, 'site.logo', 'Logo du site', 'settings\\June2021\\JBCo5DCNAAaRxnnc6ck8.png', '', 'image', 3, 'Site'),
-(4, 'site.google_analytics_tracking_id', 'Google Analytics ID de Tracking', NULL, '', 'text', 4, 'Site'),
-(5, 'admin.bg_image', 'Image de fond de l\'espace admin', 'settings\\June2021\\tB6Pl0bEmzyp1k8cEotw.jpeg', '', 'image', 5, 'Admin'),
-(6, 'admin.title', 'Titre de l\'espace admin', 'Administration', '', 'text', 1, 'Admin'),
-(7, 'admin.description', 'Description de l\'espace admin', 'Bienvenue dans le panneau d\'administration du site Réservations.', '', 'text', 2, 'Admin'),
-(8, 'admin.loader', 'Chargement de l\'espace admin', 'settings\\June2021\\7F9juZ6xdRHKy7P6T0gP.png', '', 'image', 3, 'Admin'),
-(9, 'admin.icon_image', 'Icône de l\'espace admin', 'settings\\June2021\\fQBEz7zg1KX51ilm7STb.png', '', 'image', 4, 'Admin'),
-(10, 'admin.google_analytics_client_id', 'Google Analytics ID Client (Utilisé pour le panneau d\'administration)', NULL, '', 'text', 1, 'Admin');
+(2, 'site.description', 'Description du site', 'Boutique de réservations de places de théâtre', '', 'text', 2, 'Site'),
+(3, 'site.logo', 'Logo du site', '', '', 'image', 3, 'Site'),
+(4, 'site.google_analytics_tracking_id', 'Google Analytics ID de Tracking', '', '', 'text', 4, 'Site'),
+(5, 'admin.bg_image', 'Image de fond de l\'espace admin', '', '', 'image', 5, 'Admin'),
+(6, 'admin.title', 'Titre de l\'espace admin', 'Réservations', '', 'text', 1, 'Admin'),
+(7, 'admin.description', 'Description de l\'espace admin', 'Bienvenue dans Voyager, le panneau d\'administration qui manquait à Laravel.', '', 'text', 2, 'Admin'),
+(8, 'admin.loader', 'Chargement de l\'espace admin', '', '', 'image', 3, 'Admin'),
+(9, 'admin.icon_image', 'Icône de l\'espace admin', '', '', 'image', 4, 'Admin'),
+(10, 'admin.google_analytics_client_id', 'Google Analytics ID Client (Utilisé pour le panneau d\'administration)', '', '', 'text', 1, 'Admin');
 
 -- --------------------------------------------------------
 
@@ -972,7 +759,7 @@ CREATE TABLE `shows` (
   `poster_url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `location_id` bigint(20) UNSIGNED DEFAULT NULL,
   `bookable` tinyint(1) NOT NULL,
-  `price` decimal(10,2) NOT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -982,210 +769,30 @@ CREATE TABLE `shows` (
 --
 
 INSERT INTO `shows` (`id`, `slug`, `title`, `description`, `poster_url`, `location_id`, `bookable`, `price`, `created_at`, `updated_at`) VALUES
-(1, 'ayiti', 'Ayiti', 'Un homme est bloqué à l’aéroport.\n Questionné par les douaniers, il doit alors justifier son identité, et surtout prouver qu\'il est haïtien – qu\'est-ce qu\'être haïtien ?', 'ayiti.jpg', 1, 1, '8.50', '2021-05-20 11:42:02', NULL),
-(2, 'cible-mouvante', 'Cible mouvante', 'Dans ce « thriller d’anticipation », des adultes semblent alimenter et véhiculer une crainte féroce envers les enfants âgés entre 10 et 12 ans.', 'cible.jpg', 2, 1, '9.00', '2021-04-20 11:42:02', NULL),
-(3, 'ceci-nest-pas-un-chanteur-belge', 'Ceci n\'est pas un chanteur belge', 'Non peut-être ?!\nEntre Magritte (pour le surréalisme comique) et Maigret (pour le réalisme mélancolique), ce dixième opus semalien propose quatorze nouvelles chansons mêlées à de petits textes humoristiques et à quelques fortes images poétiques.', 'claudebelgesaison220.jpg', NULL, 0, '5.50', '2021-05-11 11:42:02', NULL),
-(4, 'manneke', 'Manneke… !', 'A tour de rôle, Pierre se joue de ses oncles, tantes, grands-parents et surtout de sa mère.', 'wayburn.jpg', 3, 1, '10.50', '2021-04-21 11:42:02', NULL),
-(5, 'qui-qui', 'Qui qui.', 'Quae est velit illum quis fugit unde facere et labore itaque optio natus et fuga non odio.', 'default.jpg', 1, 1, '30.83', '2021-05-12 11:42:02', NULL),
-(6, 'et-nisi-nam', 'Et nisi nam.', 'Suscipit ad et deserunt ut autem et sit blanditiis tempora omnis consectetur consequatur tenetur qui magni nemo voluptas nobis impedit vel.', 'default.jpg', 3, 0, '38.02', NULL, NULL),
-(7, 'ut-quam-impedit', 'Ut quam impedit.', 'Possimus et harum nulla quis ipsa eos fugit illum impedit dolore corporis omnis libero aut.', 'default.jpg', 3, 1, '18.71', '2021-05-11 11:42:02', NULL),
-(8, 'rerum-minus', 'Rerum minus.', 'Dolores quibusdam rerum laboriosam eaque similique voluptatem quisquam non esse et recusandae.', 'default.jpg', 1, 0, '38.48', NULL, NULL),
-(9, 'quia-velit', 'Quia velit.', 'Eveniet possimus temporibus aspernatur sed ex vero nobis facilis accusamus ut culpa maxime ipsam sit mollitia et aliquid consequatur.', 'default.jpg', 4, 1, '32.41', NULL, NULL),
-(10, 'consequatur-eaque-non', 'Consequatur eaque non.', 'Quibusdam accusantium ea ut non voluptatem repellendus neque in quis est enim nam at numquam quia.', 'default.jpg', 2, 1, '22.31', NULL, NULL),
-(11, 'itaque-asperiores', 'Itaque asperiores.', 'Est et occaecati dolores dignissimos provident eaque quo deserunt vitae harum distinctio accusantium atque quis aliquid eveniet laborum.', 'default.jpg', 4, 0, '10.92', NULL, NULL),
-(12, 'culpa-explicabo-laboriosam', 'Culpa explicabo laboriosam.', 'Quibusdam mollitia modi quos enim numquam fugit deleniti autem et eum.', 'default.jpg', 2, 0, '24.18', NULL, NULL),
-(13, 'similique-consectetur', 'Similique consectetur.', 'Quia nobis aut iusto rerum accusamus modi eos incidunt in aut blanditiis facere sed fugiat maxime.', 'default.jpg', 3, 1, '32.82', NULL, NULL),
-(14, 'sit-sit-unde', 'Sit sit unde.', 'Reprehenderit consequuntur voluptatem eveniet facilis iste assumenda velit beatae molestiae sapiente culpa libero ratione explicabo quo qui quia.', 'default.jpg', 4, 0, '27.96', NULL, NULL),
-(15, 'repudiandae-adipisci', 'Repudiandae adipisci.', 'Qui cum earum dolorem consequatur mollitia atque deleniti et molestiae aperiam ex et molestiae.', 'default.jpg', 4, 1, '16.53', NULL, NULL),
-(16, 'praesentium-placeat', 'Praesentium placeat.', 'Dolorem fugiat ab asperiores molestiae ut et repellendus est aut eos dolorem quia qui.', 'default.jpg', 1, 1, '27.11', NULL, NULL),
-(17, 'illo-a', 'Illo a.', 'Laudantium eum suscipit nihil qui facilis pariatur molestiae exercitationem inventore quod cumque eum odio fugit ex ipsum.', 'default.jpg', 1, 0, '16.23', NULL, NULL),
-(18, 'sit-quis-sunt', 'Sit quis sunt.', 'Et pariatur et ut sit architecto hic autem omnis nemo.', 'default.jpg', 3, 1, '35.47', NULL, NULL),
-(19, 'ducimus-vitae-ut', 'Ducimus vitae ut.', 'Alias rerum animi maxime velit quisquam unde consectetur facilis inventore molestias.', 'default.jpg', 1, 1, '19.06', NULL, NULL),
-(20, 'omnis-voluptate', 'Omnis voluptate.', 'Maxime et quibusdam totam harum excepturi voluptas omnis odit adipisci molestiae ut dolore omnis delectus ut laboriosam labore omnis.', 'default.jpg', 3, 0, '20.70', NULL, NULL),
-(21, 'odio-nihil', 'Odio nihil.', 'Qui omnis sint animi saepe provident a impedit numquam tempore molestias et possimus sequi dolores sit aut.', 'default.jpg', 4, 0, '29.04', NULL, NULL),
-(22, 'natus-cum-voluptas', 'Natus cum voluptas.', 'Commodi harum et quaerat ut dolore tenetur nihil quaerat dolorem ad autem nesciunt amet et ut omnis qui qui.', 'default.jpg', 4, 1, '15.90', NULL, NULL),
-(23, 'aut-sed-nesciunt', 'Aut sed nesciunt.', 'Nemo magnam aspernatur officia placeat iure ut et voluptates hic nobis sed optio nisi occaecati praesentium.', 'default.jpg', 3, 1, '25.22', NULL, NULL),
-(24, 'velit-aut-neque', 'Velit aut neque.', 'Iste ut dicta ullam aperiam suscipit explicabo accusantium voluptatibus repudiandae sed sequi explicabo.', 'default.jpg', 2, 1, '21.53', NULL, NULL),
-(25, 'quo-aut-aut', 'Quo aut aut.', 'Ex dolores minima est quia doloremque libero quia ipsam in eligendi corrupti odio facilis ipsa facilis quo debitis qui.', 'default.jpg', 4, 0, '36.41', NULL, NULL),
-(26, 'quasi-ipsam', 'Quasi ipsam.', 'Eos rerum quam modi autem assumenda sequi rerum est voluptatem laborum magnam.', 'default.jpg', 1, 0, '34.99', NULL, NULL),
-(27, 'sed-corrupti', 'Sed corrupti.', 'Quia dolorem qui velit eos esse neque quod vitae quam voluptatum possimus dolore est et rerum repudiandae tempora illum dolor.', 'default.jpg', 1, 0, '13.50', NULL, NULL),
-(28, 'eligendi-sed', 'Eligendi sed.', 'Facere quam unde iure et omnis minus eligendi voluptatum rerum eveniet corporis.', 'default.jpg', 4, 1, '36.69', NULL, NULL),
-(29, 'nisi-quis-dolor', 'Nisi quis dolor.', 'Architecto magnam asperiores consectetur et amet soluta aut totam vel.', 'default.jpg', 3, 0, '5.27', NULL, NULL),
-(30, 'magni-placeat', 'Magni placeat.', 'Iure quod in ut iure repellendus consectetur a ut consequatur suscipit modi ut aspernatur asperiores et quam mollitia illo omnis.', 'default.jpg', 2, 0, '39.96', NULL, NULL),
-(31, 'placeat-corporis-expedita', 'Placeat corporis expedita.', 'Officiis vel voluptatem aspernatur velit ducimus est ut rem amet est dolorum.', 'default.jpg', 1, 0, '22.85', NULL, NULL),
-(32, 'officiis-autem', 'Officiis autem.', 'Adipisci quaerat eum fugiat numquam vitae doloremque fugit voluptates laborum hic sed quas dolor molestiae.', 'default.jpg', 3, 1, '13.24', NULL, NULL),
-(33, 'et-animi', 'Et animi.', 'Suscipit sint pariatur aut corrupti saepe modi culpa ut eligendi praesentium architecto quibusdam eveniet assumenda repellat similique ex suscipit at dolor.', 'default.jpg', 3, 0, '21.97', NULL, NULL),
-(34, 'excepturi-ipsam-molestias', 'Excepturi ipsam molestias.', 'Omnis voluptates sunt aliquam dolor deleniti non veniam sit dolor.', 'default.jpg', 1, 1, '23.79', NULL, NULL),
-(35, 'tempora-molestiae-odit', 'Tempora molestiae odit.', 'Quaerat neque necessitatibus cumque neque eius nisi aut rerum enim enim consequatur velit quo dolorem magnam consequatur.', 'default.jpg', 3, 1, '17.28', NULL, NULL),
-(36, 'ullam-repellat', 'Ullam repellat.', 'Necessitatibus magni maxime dolorem rem sit culpa quam consequatur id tempore praesentium sapiente.', 'default.jpg', 4, 1, '30.62', NULL, NULL),
-(37, 'sapiente-commodi-animi', 'Sapiente commodi animi.', 'Et rem debitis quas corporis est aliquid amet ad voluptatem incidunt ea tempora in enim assumenda in amet ipsum quis blanditiis.', 'default.jpg', 2, 0, '39.46', NULL, NULL),
-(38, 'ipsa-dolorem', 'Ipsa dolorem.', 'Dicta et et maxime asperiores possimus numquam nam consectetur illo consequatur.', 'default.jpg', 1, 1, '18.65', NULL, NULL),
-(39, 'velit-nulla', 'Velit nulla.', 'Doloremque eaque voluptatem ea maxime impedit voluptatem modi dicta accusamus magni ea nemo facilis cum deserunt fugiat.', 'default.jpg', 3, 1, '5.56', NULL, NULL),
-(40, 'est-asperiores', 'Est asperiores.', 'Veniam provident architecto sed accusamus quas tempore esse voluptatibus temporibus in.', 'default.jpg', 1, 0, '31.73', NULL, NULL),
-(41, 'repudiandae-repellendus', 'Repudiandae repellendus.', 'Et fuga rerum aut placeat impedit et saepe id ut fuga neque repudiandae.', 'default.jpg', 2, 1, '38.59', NULL, NULL),
-(42, 'autem-eum-error', 'Autem eum error.', 'Esse minima itaque deserunt qui commodi et quos et vero velit laborum.', 'default.jpg', 1, 1, '11.74', NULL, NULL),
-(43, 'est-explicabo', 'Est explicabo.', 'Quae sint et blanditiis dolores magnam hic quia dolor occaecati minus amet quis minima sed consequatur reiciendis ducimus aliquam.', 'default.jpg', 4, 1, '17.86', NULL, NULL),
-(44, 'est-libero', 'Est libero.', 'Pariatur neque non rem voluptatem sed non minima libero illum voluptates.', 'default.jpg', 2, 0, '18.00', NULL, NULL),
-(45, 'sint-consequatur', 'Sint consequatur.', 'Quam velit doloribus quia fuga natus et eligendi maxime nihil tempore enim voluptatum quis fuga saepe.', 'default.jpg', 4, 0, '6.72', NULL, NULL),
-(46, 'in-sit', 'In sit.', 'Recusandae ipsam sint dolorem molestiae quia tempore quam vel velit.', 'default.jpg', 4, 1, '34.14', NULL, NULL),
-(47, 'deleniti-est-harum', 'Deleniti est harum.', 'Sint ad voluptatibus quis blanditiis ut aliquam facilis doloremque omnis maxime molestiae sapiente omnis.', 'default.jpg', 1, 1, '17.06', NULL, NULL),
-(48, 'quam-iusto-blanditiis', 'Quam iusto blanditiis.', 'Voluptates saepe sit necessitatibus sunt qui corporis ab voluptas quos est quasi debitis et voluptas nobis earum quo natus laudantium.', 'default.jpg', 3, 0, '36.25', NULL, NULL),
-(49, 'quis-sint', 'Quis sint.', 'Ea accusamus voluptas sapiente sit aut ut sed aliquam quas et sit mollitia totam ea ut exercitationem quis vel non.', 'default.jpg', 4, 0, '30.01', NULL, NULL),
-(50, 'sint-non-rem', 'Sint non rem.', 'Et debitis id sit animi quo ea facere aut dolores quod odio labore voluptatibus magnam delectus repellat odio in aut et.', 'default.jpg', 3, 1, '38.26', NULL, NULL),
-(51, 'impedit-ut-sunt', 'Impedit ut sunt.', 'Non quis ut repudiandae dolores animi omnis excepturi doloremque at adipisci maiores consequatur.', 'default.jpg', 2, 1, '39.92', NULL, NULL),
-(52, 'laborum-voluptas-fugit', 'Laborum voluptas fugit.', 'Ducimus nesciunt ipsum impedit culpa similique possimus aut qui enim ea quia.', 'default.jpg', 3, 1, '28.19', NULL, NULL),
-(53, 'tenetur-laborum-et', 'Tenetur laborum et.', 'Aut mollitia autem ut voluptas qui natus aut voluptatem ratione nemo nihil adipisci laborum sed modi aut excepturi.', 'default.jpg', 1, 0, '21.38', NULL, NULL),
-(54, 'dolorem-ut', 'Dolorem ut.', 'Cum et quaerat quaerat sed minima molestias aut error ut veritatis optio dignissimos.', 'default.jpg', 4, 0, '21.98', NULL, NULL),
-(55, 'qui-eos-accusantium', 'Qui eos accusantium.', 'Earum sit laudantium libero itaque rem enim consequatur tenetur quo et facilis vel esse ipsa illo officia.', 'default.jpg', 4, 1, '36.10', NULL, NULL),
-(56, 'similique-animi', 'Similique animi.', 'Ut esse minus occaecati officia dolore ullam eum laboriosam id.', 'default.jpg', 4, 0, '17.23', NULL, NULL),
-(57, 'quidem-fugit', 'Quidem fugit.', 'Est quia et esse ut sit in impedit itaque quas est.', 'default.jpg', 1, 0, '22.87', NULL, NULL),
-(58, 'rerum-consequatur', 'Rerum consequatur.', 'Dolorem eum aperiam id et natus a quam molestiae a sint id provident sit nihil suscipit similique exercitationem id et.', 'default.jpg', 4, 0, '6.16', NULL, NULL),
-(59, 'officia-optio', 'Officia optio.', 'Doloribus cumque laudantium doloribus aut minima vel vel at consequuntur similique vel fugiat repellat quibusdam molestiae velit nisi ut consectetur delectus.', 'default.jpg', 3, 1, '34.71', NULL, NULL),
-(60, 'et-voluptatum', 'Et voluptatum.', 'Dolorum repudiandae velit voluptas perspiciatis sed quo qui libero est perspiciatis aliquam cupiditate.', 'default.jpg', 2, 0, '29.39', NULL, NULL),
-(61, 'labore-magni-in', 'Labore magni in.', 'Totam porro et ut fugiat consectetur voluptatum dolore maiores qui mollitia qui veniam ducimus labore ea assumenda nobis expedita.', 'default.jpg', 3, 0, '28.55', NULL, NULL),
-(62, 'qui-assumenda-et', 'Qui assumenda et.', 'Sunt quis minus itaque maiores quam laboriosam laudantium adipisci dolor iste magni quasi eos provident incidunt beatae.', 'default.jpg', 3, 1, '38.17', NULL, NULL),
-(63, 'quaerat-consequatur', 'Quaerat consequatur.', 'Rerum optio error enim ratione dolorem voluptas tenetur qui quo qui omnis voluptas aut atque doloremque nisi veniam placeat ut aspernatur.', 'default.jpg', 2, 1, '9.04', NULL, NULL),
-(64, 'assumenda-quia-et', 'Assumenda quia et.', 'Velit illo voluptates porro porro quis repellat consequuntur cum vero voluptas id sunt est consectetur blanditiis.', 'default.jpg', 2, 0, '27.23', NULL, NULL),
-(65, 'et-doloremque-aut', 'Et doloremque aut.', 'Cumque quae et et quo quo et et similique quia debitis error natus aut a nobis odio et quae omnis.', 'default.jpg', 3, 1, '39.42', NULL, NULL),
-(66, 'atque-reprehenderit-itaque', 'Atque reprehenderit itaque.', 'Quis voluptatem possimus optio molestiae cupiditate amet alias suscipit porro quas quidem vero dignissimos vitae culpa quaerat deserunt.', 'default.jpg', 1, 0, '11.96', NULL, NULL),
-(67, 'molestiae-et', 'Molestiae et.', 'Dicta ut qui ut aut corporis sunt at distinctio doloribus.', 'default.jpg', 4, 0, '17.74', NULL, NULL),
-(68, 'quo-eum-nostrum', 'Quo eum nostrum.', 'Qui et nisi eius exercitationem accusamus facilis repudiandae omnis nisi aut.', 'default.jpg', 2, 0, '15.88', NULL, NULL),
-(69, 'error-sunt', 'Error sunt.', 'Ab voluptatibus magnam corporis saepe nobis a sit alias autem blanditiis voluptatem et illo eos.', 'default.jpg', 4, 1, '39.62', NULL, NULL),
-(70, 'numquam-non', 'Numquam non.', 'Harum aut est recusandae repudiandae qui labore placeat esse culpa velit.', 'default.jpg', 1, 0, '24.97', NULL, NULL),
-(71, 'neque-perferendis-blanditiis', 'Neque perferendis blanditiis.', 'Cum blanditiis quaerat at quisquam blanditiis blanditiis nam qui ut assumenda.', 'default.jpg', 3, 1, '20.04', NULL, NULL),
-(72, 'consectetur-vel-quo', 'Consectetur vel quo.', 'Molestias aut qui dolorem debitis laboriosam cum incidunt in laudantium velit molestias similique aut maiores minus illo.', 'default.jpg', 3, 1, '27.49', NULL, NULL),
-(73, 'qui-dolore', 'Qui dolore.', 'Nemo reiciendis molestias est magni provident blanditiis aspernatur omnis est enim alias unde sint voluptatibus repudiandae id quibusdam.', 'default.jpg', 2, 0, '7.24', NULL, NULL),
-(74, 'quia-asperiores', 'Quia asperiores.', 'Odit perspiciatis sed et sit a mollitia facere aut molestias pariatur corrupti delectus omnis libero est et odio reprehenderit.', 'default.jpg', 3, 1, '20.35', NULL, NULL),
-(75, 'facilis-laborum-tenetur', 'Facilis laborum tenetur.', 'Vero ipsam accusamus quia et harum id esse animi qui recusandae laborum earum perspiciatis.', 'default.jpg', 4, 0, '39.79', NULL, NULL),
-(76, 'quia-omnis-et', 'Quia omnis et.', 'Qui nostrum rerum quia natus et veritatis esse fuga fugit sint tenetur incidunt et error et.', 'default.jpg', 2, 1, '31.48', NULL, NULL),
-(77, 'atque-et-ut', 'Atque et ut.', 'Est eos aspernatur ut dolorem et qui facilis illo et rerum sequi nostrum consequuntur optio dicta.', 'default.jpg', 3, 1, '22.41', NULL, NULL),
-(78, 'ratione-aut', 'Ratione aut.', 'Optio consequatur amet vel voluptatem inventore eos delectus qui veniam perspiciatis dolore quia et quidem tempora sit nemo.', 'default.jpg', 2, 0, '17.77', NULL, NULL),
-(79, 'aut-corrupti-non', 'Aut corrupti non.', 'Dolor molestiae consequatur facilis rem sint deserunt quo qui accusamus inventore doloremque quas impedit autem vel laborum neque in suscipit.', 'default.jpg', 2, 1, '7.57', NULL, NULL),
-(80, 'dolor-expedita', 'Dolor expedita.', 'Voluptate consequatur odio atque consequatur at et alias fugit consequuntur corrupti ratione deleniti perferendis non qui libero corrupti quaerat molestiae.', 'default.jpg', 4, 0, '38.79', NULL, NULL),
-(81, 'cupiditate-id', 'Cupiditate id.', 'Numquam cupiditate qui natus quia dolorum omnis mollitia et sed suscipit.', 'default.jpg', 3, 1, '9.38', NULL, NULL),
-(82, 'veniam-suscipit', 'Veniam suscipit.', 'Aut enim tempora culpa voluptas itaque eos et dolor blanditiis perspiciatis ipsam ad omnis natus.', 'default.jpg', 1, 0, '20.41', NULL, NULL),
-(83, 'assumenda-consequatur-at', 'Assumenda consequatur at.', 'Officiis excepturi accusantium minus incidunt officiis quia et sint doloribus possimus sed qui consequatur odio numquam quae.', 'default.jpg', 3, 1, '23.66', NULL, NULL),
-(84, 'vel-ea-quia', 'Vel ea quia.', 'In adipisci nam maxime et omnis quos modi aut laborum eaque rerum voluptatem.', 'default.jpg', 3, 0, '7.41', NULL, NULL),
-(85, 'perferendis-incidunt', 'Perferendis incidunt.', 'Voluptates earum doloribus quam eos iusto amet odio voluptatem asperiores et velit aspernatur et quis cum.', 'default.jpg', 1, 0, '9.49', NULL, NULL),
-(86, 'dolor-voluptates-facere', 'Dolor voluptates facere.', 'Qui repellat sit sit numquam laborum illo quae tenetur assumenda similique.', 'default.jpg', 1, 1, '5.41', NULL, NULL),
-(87, 'aut-sapiente-delectus', 'Aut sapiente delectus.', 'Alias velit est dolor iste itaque aliquid aperiam dolor sunt nihil et iste qui.', 'default.jpg', 4, 1, '12.93', NULL, NULL),
-(88, 'molestias-quaerat', 'Molestias quaerat.', 'Molestiae voluptates ea omnis non dicta itaque ut aliquid iusto.', 'default.jpg', 1, 1, '21.03', NULL, NULL),
-(89, 'qui-est', 'Qui est.', 'Aut illo nulla eum quia reiciendis sit non praesentium debitis molestiae provident nesciunt voluptas sed quia tempora occaecati.', 'default.jpg', 4, 1, '26.93', NULL, NULL),
-(90, 'hic-libero', 'Hic libero.', 'Perspiciatis ut beatae quisquam eum suscipit quia fuga dolor fugit deleniti asperiores voluptatem voluptas odio saepe quas vitae mollitia.', 'default.jpg', 3, 0, '34.81', NULL, NULL),
-(91, 'minus-voluptatum-ut', 'Minus voluptatum ut.', 'Rem hic qui commodi sit qui minus nulla libero minima vel.', 'default.jpg', 2, 0, '31.88', NULL, NULL),
-(92, 'quia-dolorem', 'Quia dolorem.', 'Rerum quibusdam consequuntur doloribus omnis blanditiis vel similique delectus maxime vitae voluptatibus velit quia et repudiandae earum quia id laudantium enim.', 'default.jpg', 4, 1, '30.90', NULL, NULL),
-(93, 'qui-excepturi-omnis', 'Qui excepturi omnis.', 'Corporis itaque ea perferendis itaque consequatur tempora fuga aut qui deserunt vel veritatis est reiciendis labore.', 'default.jpg', 2, 0, '7.80', NULL, NULL),
-(94, 'itaque-voluptatem', 'Itaque voluptatem.', 'Deleniti laudantium sit minima qui suscipit velit provident molestiae quia facilis molestiae aperiam voluptatem.', 'default.jpg', 2, 0, '19.09', NULL, NULL),
-(95, 'temporibus-ut', 'Temporibus ut.', 'Blanditiis ab est fugiat exercitationem distinctio amet iusto molestias aut molestias dicta.', 'default.jpg', 2, 0, '21.57', NULL, NULL),
-(96, 'est-vitae', 'Est vitae.', 'Et cumque ipsam minima harum quis culpa ut assumenda sit voluptatem voluptas corrupti et aliquam iusto.', 'default.jpg', 4, 0, '39.28', NULL, NULL),
-(97, 'exercitationem-atque-reprehenderit', 'Exercitationem atque reprehenderit.', 'Ut totam maxime et cumque est vitae recusandae placeat ut sunt ut.', 'default.jpg', 1, 0, '26.28', NULL, NULL),
-(98, 'et-in', 'Et in.', 'Suscipit officia consequatur dolores et aliquam asperiores ducimus autem aliquam aut doloribus quaerat recusandae voluptatem sapiente occaecati rerum debitis ipsa consequatur.', 'default.jpg', 3, 0, '14.62', NULL, NULL),
-(99, 'quia-facilis', 'Quia facilis.', 'Dicta similique mollitia placeat quo aut eos labore sed quia minus quis ipsum omnis ut unde rerum cumque nemo.', 'default.jpg', 2, 0, '12.33', NULL, NULL),
-(100, 'maiores-est-voluptatem', 'Maiores est voluptatem.', 'Nulla ut corrupti corporis doloremque iure inventore ratione eaque suscipit ut quisquam iure eum sit modi.', 'default.jpg', 1, 0, '23.85', NULL, NULL),
-(101, 'similique-nostrum-id', 'Similique nostrum id.', 'Vel mollitia quaerat omnis possimus voluptas nihil sed atque repudiandae quis sapiente enim ratione explicabo quidem animi.', 'default.jpg', 1, 0, '31.18', NULL, NULL),
-(102, 'libero-non', 'Libero non.', 'Ut quis et aspernatur vitae fugiat sit quas perspiciatis consequatur rerum vero.', 'default.jpg', 4, 0, '27.68', NULL, NULL),
-(103, 'aperiam-laudantium-nobis', 'Aperiam laudantium nobis.', 'Debitis sequi et omnis eligendi omnis sit necessitatibus id quo vel dolorum aut dicta.', 'default.jpg', 2, 0, '32.76', NULL, NULL),
-(104, 'occaecati-et', 'Occaecati et.', 'Eius quis temporibus suscipit ipsum sit suscipit officia eos quas et repudiandae architecto sed.', 'default.jpg', 2, 0, '14.21', NULL, NULL),
-(105, 'ut-veniam-a', 'Ut veniam a.', 'Et ut fugiat accusamus totam vel iste inventore consequatur vel qui dolorem voluptas sequi cum praesentium laboriosam quo eveniet quos.', 'default.jpg', 3, 1, '29.74', NULL, NULL),
-(106, 'eum-aliquam-officiis', 'Eum aliquam officiis.', 'Nihil labore repudiandae voluptas sint ducimus aliquam consequatur tempore neque.', 'default.jpg', 4, 0, '31.30', NULL, NULL),
-(107, 'nostrum-voluptas', 'Nostrum voluptas.', 'Voluptatem cum sapiente et hic esse aut quisquam animi quod officiis consequuntur a sapiente eligendi consequatur.', 'default.jpg', 4, 0, '27.93', NULL, NULL),
-(108, 'nemo-delectus', 'Nemo delectus.', 'Ipsa voluptas voluptatem cum non veritatis ipsam nam quia labore.', 'default.jpg', 1, 1, '34.16', NULL, NULL),
-(109, 'qui-id-temporibus', 'Qui id temporibus.', 'Voluptas quia delectus quibusdam quae facilis facere in qui aspernatur sequi culpa quam et corporis ut soluta.', 'default.jpg', 4, 0, '12.99', NULL, NULL),
-(110, 'quibusdam-accusantium', 'Quibusdam accusantium.', 'Et quidem qui quasi eum neque saepe voluptas vel enim enim.', 'default.jpg', 1, 0, '26.95', NULL, NULL),
-(111, 'cupiditate-eveniet', 'Cupiditate eveniet.', 'Sunt laudantium id placeat alias et aliquam repellendus dolorem aut unde facere non.', 'default.jpg', 3, 0, '19.58', NULL, NULL),
-(112, 'quod-dolorem-voluptatem', 'Quod dolorem voluptatem.', 'In nemo saepe amet sit dolor at dignissimos eos assumenda quia provident consequatur qui dolorum.', 'default.jpg', 2, 1, '36.57', NULL, NULL),
-(113, 'inventore-architecto', 'Inventore architecto.', 'Ut aut amet eos deserunt unde incidunt eos odio sit atque.', 'default.jpg', 3, 1, '31.01', NULL, NULL),
-(114, 'eum-doloribus-perferendis', 'Eum doloribus perferendis.', 'Aut quos non deleniti dolore qui harum soluta sit reiciendis vitae et iure ipsa similique ullam optio minima laborum mollitia aut veniam.', 'default.jpg', 3, 1, '35.83', NULL, NULL),
-(115, 'natus-provident', 'Natus provident.', 'Perspiciatis veniam delectus doloribus voluptatem et fugiat qui et quia et similique ex ipsum.', 'default.jpg', 2, 1, '19.34', NULL, NULL),
-(116, 'temporibus-sequi', 'Temporibus sequi.', 'Asperiores vel repellat voluptatem voluptatem nihil qui non animi praesentium corporis nobis dolorem aspernatur.', 'default.jpg', 2, 0, '18.32', NULL, NULL),
-(117, 'numquam-corporis-praesentium', 'Numquam corporis praesentium.', 'Ipsum et omnis debitis sed sapiente dolores sapiente vel optio vel velit quia eligendi sapiente et.', 'default.jpg', 3, 1, '9.15', NULL, NULL),
-(118, 'commodi-sunt', 'Commodi sunt.', 'Dolores nesciunt eum rerum voluptate odio ullam earum voluptatem ipsam magni.', 'default.jpg', 4, 0, '25.46', NULL, NULL),
-(119, 'omnis-sit', 'Omnis sit.', 'Molestiae in est et fugit qui repellat incidunt iste et rerum et magnam qui quo odit.', 'default.jpg', 4, 1, '21.03', NULL, NULL),
-(120, 'nostrum-quos-tenetur', 'Nostrum quos tenetur.', 'Ut sit impedit ducimus dolores alias dolorum omnis aut et unde facere nihil dolor facere.', 'default.jpg', 3, 1, '20.18', NULL, NULL),
-(121, 'dolorum-dolorum-reiciendis', 'Dolorum dolorum reiciendis.', 'Nostrum molestiae in odio eius earum quae officiis quis quisquam est non voluptatum et nam nostrum animi tenetur dolore.', 'default.jpg', 2, 0, '28.59', NULL, NULL),
-(122, 'voluptas-labore-et', 'Voluptas labore et.', 'Laboriosam voluptatem dolorem voluptatibus ut animi facere officiis qui repellat et ut tempora nemo id doloremque necessitatibus corporis aut incidunt sunt.', 'default.jpg', 2, 0, '28.06', NULL, NULL),
-(123, 'iure-sint-libero', 'Iure sint libero.', 'Esse ipsam et maiores velit minus est sint asperiores nulla illum animi a labore et sed quaerat nesciunt quod a molestias nostrum.', 'default.jpg', 1, 1, '13.02', NULL, NULL),
-(124, 'maiores-commodi-quaerat', 'Maiores commodi quaerat.', 'Explicabo dolor vitae dicta voluptatibus blanditiis libero dolorum libero accusantium repudiandae aut ut nesciunt occaecati.', 'default.jpg', 1, 1, '21.15', NULL, NULL),
-(125, 'cum-est-non', 'Cum est non.', 'Doloremque veritatis et error ducimus vero voluptates quidem veniam earum molestias ut totam culpa incidunt quo.', 'default.jpg', 3, 1, '25.95', NULL, NULL),
-(126, 'eos-voluptatem-molestiae', 'Eos voluptatem molestiae.', 'Ipsa ad cum provident hic atque porro voluptates occaecati similique.', 'default.jpg', 1, 0, '17.60', NULL, NULL),
-(127, 'harum-optio-error', 'Harum optio error.', 'Voluptas dolor sunt doloribus ut laborum in error quaerat molestias nisi et repudiandae.', 'default.jpg', 4, 1, '28.98', NULL, NULL),
-(128, 'magni-dolorem-possimus', 'Magni dolorem possimus.', 'At velit animi deleniti totam id rerum minus voluptatem tempora beatae.', 'default.jpg', 2, 1, '32.58', NULL, NULL),
-(129, 'dolor-veritatis-nihil', 'Dolor veritatis nihil.', 'Dolor minima facere eos aliquid sunt cumque voluptatem hic dolor harum laudantium sunt aut et aut quisquam molestiae eligendi similique est sit.', 'default.jpg', 4, 0, '25.62', NULL, NULL),
-(130, 'error-facere', 'Error facere.', 'Sunt illo rerum harum suscipit excepturi voluptas quia cum cumque voluptatem autem blanditiis voluptate ad quibusdam eaque iste amet voluptatem aut.', 'default.jpg', 3, 1, '11.23', NULL, NULL),
-(131, 'id-ratione-qui', 'Id ratione qui.', 'Nulla dicta possimus optio vel iste corrupti aut et officia dolor aliquid accusantium molestias est aut hic deserunt.', 'default.jpg', 1, 0, '21.97', NULL, NULL),
-(132, 'rem-dolore', 'Rem dolore.', 'Facilis optio repudiandae soluta nam consequatur quo dolor vel quasi nisi modi aperiam veritatis vel tempora.', 'default.jpg', 4, 1, '5.08', NULL, NULL),
-(133, 'ea-enim-aut', 'Ea enim aut.', 'Impedit reiciendis facere voluptates in reprehenderit quaerat facere doloremque error dolor.', 'default.jpg', 1, 1, '9.71', NULL, NULL),
-(134, 'architecto-omnis-esse', 'Architecto omnis esse.', 'Ut soluta eum maiores exercitationem sed id nostrum eos occaecati rerum quibusdam numquam id deserunt sit voluptas omnis.', 'default.jpg', 4, 1, '37.43', NULL, NULL),
-(135, 'est-voluptatem-aut', 'Est voluptatem aut.', 'Hic adipisci et dolor ea fugiat deserunt temporibus totam tempora.', 'default.jpg', 3, 0, '32.66', NULL, NULL),
-(136, 'tempore-alias-at', 'Tempore alias at.', 'Reprehenderit dolor fugiat veritatis et beatae voluptatem incidunt numquam earum sit voluptas dolores asperiores quibusdam necessitatibus.', 'default.jpg', 2, 0, '32.15', NULL, NULL),
-(137, 'vitae-ducimus', 'Vitae ducimus.', 'Recusandae odit nisi soluta et quia deserunt quisquam voluptatem ab.', 'default.jpg', 3, 0, '20.94', NULL, NULL),
-(138, 'perferendis-et-tenetur', 'Perferendis et tenetur.', 'Quae corrupti ex quis id et maiores quod architecto libero iusto impedit voluptates quia.', 'default.jpg', 4, 0, '30.41', NULL, NULL),
-(139, 'aspernatur-quas', 'Aspernatur quas.', 'Ducimus fuga blanditiis libero ut assumenda molestias vitae veniam omnis laborum occaecati unde aut hic reiciendis doloribus et.', 'default.jpg', 4, 0, '13.62', NULL, NULL),
-(140, 'ut-deserunt-eveniet', 'Ut deserunt eveniet.', 'Corrupti et id hic quis ab ab minima natus dolores molestiae provident aliquid exercitationem maxime praesentium sed tempora natus.', 'default.jpg', 4, 0, '12.53', NULL, NULL),
-(141, 'voluptates-voluptate', 'Voluptates voluptate.', 'Reiciendis reiciendis quisquam qui expedita eum omnis qui inventore nihil et placeat quaerat corrupti sequi.', 'default.jpg', 3, 0, '28.27', NULL, NULL),
-(142, 'sapiente-pariatur', 'Sapiente pariatur.', 'Qui veritatis quia neque modi qui eum praesentium tempora minus accusantium a ea consequatur dicta maiores aliquid soluta.', 'default.jpg', 4, 0, '19.89', NULL, NULL),
-(143, 'sit-dolores-veritatis', 'Sit dolores veritatis.', 'Neque voluptas aspernatur est delectus saepe pariatur ab debitis sapiente qui officia eligendi excepturi id fugiat alias atque quos neque maiores.', 'default.jpg', 4, 1, '16.52', NULL, NULL),
-(144, 'quasi-autem', 'Quasi autem.', 'Voluptatibus maxime suscipit veritatis dolorum eligendi occaecati enim ut odio accusamus cupiditate sunt est.', 'default.jpg', 1, 1, '25.69', NULL, NULL),
-(145, 'ducimus-et', 'Ducimus et.', 'Tenetur quaerat vitae eius architecto quia error explicabo occaecati voluptas molestiae laudantium itaque amet sit voluptatem laborum est.', 'default.jpg', 3, 0, '20.39', NULL, NULL),
-(146, 'voluptatem-rerum-at', 'Voluptatem rerum at.', 'Totam voluptatem ut aut laborum nam ea eos omnis sapiente id et voluptatem.', 'default.jpg', 3, 0, '38.09', NULL, NULL),
-(147, 'temporibus-et-laudantium', 'Temporibus et laudantium.', 'Facilis ex debitis ex tenetur aliquid doloremque ex numquam commodi quod autem accusantium at explicabo et dignissimos sunt nemo architecto et.', 'default.jpg', 3, 0, '28.45', NULL, NULL),
-(148, 'eligendi-perspiciatis-quis', 'Eligendi perspiciatis quis.', 'Et consequatur suscipit quas incidunt rerum illo est aspernatur perferendis rerum.', 'default.jpg', 2, 0, '23.52', NULL, NULL),
-(149, 'ea-cupiditate', 'Ea cupiditate.', 'Molestiae fugit vel laudantium nihil numquam qui et quo nihil ea.', 'default.jpg', 4, 1, '26.38', NULL, NULL),
-(150, 'similique-natus', 'Similique natus.', 'Sed assumenda expedita tenetur excepturi est aut dolorem qui nesciunt libero vero consectetur necessitatibus incidunt nemo molestiae eos quidem.', 'default.jpg', 3, 0, '31.79', NULL, NULL),
-(151, 'sint-reprehenderit-ipsam', 'Sint reprehenderit ipsam.', 'Unde quis ut consequatur porro id sapiente ut error quaerat et.', 'default.jpg', 2, 1, '27.11', NULL, NULL),
-(152, 'qui-et', 'Qui et.', 'Atque ut maiores molestias tempora dolor numquam nihil enim corporis nostrum quis totam ut necessitatibus maiores.', 'default.jpg', 2, 1, '8.26', NULL, NULL),
-(153, 'quia-rem', 'Quia rem.', 'Necessitatibus voluptas animi officia nihil ut sed architecto vero et ea sit facilis.', 'default.jpg', 2, 1, '24.93', NULL, NULL),
-(154, 'quos-assumenda-earum', 'Quos assumenda earum.', 'Laudantium odit praesentium rerum deleniti aliquid quis rerum id voluptas illum molestiae ea.', 'default.jpg', 3, 0, '28.00', NULL, NULL),
-(155, 'est-incidunt-aut', 'Est incidunt aut.', 'Est quidem dicta velit unde excepturi excepturi quaerat praesentium minus voluptatem omnis impedit aperiam quia.', 'default.jpg', 2, 0, '20.45', NULL, NULL),
-(156, 'ad-quaerat-beatae', 'Ad quaerat beatae.', 'Iusto et rerum sunt sit molestias perspiciatis fugit necessitatibus fugiat dolore sit unde porro illum quo.', 'default.jpg', 4, 1, '32.01', NULL, NULL),
-(157, 'voluptatibus-nulla-ullam', 'Voluptatibus nulla ullam.', 'Qui nostrum non ut quasi eaque veritatis vel aut commodi veritatis quisquam quaerat corrupti rerum enim sapiente est at neque.', 'default.jpg', 4, 0, '18.19', NULL, NULL),
-(158, 'aliquid-omnis-perferendis', 'Aliquid omnis perferendis.', 'Ut maiores modi fugiat deleniti voluptates eos perspiciatis odio et et quibusdam labore quam deleniti in vitae.', 'default.jpg', 1, 0, '23.29', NULL, NULL),
-(159, 'eos-et', 'Eos et.', 'Et nihil consequatur reiciendis porro voluptatibus ut sed veniam dolorum aliquam esse corrupti ex doloremque impedit sequi asperiores laboriosam voluptate.', 'default.jpg', 3, 0, '10.44', NULL, NULL),
-(160, 'ipsa-iusto', 'Ipsa iusto.', 'Est nobis dolore magni qui non voluptatem non nihil est est voluptatem doloribus et et voluptas.', 'default.jpg', 2, 1, '10.05', NULL, NULL),
-(161, 'voluptatibus-repellendus', 'Voluptatibus repellendus.', 'Dolorum molestiae aspernatur tenetur dolores placeat est quaerat est aut cumque et laudantium doloribus.', 'default.jpg', 3, 0, '9.59', NULL, NULL),
-(162, 'facere-eum', 'Facere eum.', 'In beatae at aut et impedit minus ut dolore nihil amet soluta aperiam fugit suscipit.', 'default.jpg', 2, 1, '22.68', NULL, NULL),
-(163, 'occaecati-est', 'Occaecati est.', 'Deserunt saepe quis vel qui quis dolorem consequatur voluptatem laboriosam.', 'default.jpg', 4, 1, '32.85', NULL, NULL),
-(164, 'corrupti-et', 'Corrupti et.', 'At deserunt error et autem recusandae et fugiat laudantium quasi distinctio fugiat unde quasi ut.', 'default.jpg', 3, 1, '37.97', NULL, NULL),
-(165, 'voluptatibus-iusto', 'Voluptatibus iusto.', 'Optio commodi voluptas eligendi nihil dolorem eveniet accusamus sed cum in quos.', 'default.jpg', 3, 1, '37.34', NULL, NULL),
-(166, 'consequuntur-quis-nihil', 'Consequuntur quis nihil.', 'Et vitae sapiente commodi ipsa veniam molestiae provident molestiae molestiae natus tempora cum ullam exercitationem libero sint maiores.', 'default.jpg', 3, 1, '11.52', NULL, NULL),
-(167, 'sed-libero', 'Sed libero.', 'Nemo veniam sapiente inventore occaecati sint odio maiores perspiciatis quas culpa ab reprehenderit aut nemo molestiae dolorem molestiae aut consectetur dolor.', 'default.jpg', 3, 1, '31.23', NULL, NULL),
-(168, 'assumenda-suscipit-aut', 'Assumenda suscipit aut.', 'Sit quam reprehenderit id ducimus doloremque totam eum nisi iure omnis facilis quasi quas culpa est.', 'default.jpg', 4, 1, '35.91', NULL, NULL),
-(169, 'dolor-ratione-incidunt', 'Dolor ratione incidunt.', 'Ea consectetur aspernatur aperiam voluptates magni voluptas officiis accusantium enim impedit in ipsam architecto officia temporibus tempore nihil voluptas.', 'default.jpg', 4, 0, '7.90', NULL, NULL),
-(170, 'est-corporis', 'Est corporis.', 'Molestias voluptas consequatur minus laudantium adipisci molestias dolorem beatae velit magni.', 'default.jpg', 2, 0, '33.76', NULL, NULL),
-(171, 'consequatur-non', 'Consequatur non.', 'Delectus sed amet culpa tempora omnis sequi ullam deserunt fugit dolores commodi recusandae eligendi dolorem doloremque similique aut aut officiis qui.', 'default.jpg', 1, 0, '24.14', NULL, NULL),
-(172, 'maxime-quo', 'Maxime quo.', 'Ea voluptas repellat velit qui ea vel quis animi suscipit voluptatem ut in accusantium.', 'default.jpg', 3, 1, '39.78', NULL, NULL),
-(173, 'sit-est', 'Sit est.', 'Deserunt similique quisquam voluptatem sapiente ex reiciendis voluptatibus sequi aut quidem quasi impedit reiciendis illum recusandae.', 'default.jpg', 3, 0, '17.19', NULL, NULL),
-(174, 'adipisci-perspiciatis-esse', 'Adipisci perspiciatis esse.', 'Impedit illo ipsum quidem quis quas ut nihil rerum aut et.', 'default.jpg', 2, 0, '22.27', NULL, NULL),
-(175, 'quas-et', 'Quas et.', 'Officiis similique aut maxime deleniti iste ad distinctio est fugiat aut rerum qui dolores.', 'default.jpg', 2, 0, '17.30', NULL, NULL),
-(176, 'sint-nesciunt', 'Sint nesciunt.', 'Eos eligendi quis praesentium sit hic soluta rerum occaecati nam accusantium optio quasi optio labore perferendis eveniet consequatur qui quis.', 'default.jpg', 3, 0, '14.94', NULL, NULL),
-(177, 'unde-cupiditate-aut', 'Unde cupiditate aut.', 'Animi eius eos natus et voluptas qui error aut ut cumque qui est aliquid ipsa quia voluptatem dolore recusandae eum sit.', 'default.jpg', 3, 1, '14.26', NULL, NULL),
-(178, 'voluptas-doloremque', 'Voluptas doloremque.', 'Qui exercitationem iusto et velit sed eum et eveniet est et nihil qui.', 'default.jpg', 1, 1, '5.65', NULL, NULL),
-(179, 'hic-enim', 'Hic enim.', 'Labore et voluptas iste vitae voluptatem voluptas voluptas velit eius ut.', 'default.jpg', 4, 0, '22.74', NULL, NULL),
-(180, 'porro-sapiente-ullam', 'Porro sapiente ullam.', 'Perferendis vero illum numquam sequi qui placeat quia dolore eum optio vel fuga et est vitae consequatur.', 'default.jpg', 3, 0, '28.48', NULL, NULL),
-(181, 'repellat-natus', 'Repellat natus.', 'Aut eos quia occaecati sapiente exercitationem aut et odio omnis laudantium maxime placeat et ipsa voluptas veritatis voluptates.', 'default.jpg', 2, 0, '28.88', NULL, NULL),
-(182, 'qui-minus', 'Qui minus.', 'Ducimus aliquid sit non aut nostrum in animi aliquam modi aut cum non.', 'default.jpg', 2, 1, '8.77', NULL, NULL),
-(183, 'ducimus-rerum', 'Ducimus rerum.', 'Beatae saepe possimus voluptas quos inventore minus est laboriosam quasi.', 'default.jpg', 1, 0, '22.87', NULL, NULL),
-(184, 'quia-in-blanditiis', 'Quia in blanditiis.', 'Sint repudiandae voluptatum consequatur autem facere velit non ipsam aliquam debitis asperiores adipisci quos et.', 'default.jpg', 2, 0, '34.03', NULL, NULL),
-(185, 'beatae-mollitia', 'Beatae mollitia.', 'Earum quibusdam aut vitae quia molestiae eligendi dolores tempore laboriosam qui ullam.', 'default.jpg', 1, 1, '23.53', NULL, NULL),
-(186, 'sapiente-veniam', 'Sapiente veniam.', 'Iure voluptas dignissimos rerum in deserunt accusantium explicabo pariatur eveniet quidem.', 'default.jpg', 1, 0, '7.97', NULL, NULL),
-(187, 'quo-quae', 'Quo quae.', 'Voluptatem nobis non repellat dolores nihil voluptate reprehenderit vel eligendi accusamus velit optio facilis ad consequatur.', 'default.jpg', 2, 1, '16.85', NULL, NULL),
-(188, 'eligendi-ut-cum', 'Eligendi ut cum.', 'Magnam facilis qui consequatur rerum et non laborum quidem et quia aspernatur.', 'default.jpg', 1, 1, '32.10', NULL, NULL),
-(189, 'laborum-accusamus', 'Laborum accusamus.', 'Saepe architecto perspiciatis soluta animi non nobis veritatis consequatur sed blanditiis quia deserunt.', 'default.jpg', 2, 0, '24.09', NULL, NULL),
-(190, 'adipisci-rerum', 'Adipisci rerum.', 'Ea cum molestiae blanditiis minus voluptatem fuga voluptas omnis quia veritatis saepe ut aut qui voluptate nisi a maxime natus quam.', 'default.jpg', 4, 0, '9.20', NULL, NULL),
-(191, 'soluta-vero', 'Soluta vero.', 'Voluptatem consectetur voluptatem et aut sequi esse voluptates consequatur sapiente qui quae dolorum ut commodi.', 'default.jpg', 2, 0, '9.37', NULL, NULL),
-(192, 'officia-accusamus-cumque', 'Officia accusamus cumque.', 'Ex aut dolores voluptatem magnam maxime sequi qui non rerum dolorem velit aut et totam.', 'default.jpg', 1, 0, '16.74', NULL, NULL),
-(193, 'voluptate-sit-magnam', 'Voluptate sit magnam.', 'Ad et magni eum voluptatem accusantium odio et sit a facere.', 'default.jpg', 1, 1, '38.50', NULL, NULL),
-(194, 'at-ad', 'At ad.', 'Inventore reiciendis qui fugiat in rerum delectus odio iste dolores voluptatum nemo earum nobis non enim est et nihil.', 'default.jpg', 1, 0, '24.50', NULL, NULL),
-(195, 'commodi-rerum', 'Commodi rerum.', 'Dolor itaque ad voluptatem accusantium sed natus voluptatum totam numquam temporibus reiciendis hic natus iusto sint quisquam nisi ex autem.', 'default.jpg', 2, 0, '8.40', NULL, NULL),
-(196, 'veritatis-laborum', 'Veritatis laborum.', 'Totam ullam nisi dolorum et quidem enim hic magni et sint harum ut quas.', 'default.jpg', 3, 0, '5.03', NULL, NULL),
-(197, 'soluta-aut-recusandae', 'Soluta aut recusandae.', 'Corrupti molestiae rerum tempore consequuntur sit dolor ut vero aperiam incidunt est impedit et nostrum et dolores.', 'default.jpg', 2, 1, '8.18', NULL, NULL),
-(198, 'sunt-deleniti', 'Sunt deleniti.', 'Dicta facilis hic ipsa et numquam eos ratione sunt non sit asperiores illum labore itaque molestiae quasi libero quos quasi omnis.', 'default.jpg', 3, 0, '17.25', NULL, NULL),
-(199, 'in-ea', 'In ea.', 'Fugit soluta reprehenderit quos sit enim quisquam qui praesentium nisi neque.', 'default.jpg', 2, 0, '5.39', NULL, NULL),
-(200, 'officia-ullam-explicabo', 'Officia ullam explicabo.', 'Eveniet ab commodi veniam id est voluptatem in nihil dolores ea expedita quo consequatur qui amet.', 'default.jpg', 3, 1, '6.35', NULL, NULL),
-(201, 'velit-perspiciatis-enim', 'Velit perspiciatis enim.', 'Iure est natus tempore et odit quibusdam numquam molestias earum reiciendis iusto quia.', 'default.jpg', 1, 0, '12.18', NULL, NULL),
-(202, 'omnis-dolorem-ut', 'Omnis dolorem ut.', 'Possimus dolores eligendi iusto aut voluptatem eos quaerat ratione itaque autem fugiat laborum cum perferendis quo nihil nam rerum id.', 'default.jpg', 4, 1, '28.91', NULL, NULL),
-(203, 'autem-ipsa', 'Autem ipsa.', 'Iste et nihil eveniet minus distinctio eaque voluptatem dolores illum odit.', 'default.jpg', 4, 0, '11.41', NULL, NULL),
-(204, 'aut-eau', 'Aut ea.', 'Sapiente corrupti necessitatibus consectetur modi qui earum dignissimos voluptatem qui et fuga repellat facere dolor.', 'default.jpg', 2, 0, '7.93', NULL, NULL);
+(1, 'ayiti', 'Ayiti', 'Un homme est bloqué à l’aéroport.\n Questionné par les douaniers, il doit alors justifier son identité, et surtout prouver qu\'il est haïtien – qu\'est-ce qu\'être haïtien ?', 'ayiti.jpg', 1, 1, '10.50', NULL, NULL),
+(2, 'cible-mouvante', 'Cible mouvante', 'Dans ce « thriller d’anticipation », des adultes semblent alimenter et véhiculer une crainte féroce envers les enfants âgés entre 10 et 12 ans.', 'cible.jpg', 2, 1, '9.50', NULL, NULL),
+(3, 'ceci-nest-pas-un-chanteur-belge', 'Ceci n\'est pas un chanteur belge', 'Non peut-être ?!\nEntre Magritte (pour le surréalisme comique) et Maigret (pour le réalisme mélancolique), ce dixième opus semalien propose quatorze nouvelles chansons mêlées à de petits textes humoristiques et à quelques fortes images poétiques.', 'claudebelgesaison220.jpg', NULL, 0, '12.50', NULL, NULL),
+(4, 'manneke', 'Manneke… !', 'A tour de rôle, Pierre se joue de ses oncles, tantes, grands-parents et surtout de sa mère.', 'wayburn.jpg', 3, 1, '11.00', NULL, NULL),
+(5, 'ut-perspiciatis-neque', 'Ut perspiciatis neque.', 'Minus tempora aut enim veniam laborum tenetur eum modi rerum beatae neque qui voluptatem omnis minima.', 'default.jpg', 2, 1, '17.47', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(6, 'quas-quia', 'Quas quia.', 'Omnis animi ut quia velit consequatur reprehenderit nihil et rerum est et tempore aspernatur.', 'default.jpg', 3, 0, '22.21', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(7, 'cum-soluta-odit', 'Cum soluta odit.', 'Odit soluta est autem ipsum distinctio et voluptatum rerum rerum doloribus rerum quas vero et odit ipsa hic.', 'default.jpg', 4, 1, '13.52', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(8, 'expedita-sit-vitae', 'Expedita sit vitae.', 'Commodi quis vero numquam totam aut ex eum vel laboriosam.', 'default.jpg', 1, 0, '31.76', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(9, 'ut-cupiditate-sunt', 'Ut cupiditate sunt.', 'Quibusdam quibusdam est enim occaecati recusandae in dignissimos est sequi vel quia et fugit veritatis incidunt.', 'default.jpg', 3, 0, '34.36', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(10, 'quia-qui-mollitia', 'Quia qui mollitia.', 'Dolores magni provident quos eaque rerum iure voluptate tempora et architecto mollitia.', 'default.jpg', 2, 1, '18.35', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(11, 'dicta-nobis-et', 'Dicta nobis et.', 'Necessitatibus architecto et officiis earum et porro qui iusto aut praesentium rerum tempore vel aut sapiente aperiam vitae aliquam molestiae aspernatur.', 'default.jpg', 4, 0, '22.30', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(12, 'sint-recusandae-minus', 'Sint recusandae minus.', 'Quam incidunt et repellendus saepe pariatur nam quo ratione nihil magnam et sed perferendis nobis aperiam ut.', 'default.jpg', 2, 1, '7.23', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(13, 'saepe-quod-amet', 'Saepe quod amet.', 'Odit adipisci sint et labore repellat repudiandae in quam facilis culpa reiciendis aut qui.', 'default.jpg', 4, 1, '29.55', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(14, 'cupiditate-mollitia', 'Cupiditate mollitia.', 'Velit porro at quidem a dolorem quasi velit distinctio itaque eos atque eos odit.', 'default.jpg', 2, 1, '24.23', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(15, 'assumenda-quae', 'Assumenda quae.', 'Quis recusandae officia molestiae commodi qui a dolorem sit nihil tenetur illum sunt ab accusantium perferendis ad sit sunt est reiciendis.', 'default.jpg', 4, 1, '39.66', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(16, 'amet-asperiores-quaerat', 'Amet asperiores quaerat.', 'Distinctio ut et ut voluptatem nihil ut molestiae et id ea pariatur magni cumque non nam necessitatibus aut quia.', 'default.jpg', 3, 0, '35.22', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(17, 'odio-eos', 'Odio eos.', 'Quia dolores consectetur iste sint quo quod et ea quia adipisci recusandae tenetur in et quasi voluptatem consequatur ex maxime voluptas tenetur.', 'default.jpg', 1, 1, '10.98', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(18, 'facilis-reiciendis-repellendus', 'Facilis reiciendis repellendus.', 'Ad expedita sunt sint ipsa adipisci dignissimos impedit enim aut hic omnis et non rerum voluptate quia.', 'default.jpg', 3, 1, '16.20', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(19, 'et-ut', 'Et ut.', 'Non cumque inventore veritatis et optio quis error est dolor vel mollitia natus rerum omnis perferendis ut magni aperiam quae ab.', 'default.jpg', 3, 1, '27.86', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(20, 'aut-tempora', 'Aut tempora.', 'Eaque perferendis voluptatum in et id eum qui optio et autem est sunt aut aliquid.', 'default.jpg', 1, 1, '28.60', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(21, 'facilis-harum-vel', 'Facilis harum vel.', 'Quis molestiae voluptatem ut deserunt accusamus aut id sint qui similique maxime qui est sit a quas optio.', 'default.jpg', 4, 0, '19.06', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(22, 'autem-est-rerum', 'Autem est rerum.', 'Veritatis alias sunt dolorem doloribus excepturi facilis aspernatur similique earum consequuntur eius quos mollitia fuga nihil dolores aperiam.', 'default.jpg', 1, 1, '22.94', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(23, 'quis-est', 'Quis est.', 'Iste labore autem consequatur aperiam sed officia dolores iusto id enim deleniti error quibusdam.', 'default.jpg', 4, 0, '37.41', '2021-06-06 06:41:52', '2021-06-06 06:41:52'),
+(24, 'assumenda-laborum-nulla', 'Assumenda laborum nulla.', 'Iusto at ut ipsa ut totam harum cum laborum voluptas illo rerum minus vel ipsam cum facilis itaque.', 'default.jpg', 2, 1, '11.84', '2021-06-06 06:41:52', '2021-06-06 06:41:52');
 
 -- --------------------------------------------------------
 
@@ -1269,7 +876,10 @@ INSERT INTO `types` (`id`, `type`) VALUES
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `role_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `firstname` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lastname` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `langue` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'FR',
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'users/default.png',
   `email_verified_at` timestamp NULL DEFAULT NULL,
@@ -1281,20 +891,15 @@ CREATE TABLE `users` (
   `stripe_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `card_brand` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `card_last_four` varchar(4) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `trial_ends_at` timestamp NULL DEFAULT NULL,
-  `firstname` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `lastname` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `langue` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'FR'
+  `trial_ends_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`, `stripe_id`, `card_brand`, `card_last_four`, `trial_ends_at`, `firstname`, `lastname`, `langue`) VALUES
-(1, 1, 'epfc', 'epfc@epfc.com', 'users\\June2021\\TAGZPu52XCW9CZSfIlzB.jpg', NULL, '$2y$10$ej/I18rcZ0BRCBy6SdkbieANeYn8Fk4i6wpp5i3/4ryG.GAcVRt4m', NULL, '{\"locale\":\"fr\"}', NULL, '2021-06-03 10:57:38', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 1, 'luc', 'luc@luc.com', 'users/default.png', NULL, '$2y$10$wbNxSb9DH2rF5dEdd.HF2OmfOo8Iq14eBvA1.MHtVLjBPoEE/5Nzq', NULL, '{\"locale\":\"fr\"}', '2021-06-01 16:56:23', '2021-06-01 16:56:23', NULL, NULL, NULL, NULL, NULL, NULL, 'FR'),
-(4, 2, 'Grégory Van Ossel', 'vanosselgregory@gmail.com', 'users\\June2021\\RyRfpOndszTCjvYzgIJ6.jpg', NULL, '$2y$10$DU.2TfuP6axkMC6XzP3vRuCIQoCMv3PpbSiTYQSigNn5FXBzKbFEG', NULL, '{\"locale\":\"fr\"}', '2021-06-01 21:48:35', '2021-06-04 11:35:16', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `role_id`, `name`, `firstname`, `lastname`, `langue`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`, `stripe_id`, `card_brand`, `card_last_four`, `trial_ends_at`) VALUES
+(1, NULL, 'epfc', 'Simba', 'Moufassa', 'français', 'epfc@epfc.com', 'users/default.png', NULL, '$2y$10$fHaqYr52vXwMGF.CIQn9Ce4eKISdhnLt/GntIkj2p9dJ7k7YozRB2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1306,13 +911,6 @@ CREATE TABLE `user_roles` (
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `role_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `user_roles`
---
-
-INSERT INTO `user_roles` (`user_id`, `role_id`) VALUES
-(3, 2);
 
 --
 -- Index pour les tables déchargées
@@ -1488,8 +1086,8 @@ ALTER TABLE `types`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_name_unique` (`name`),
   ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD UNIQUE KEY `users_name_unique` (`name`),
   ADD KEY `users_role_id_foreign` (`role_id`),
   ADD KEY `users_stripe_id_index` (`stripe_id`);
 
@@ -1521,19 +1119,19 @@ ALTER TABLE `artist_type`
 -- AUTO_INCREMENT pour la table `artist_type_show`
 --
 ALTER TABLE `artist_type_show`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=214;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
 
 --
 -- AUTO_INCREMENT pour la table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT pour la table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `failed_jobs`
@@ -1557,25 +1155,25 @@ ALTER TABLE `locations`
 -- AUTO_INCREMENT pour la table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT pour la table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT pour la table `representations`
@@ -1587,7 +1185,7 @@ ALTER TABLE `representations`
 -- AUTO_INCREMENT pour la table `representation_user`
 --
 ALTER TABLE `representation_user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `roles`
@@ -1605,7 +1203,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT pour la table `shows`
 --
 ALTER TABLE `shows`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT pour la table `subscriptions`
@@ -1635,7 +1233,7 @@ ALTER TABLE `types`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Contraintes pour les tables déchargées
@@ -1704,7 +1302,6 @@ ALTER TABLE `shows`
 -- Contraintes pour la table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_id_foreign` FOREIGN KEY (`id`) REFERENCES `locations` (`id`),
   ADD CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`);
 
 --

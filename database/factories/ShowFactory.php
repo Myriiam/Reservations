@@ -31,6 +31,7 @@ class ShowFactory extends Factory
             'poster_url'=> 'default.jpg',
             'location_id'=> Location::all()->random()->id,
             'bookable'=> $this->faker->boolean(50),
+            'price'=> $this->faker->randomFloat(2, 5, 40),
         ];
     }
 }
