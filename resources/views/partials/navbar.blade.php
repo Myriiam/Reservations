@@ -18,46 +18,34 @@
         </button>
       </div>
       <nav class="hidden md:flex space-x-10">
-      <!-- Dropdown button -->
-      <div id="app2">
-        <div>
+        <!-- Dropdown button -->
+        <div id="app2">
           <navigation>
             <!--The content of this componant will be another one after component chargement-->    
             <div class="relative">
-            <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-            <button type="button" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" aria-expanded="false">
-              <span>Shows</span>
-              <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </button>
-          </div>
-        </navigation>
-      </div>
-<!--
-          @while(false)
-          <button type="button" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" aria-expanded="false">
-            <span>Shows</span>
-            <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-          </button>
-          @endwhile
--->
-      </div>
-        <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
-          Nos tarifs
-        </a>
-        <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
-          A propos
-        </a>
-         <!-- Lien du menu vers la page Profil d'un user connecté -->
-         @if(auth()->user() !== null)
-          <a href="{{ route('my_profil') }}" class="text-base font-medium text-gray-500 hover:text-gray-900">
-            Mon profil
+              <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
+              <button type="button" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" aria-expanded="false">
+                <span>Shows</span>
+                <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </navigation>
+        </div>
+          <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+            Nos tarifs
           </a>
-        @endif
-      <!-- Login button | logout button -->          
+          <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+            A propos
+          </a>
+          <!-- Lien du menu vers la page Profil d'un user connecté -->
+          @if(auth()->user() !== null)
+            <a href="{{ route('my_profil') }}" class="text-base font-medium text-gray-500 hover:text-gray-900">
+              Mon profil
+            </a>
+          @endif
+        <!-- Login button | logout button -->          
       </nav>
       <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
       @auth

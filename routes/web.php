@@ -41,6 +41,8 @@ Route::get('/location', [App\Http\Controllers\LocationController::class, 'index'
 Route::get('/location/{id}', [App\Http\Controllers\LocationController::class, 'show'])->name('location_show');
 //Show
 Route::get('/show', [App\Http\Controllers\ShowController::class, 'index'])->name('show');
+Route::get('/show/fetch', [App\Http\Controllers\ShowController::class, 'fetch'])->name('show_fecth');
+Route::post('/show/fill', [App\Http\Controllers\ShowController::class, 'fill'])->name('show_fill');
 Route::get('/show/sort', [App\Http\Controllers\ShowController::class, 'sort'])->name('sort_show');
 Route::get('/show/{slug}', [App\Http\Controllers\ShowController::class, 'show'])->name('show_show');
 Route::post('/show/{slug}', [App\Http\Controllers\ShowController::class, 'booking'])->name('show_booking');
