@@ -37,14 +37,14 @@ class AuthenticatedSessionController extends Controller
 
         $user = User::where('id','=',$id)->first();
         session(['user' => $user]);
-        $role = $user->role->name;
+        $role = $user->role_id;
 
-        if($role === "admin")
+        if($role === 1)
         {
             return redirect()->intended(RouteServiceProvider::BACK);
-        } else if($role === "user"){
+        } else if($role === 2){
             return redirect()->intended(RouteServiceProvider::WELCOME);
-        } else if($role === "affiliate"){
+        } else if($role === 3){
             return redirect()->intended(RouteServiceProvider::WELCOME);
         } else {
             return redirect()->intended(RouteServiceProvider::HOME);
