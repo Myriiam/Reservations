@@ -15,7 +15,7 @@ class ArtistController extends Controller
     public function index()
     {
         $artists = Artist::all();   //Récupérer les artistes du modèle(table)
-        //dd($artists);
+        
         return view('artist.index',[
             'artists' => $artists,
             'resource' => 'artistes',
@@ -52,7 +52,7 @@ class ArtistController extends Controller
     public function show($id)
     {
         $artist = Artist::find($id);
-        
+
         return view('artist.show',[
             'artist' => $artist,
         ]);

@@ -1,5 +1,6 @@
 <?php
 
+use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +26,7 @@ require __DIR__.'/auth.php';
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Artist
-Route::get('/artist', [App\Http\Controllers\ArtistController::class, 'index'])->name('artist');       
+Route::get('/artist', [App\Http\Controllers\ArtistController::class, 'index'])->name('artist');
 Route::get('/artist/{id}', [App\Http\Controllers\ArtistController::class, 'show'])->name('artist_show');
 //Type
 Route::get('/type', [App\Http\Controllers\TypeController::class, 'index'])->name('type');
@@ -54,3 +55,8 @@ Route::get('/show/{id}/checkout', [App\Http\Controllers\PaymentController::class
 Route::post('/payment/{id}', [App\Http\Controllers\PaymentController::class, 'handlePost'])->middleware(['auth'])->name('payment');
 //Profil
 Route::get('/profil', [App\Http\Controllers\UserController::class, 'profilDisplay'])->middleware(['auth'])->name('my_profil');
+Route::get('/profil/{id}/edit', [App\Http\Controllers\UserController::class, 'edit'])->middleware(['auth'])->name('edit_profil');
+//Back office
+Route::group(['prefix' => 'admin'], function () { Voyager::routes(); });
+//Flux RSS
+Route::feeds();

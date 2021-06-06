@@ -9,15 +9,17 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "ext-bread-fields-fix": "dev-master",
         "barryvdh/laravel-debugbar": "^3.5",
         "fideloper/proxy": "^4.4",
-        "filament/filament": "^1.9",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/cashier": "^12.11",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
-        "stripe/stripe-php": "^7.76"
+        "spatie/laravel-feed": "^4.0",
+        "stripe/stripe-php": "^7.76",
+        "tcg/voyager": "^1.4"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -63,5 +65,11 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
+    },
+    "repositories": {
+        "hooks": {
+            "type": "composer",
+            "url": "https://larapack.io"
+        }
     }
 }

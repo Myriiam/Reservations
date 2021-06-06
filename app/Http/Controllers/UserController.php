@@ -62,10 +62,10 @@ class UserController extends Controller
      */
     public function profilDisplay()
     {
-       
+
        //$user = User::find(auth()->user());
        $user = auth()->user();
-    
+
        $roleUser = $user->role;
        //dd($roleUser);
        $today = Carbon::today();
@@ -87,7 +87,19 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+       //$user = User::find(auth()->user());
+       $user = auth()->user();
+
+       $roleUser = $user->role;
+       //dd($roleUser);
+       $today = Carbon::today();
+
+        return view('profil.edit',[
+            'user' => $user,
+            'roleUser' => $roleUser,
+            'resource' => 'Profil utilisateur',
+            'today' => $today,
+        ]);
     }
 
     /**
@@ -97,9 +109,31 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        $user->update($request->all());
+
+
+        // Validation
+        $request->validate([
+            'file' => 'required|mimes:png,jpg,jpeg,csv,txt,pdf|max:2048'
+        ]);
+
+        if($request->file('avatar')) {
+            $file = $request->file('avatar');
+            $filename = time().'_'.$file->getClientOriginalName();
+
+            // File upload location
+            $location = 'public/storage/app/user';
+
+            // Upload file
+            $file->move($location,$filename);
+
+        }
+
+        return redirect('/welcome')->with('status', 'Votre profil a été mis à jours !');
     }
 
     /**
