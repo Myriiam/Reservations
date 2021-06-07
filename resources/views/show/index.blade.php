@@ -31,7 +31,7 @@
             @endforeach
         </div>
 
-        <div class="flex flex-row justify-center m-7">
+        <div class="flex flex-row justify-center mt-7 p-7">
             {{ ($shows->onEachSide(1)->links()) }}
         </div>
     </div>

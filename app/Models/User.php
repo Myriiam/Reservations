@@ -25,6 +25,11 @@ class User extends \TCG\Voyager\Models\User
         'email',
         'password',
         'avatar',
+        'card_brand',
+        'card_last_four',
+        'stripe_id',
+        'trial_ends_at',
+
     ];
 
     protected $table = 'users';
@@ -38,6 +43,10 @@ class User extends \TCG\Voyager\Models\User
     protected $hidden = [
         'password',
         'remember_token',
+        'card_brand',
+        'card_last_four',
+        'stripe_id',
+        'trial_ends_at',
     ];
 
     /**
