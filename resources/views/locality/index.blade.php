@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-bold text-xl text-gray-800 leading-tight">
+        <h2 class="px-12 font-bold text-xl text-gray-800 leading-tight">
             {{ __('Liste des localités') }}
         </h2>
     </x-slot>

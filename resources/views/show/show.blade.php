@@ -1,12 +1,12 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="px-12 font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Fiche du spectacle ') }}{{ $show->title }}
         </h2>
     </x-slot>
     
     <div class="flex mb-4">
-      <div class="w-1/4 px-20">
+      <div class="w-1/4 px-12">
         <h2 class="py-5"><b class="text-2xl">Infos billeterie</b></h2>
         <p><strong>Prix:</strong> {{ $show->price }} €</p>
 

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Models\Show;
 use Illuminate\Http\Request;
 use App\Models\Representation;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class RepresentationController extends Controller
 {
@@ -97,5 +99,44 @@ class RepresentationController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Method to book a show.
+     *
+     * @param  int  $id
+     * @param  request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function booking($id,Request $request)
+    {
+        $show = Show::find($id);
+        $quantity = $request->quantity;
+        $price = $quantity*$show->price;
+        $date = $request->date;
+        $slug = $show->slug;
+
+        $representations = DB::table('representations')->where([
+            ['show_id', '=', $id],
+            ['when', '=', $date],
+        ])->get();
+
+        if($quantity < 1 || empty($request->date)){
+            return redirect()->action([ShowController::class, 'show', $slug]);
+        } else {
+            session([
+                'qty' => $quantity,
+                'price' => $price,
+                'representations' => $representations,
+                'date' => $date,
+                'show' => $show,
+                ]);
+            return view('show.booking',[
+                'show' => $show,
+                'qty' => $quantity,
+                'price' => $price,
+                'date' => $date,
+            ]);
+        }
     }
 }
