@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Show;
-use App\Models\Representation;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use App\Models\Representation;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
 
 class ShowController extends Controller
@@ -15,9 +18,16 @@ class ShowController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $shows = DB::table('shows')->paginate(12);
+        session(['search_criteria' => $request->title]);
+        
+        if ($request && $request->title) {
+            $shows = DB::table('shows')->where('title', 'LIKE', "%{$request->title}%")->paginate(12);
+            $shows->withPath("show?title={$request->title}");
+        } else {
+            $shows = DB::table('shows')->paginate(12);
+        }
 
         return view('show.index',[
             'shows' => $shows,
@@ -96,32 +106,86 @@ class ShowController extends Controller
      */
     public function sort(Request $request)
     {
-        $sortType = $request->input('sortType');
+        if(session('search_criteria')) {
+            $title = session('search_criteria');
+            $query = DB::table('shows')->where('title', 'LIKE', "%{$title}%");
+        }
+        else {
+            $query = DB::table('shows');
+        }
 
-        switch ($sortType) {
-            case 'priceAsc': 
-                $paginatedShows = Show::orderBy('price', 'asc')->paginate(12);
-                $paginatedShows->withPath('sort?sortType=priceAsc');
-                break;
-            case 'priceDesc': 
-                $paginatedShows = Show::orderBy('price', 'desc')->paginate(12);
-                $paginatedShows->withPath('sort?sortType=priceDesc');
-                break;
-            case 'titleAsc': 
-                $paginatedShows = Show::orderBy('title', 'asc')->paginate(12);
-                $paginatedShows->withPath('sort?sortType=titleAsc');
-                break;
-            case 'titleDesc': 
-                $paginatedShows = Show::orderBy('title', 'desc')->paginate(12);
-                $paginatedShows->withPath('sort?sortType=titleDesc');
-                break;
-            default:
-                $paginatedShows = DB::table('shows')->simplePaginate(12);
+        if ($request->input('sortType')) {
+            $sortType = explode('_', $request->input('sortType'));
+            $paginatedShows = $query->orderBy($sortType[0], $sortType[1])->paginate(12);
+            $paginatedShows->withPath("sort?sortType={$sortType[0]}_{$sortType[1]}");
+        } else {
+            $paginatedShows = $query->simplePaginate(12);
         }
 
         return view('show.index',[
             'shows' => $paginatedShows,
             'resource' => 'spectacles',
+        ]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function fill(Request $request)
+    {
+        if (! Gate::allows('fetch')) {
+            return redirect()->route('home');
+        }
+
+        $toAdd = [];
+        $checkedShows = $request->input();
+
+        $client = new Client([
+            'base_uri' => 'https://60bbc78f3a39900017b2dea7.mockapi.io/api/other_shows/',
+            'verify' => false
+        ]);
+        $response = $client->request('GET', 'shows');
+        $response = json_decode($response->getBody()->getContents());
+        
+        foreach ($response->shows as $show) {
+            if(array_key_exists($show->slug, $checkedShows)) {
+                $show->bookable = false;
+                $show->poster_url = 'default.jpg';
+                Show::firstOrCreate(
+                    ['title' => $show->title],
+                    (array)$show
+                );
+            }
+        }
+
+        return redirect()->route('show');
+    }
+
+    public function fetch()
+    {
+        if (! Gate::allows('fetch')) {
+            return redirect()->route('home');
+        }
+
+        $shows = [];
+        $client = new Client([
+            'base_uri' => 'https://60bbc78f3a39900017b2dea7.mockapi.io/api/other_shows/',
+            'verify' => false
+        ]);
+        $response = $client->request('GET', 'shows');
+        $response = json_decode($response->getBody()->getContents());
+
+        foreach ($response->shows as $object){
+            $object->bookable= false;
+            if(!Show::where('slug', '=', $object->slug)->exists()){
+                $shows[] = new Show((array)$object);
+            }
+        }
+        return view('show.fetch', [
+            'shows' => $shows
         ]);
     }
 

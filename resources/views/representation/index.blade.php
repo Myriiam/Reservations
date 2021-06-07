@@ -10,7 +10,7 @@
 
         <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
           <div class="flex-1 flex flex-col p-8">
-            <img class="w-32 h-32 flex-shrink-0 mx-auto bg-black" src="{{ asset('images/'.$representation->show->poster_url) }}" alt="{{ $representation->show->title }}">
+            <img class="w-32 h-32 flex-shrink-0 mx-auto bg-black object-cover" src="{{ asset('images/'.$representation->show->poster_url) }}" alt="{{ $representation->show->title }}">
             <h3 class="mt-6 text-gray-900 text-xl font-bold">@if($representation->show) {{ $representation->show->title }} @endif</h3>
             <dl class="mt-1 flex-grow flex flex-col justify-between">
               <dt class="sr-only"></dt>
