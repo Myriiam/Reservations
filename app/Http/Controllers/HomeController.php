@@ -8,12 +8,22 @@ class HomeController extends Controller
 {
 
     /**
-     * Show the application dashboard.
+     * Show the homepage.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
         return view('welcome');
+    }
+
+    /**
+     * Show the about page.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function about()
+    {
+        return view('about');
     }
 }
