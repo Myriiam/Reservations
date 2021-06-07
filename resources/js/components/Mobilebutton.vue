@@ -8,14 +8,14 @@
         </svg>
     </button>
 
+<transition name="slide-fade">
   <teleport to="body">
-
     <div v-if="button_open" class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
       <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
         <div class="pt-5 pb-6 px-5">
           <div class="flex items-center justify-between">
             <div>
-              <a href="{{ route('home') }}">
+              <a href="/home">
                   <span class="sr-only">Workflow</span>
                   <img class="h-10 w-auto sm:h-20" src="http://localhost:8000/images/logos.png" alt="">
                 </a>
@@ -112,6 +112,7 @@
       </div>
     </div>
   </teleport>
+  </transition>
 </template>
 
 

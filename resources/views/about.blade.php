@@ -34,7 +34,7 @@
                         <h1>
                         <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">A propos de nous</span>
                         </h1>
-                        <p class="mt-8 text-xl text-gray-500 leading-8">Le théatre est un art du spectacle parmis les plus vieux au monde et des plus divertissants. Le spectacle <b><a href="{{ route('representation_index') }}">commence par une réservation</a></b>, notre but est de vous fournir les deux ! Voila déjà longtemps que Réservations travaille de concert avec les plus grands théâtres d'Europe afin de vous proposer les meilleure pièces du monde. Bienvenue chez <b>Réservations</b>.</p>
+                        <p class="mt-8 text-xl text-gray-500 leading-8">Le théatre est un art du spectacle parmis les plus vieux au monde et des plus divertissants. Le spectacle <b><a href="{{ route('representation_index') }}">commence par une réservation</a></b>, notre but est de vous fournir les deux ! Voila déjà longtemps que Réservations travaille de concert avec les plus grands théâtres d'Europe afin de vous proposer les meilleures pièces du monde. Bienvenue chez <b>Réservations</b>.</p>
                     </div>
                     <div class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
                         <figure>

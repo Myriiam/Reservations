@@ -14950,13 +14950,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return _ctx.open_modal = !_ctx.open_modal;
     }),
     "aria-expanded": "false"
-  }, [_hoisted_2]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" This example requires Tailwind CSS v2.0+ "), _ctx.open_modal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\r\n            Background overlay, show/hide based on modal state.\r\n            Entering: \"ease-out duration-300\"\r\n                From: \"opacity-0\"\r\n                To: \"opacity-100\"\r\n            Leaving: \"ease-in duration-200\"\r\n                From: \"opacity-100\"\r\n                To: \"opacity-0\"\r\n            "), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" This element is to trick the browser into centering the modal contents. "), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\r\n            Modal panel, show/hide based on modal state.\r\n            Entering: \"ease-out duration-300\"\r\n                From: \"opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95\"\r\n                To: \"opacity-100 translate-y-0 sm:scale-100\"\r\n            Leaving: \"ease-in duration-200\"\r\n                From: \"opacity-100 translate-y-0 sm:scale-100\"\r\n                To: \"opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95\"\r\n            "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-    onClick: _cache[2] || (_cache[2] = function ($event) {
-      return _ctx.open_modal = !_ctx.open_modal;
+  }, [_hoisted_2]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" This example requires Tailwind CSS v2.0+ "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(vue__WEBPACK_IMPORTED_MODULE_0__.Transition, {
+    name: "slide-fade"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_ctx.open_modal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\n            Background overlay, show/hide based on modal state.\n            Entering: \"ease-out duration-300\"\n                From: \"opacity-0\"\n                To: \"opacity-100\"\n            Leaving: \"ease-in duration-200\"\n                From: \"opacity-100\"\n                To: \"opacity-0\"\n            "), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" This element is to trick the browser into centering the modal contents. "), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\n            Modal panel, show/hide based on modal state.\n            Entering: \"ease-out duration-300\"\n                From: \"opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95\"\n                To: \"opacity-100 translate-y-0 sm:scale-100\"\n            Leaving: \"ease-in duration-200\"\n                From: \"opacity-100 translate-y-0 sm:scale-100\"\n                To: \"opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95\"\n            "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+        onClick: _cache[2] || (_cache[2] = function ($event) {
+          return _ctx.open_modal = !_ctx.open_modal;
+        }),
+        type: "button",
+        "class": "mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+      }, " Retour ")])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
     }),
-    type: "button",
-    "class": "mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-  }, " Retour ")])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+    _: 1
+    /* STABLE */
+
+  })]);
 }
 
 /***/ }),
@@ -15218,7 +15227,7 @@ var _hoisted_6 = {
 };
 
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
-  href: "{{ route('home') }}"
+  href: "/home"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "sr-only"
 }, "Workflow"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
@@ -15392,15 +15401,24 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "aria-expanded": "false"
   }), [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Heroicon name: outline/menu "), _hoisted_2], 16
   /* FULL_PROPS */
-  ), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Teleport, {
-    to: "body"
-  }, [_ctx.button_open ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-    type: "button",
-    onClick: _cache[2] || (_cache[2] = function ($event) {
-      return _ctx.button_open = !_ctx.button_open;
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(vue__WEBPACK_IMPORTED_MODULE_0__.Transition, {
+    name: "slide-fade"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Teleport, {
+        to: "body"
+      }, [_ctx.button_open ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+        type: "button",
+        onClick: _cache[2] || (_cache[2] = function ($event) {
+          return _ctx.button_open = !_ctx.button_open;
+        }),
+        "class": "bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500"
+      }, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Heroicon name: outline/x "), _hoisted_10])])]), _hoisted_11]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [_ctx.auth_user == _ctx.NULL ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("a", _hoisted_14, [_hoisted_15, _hoisted_16])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.auth_user == true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("a", _hoisted_17, " Connexion ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_18])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]))];
     }),
-    "class": "bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500"
-  }, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Heroicon name: outline/x "), _hoisted_10])])]), _hoisted_11]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [_ctx.auth_user == _ctx.NULL ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("a", _hoisted_14, [_hoisted_15, _hoisted_16])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.auth_user == true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("a", _hoisted_17, " Connexion ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_18])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]))], 64
+    _: 1
+    /* STABLE */
+
+  })], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -15594,18 +15612,27 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "aria-expanded": "false"
   }, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\n          Heroicon name: solid/chevron-down\n          Item active: \"text-gray-600\", Item inactive: \"text-gray-400\"\n        "), _hoisted_3], 32
   /* HYDRATE_EVENTS */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\n        'Solutions' flyout menu, show/hide based on flyout menu state.\n        Entering: \"transition ease-out duration-200\"\n          From: \"opacity-0 translate-y-1\"\n          To: \"opacity-100 translate-y-0\"\n        Leaving: \"transition ease-in duration-150\"\n          From: \"opacity-100 translate-y-0\"\n          To: \"opacity-0 translate-y-1\"\n      "), _ctx.menu_open ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
-    key: 0,
-    onMouseover: _cache[4] || (_cache[4] = function ($event) {
-      return _ctx.menu_open = true;
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\n        'Solutions' flyout menu, show/hide based on flyout menu state.\n        Entering: \"transition ease-out duration-200\"\n          From: \"opacity-0 translate-y-1\"\n          To: \"opacity-100 translate-y-0\"\n        Leaving: \"transition ease-in duration-150\"\n          From: \"opacity-100 translate-y-0\"\n          To: \"opacity-0 translate-y-1\"\n      "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(vue__WEBPACK_IMPORTED_MODULE_0__.Transition, {
+    name: "slide-fade"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_ctx.menu_open ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
+        key: 0,
+        onMouseover: _cache[4] || (_cache[4] = function ($event) {
+          return _ctx.menu_open = true;
+        }),
+        onMouseleave: _cache[5] || (_cache[5] = function ($event) {
+          return _ctx.menu_open = false;
+        }),
+        "class": "absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2"
+      }, [_hoisted_4], 32
+      /* HYDRATE_EVENTS */
+      )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
     }),
-    onMouseleave: _cache[5] || (_cache[5] = function ($event) {
-      return _ctx.menu_open = false;
-    }),
-    "class": "absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2"
-  }, [_hoisted_4], 32
-  /* HYDRATE_EVENTS */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+    _: 1
+    /* STABLE */
+
+  })]);
 }
 
 /***/ }),
