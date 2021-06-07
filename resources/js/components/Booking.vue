@@ -3,9 +3,9 @@
         <p @click="open_modal = !open_modal" aria-expanded="false">
         <span>Annuler</span>
         </p>
-        
-        <!-- This example requires Tailwind CSS v2.0+ -->
 
+        <!-- This example requires Tailwind CSS v2.0+ -->
+<transition name="slide-fade">
         <div v-if ="open_modal" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <!--
@@ -63,6 +63,7 @@
             </div>
         </div>
         </div>
+        </transition>
         </div>
 </template>
 
