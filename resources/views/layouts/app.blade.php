@@ -48,7 +48,7 @@
             </header>
 
             <!-- Page Content -->
-            <main class="p-5">
+            <main class="pt-5">
                 {{ $slot }}
             </main>
         </div>
