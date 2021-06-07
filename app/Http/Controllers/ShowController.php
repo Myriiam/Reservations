@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Show;
-use App\Models\Representation;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
+use App\Models\Representation;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
 
 class ShowController extends Controller
@@ -179,16 +181,27 @@ class ShowController extends Controller
      */
     public function fill(Request $request)
     {
+        if (! Gate::allows('fetch')) {
+            return redirect()->route('home');
+        }
+
         $toAdd = [];
         $checkedShows = $request->input();
-        $response = Http::get('https://60bbc78f3a39900017b2dea7.mockapi.io/api/other_shows/shows')->json();
+
+        $client = new Client([
+            'base_uri' => 'https://60bbc78f3a39900017b2dea7.mockapi.io/api/other_shows/',
+            'verify' => false
+        ]);
+        $response = $client->request('GET', 'shows');
+        $response = json_decode($response->getBody()->getContents());
         
-        foreach ($response['shows'] as $show) {
-            if(array_key_exists($show['slug'], $checkedShows)) {
-                $show['bookable'] = false;
+        foreach ($response->shows as $show) {
+            if(array_key_exists($show->slug, $checkedShows)) {
+                $show->bookable = false;
+                $show->poster_url = 'default.jpg';
                 Show::firstOrCreate(
-                    ['title' => $show['title']],
-                    $show
+                    ['title' => $show->title],
+                    (array)$show
                 );
             }
         }
@@ -198,12 +211,22 @@ class ShowController extends Controller
 
     public function fetch()
     {
+        if (! Gate::allows('fetch')) {
+            return redirect()->route('home');
+        }
+
         $shows = [];
-        $response = Http::get('https://60bbc78f3a39900017b2dea7.mockapi.io/api/other_shows/shows')->json();
-        foreach ($response['shows'] as $object){
-            $object['bookable'] = false;
-            if(!Show::where('slug', '=', $object['slug'])->exists()){
-                $shows[] = new Show($object);
+        $client = new Client([
+            'base_uri' => 'https://60bbc78f3a39900017b2dea7.mockapi.io/api/other_shows/',
+            'verify' => false
+        ]);
+        $response = $client->request('GET', 'shows');
+        $response = json_decode($response->getBody()->getContents());
+
+        foreach ($response->shows as $object){
+            $object->bookable= false;
+            if(!Show::where('slug', '=', $object->slug)->exists()){
+                $shows[] = new Show((array)$object);
             }
         }
         return view('show.fetch', [
