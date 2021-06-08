@@ -19,6 +19,7 @@ class Representation extends Model
         'when',
         'location_id',
         'created_at',
+        'updated_at',
         'price',
         'places',
         'bookable',

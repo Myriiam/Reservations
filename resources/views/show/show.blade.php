@@ -10,21 +10,32 @@
         <h2 class="py-5"><b class="text-2xl">Infos billeterie</b></h2>
         <p><strong>Prix:</strong> {{ $show->price }} €</p>
 
+
         @if($show->bookable)
-        <p><em>Réservable</em></p>
+          <p><em>Réservable</em></p>
         @else
-        <p><em>Non réservable</em></p>
+          <p><em>Non réservable</em></p>
         @endif
 
         <h2 class="py-5"><b class="text-2xl">Liste des représentations</b></h2>
         @if($show->representations->count()>=1)
-        <ul>
-            @foreach ($show->representations as $representation)
-                <li>{{ $representation->when }}</li>              
-            @endforeach
-        </ul>
+          <ul>
+          @foreach ($show->representations as $item)
+              <li class="list-disc"><b>Date</b> : {{ $item->when }}</li> 
+              <li class="list-none"><b>Salle</b> : {{ !empty($representations[0]->location_id) ? $item->location->designation : "Pas de salle actuellement" }}</li>  <!--TODO-->
+
+              @if($item->bookable === true)
+              <li><b>{{ !empty($representations[0]->location_id) ? "Places" : "Précommandes" }}</b> : <b @if($item->places < 11) class="text-red-600" @endif></b>
+                {{ $item->places }}
+              </li>
+              @else
+              <li><b>Places</b> : Bientôt disponnibles</li> 
+              @endif
+
+          @endforeach
+          </ul>
         @else
-        <p class="text-gray-600">Aucune représentation</p>
+          <p class="text-gray-600">Aucune représentation</p>
         @endif
 
         <h2 class="py-5"><b class="text-2xl">Liste des artistes</b></h2>
@@ -54,21 +65,22 @@
       <div class="w-2/4 px-10 flex justify-center">
         <div>
           <h1 class="text-4xl font-black mb-5">{{ $show->title }}</h1>
+          <P>{{ $show->description }}</P>
           @if($show->poster_url)
-          <img class="object-contain shadow-md" src="{{ asset('images/'.$show->poster_url) }}" alt="{{ $show->title }}" min-width="200">
+            <img class="object-contain shadow-md" src="{{ asset('images/'.$show->poster_url) }}" alt="{{ $show->title }}" min-width="200">
           @else
-          <canvas width="200" height="100" style="border:1px solid #000000;"></canvas>
+            <canvas width="200" height="100" style="border:1px solid #000000;"></canvas>
           @endif
         </div>
       </div>
       <div class="w-1/4">
         <div class="pl-5 pb-10">
           <p class="my-5 text-2xl font-black"><b>Lieu de représentation</b></p>
-          @if($show->location)
-          <p><b>Lieu de création:</b> {{ $show->location->designation }}</p>
+          @if($show->location_id != NULL)
+            <p><b>Lieu :</b> {{ $show->location->designation }}</p>
+          @else
+            <p><b>Lieu :</b> Non défini</p>
           @endif
-
-          <p><b>Prix:</b> {{ $show->price }} €</p>
         </div>
 
           @if($show->bookable)
@@ -80,6 +92,11 @@
               @csrf
               <select class="mb-3" type="select" id="date" name="place">
                 <option value="">Choisir une salle</option>
+                
+                @foreach ($show->representations as $item)
+                  <option value="{{ !empty($item->location->id) ? $item->location->id : "" }}">{{ !empty($item->location->designation) ? $item->location->designation : "Inconnue" }}</option>
+                @endforeach
+
               </select><br>
               <select class="mb-3" type="select" id="date" name="date">
                   @if(!empty($representations))
@@ -105,11 +122,11 @@
           
           @if($show->bookable)
             <div class="mt-10">
-              <a href={{ route('show') }} class="px-4 py-2 bg-gray-400 text-center rounded-md text-white text-sm focus:border-transparent hover:bg-gray-700">Retour vers les spectacles</a>
+              <a href={{ route('show') }} class="px-4 py-2 bg-gray-600 text-center rounded-md text-white text-sm focus:border-transparent hover:bg-gray-800">Retour vers les spectacles</a>
             </div>
           @else
             <div class="mt-10 ml-5">
-              <a href={{ route('show') }} class="px-4 py-2 bg-gray-400 text-center rounded-md text-white text-sm focus:border-transparent hover:bg-gray-700">Retour vers les spectacles</a>
+              <a href={{ route('show') }} class="px-4 py-2 bg-gray-600 text-center rounded-md text-white text-sm focus:border-transparent hover:bg-gray-800">Retour vers les spectacles</a>
             </div>
           @endif
       </div>
