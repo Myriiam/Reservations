@@ -28,7 +28,7 @@ class RepresentationUser extends Model
     /**
      * Get all about the purchases of the user - relationship
      */
-    public function ruUser()
+    public function user()
     {
         return $this->belongsTo('App\Models\User');
     }
@@ -36,7 +36,7 @@ class RepresentationUser extends Model
     /**
      * Get all about the purchases of the representation - relationship
      */
-    public function ruRepresentation()
+    public function representation()
     {
         return $this->belongsTo('App\Models\Representation');
     }

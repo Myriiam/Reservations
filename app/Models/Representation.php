@@ -67,7 +67,7 @@ class Representation extends Model
     /**
      * The User's representation(s) user - Relationship.
      */
-    public function userRu()
+    public function representationUser()
     {
         return $this->hasMany('App\Models\RepresentationUser');
     }

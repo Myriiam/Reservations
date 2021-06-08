@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\Models\Role;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 
 
@@ -133,7 +135,7 @@ class UserController extends Controller
 
         }
 
-        return redirect('/welcome')->with('status', 'Votre profil a été mis à jours !');
+        return redirect('/welcome')->with('message', 'Votre profil a été mis à jours !');
     }
 
     /**
@@ -144,6 +146,15 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(User::find($id)){
+            $user = User::find($id);
+            Auth::logout();
+            $user->delete();
+           // Notification::container()->success('Your account has been permanently removed from the system. Sorry to see you go!');
+           $message = 'Votre compte a été définitivement supprimé !';
+            return view('welcome',[
+                'message' => $message,
+            ]);
+        }
     }
 }
