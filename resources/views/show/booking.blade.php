@@ -1,13 +1,22 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="px-12 font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Réservation de vos tickets') }}
         </h2>
     </x-slot>
-    <div class="bg-no-repeat bg-left-bottom h-screen" style="background-image: url({{ asset('images/tickets.png') }});">
+    @php
+        //dd($price);    
+    @endphp
+    <div class="bg-no-repeat bg-contain bg-left-bottom h-screen" style="background-image: url({{ asset('images/tickets.png') }});">
         <div class="flex items-center justify-center">
-            <div class="p-10 mt-20 bg-white rounded-lg shadow-lg overflow-hidden">
-                <p>Vous allez réserver <b>{{ $qty }}</b> {{ ($qty>1) ? "places" : "place" }} pour le spectacle <b>{{ $show->title }}</b> . Le montant total de votre réservation s'élève à <b class="text-red-800">{{ $price }}€.</b> La pièce aura lieu le <b>{{ $date }}</b></p>
+            <div class="p-10 mt-20 sm:w-4/5 md:w-3/5 lg:w-2/5 bg-white rounded-lg shadow-lg overflow-hidden">
+                <p>Vous allez réserver <b>{{ $qty }}</b> {{ ($qty>1) ? "places" : "place" }} pour le spectacle <b>{{ $show->title }}</b>. 
+                    @if(!empty($price))Le montant total de votre réservation s'élève à <b class="text-red-800">{{ $price }}€.</b>
+                    @else Le montant total de votre réservation sera à payer sur place, le prix sera mis à jour prochainement. @endif 
+                    @if(!empty($date))La pièce est prévue pour le {{ $date }} à {{ $hour ? $hour : "l'heure définie" }}.
+                    @else La pièce ne dispose pas de date de représentation actuellement, celle-ci vous sera communiquer par email.
+                    @endif 
+                    @if(!empty($place[0]->designation)) Le spectacle aura lieu dans le théâtre <b>{{ $place[0]->designation ? $place[0]->designation : 'choisi' }}</b>. @endif</p>
                 <div id="app3">
                     <h2 class="mt-5 mb-2"><b>Confirmez votre réservation ?</b></h2>
                     <p class="mt-5 mb-2">Je valide ma réservation et je passe au paiement.</p>

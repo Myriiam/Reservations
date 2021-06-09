@@ -118,7 +118,6 @@
 
 <script>
   export default {
-    //name: 'Mobile.vue',
     data: () => ({
       button_open: false,
       auth_user: window.authUser,

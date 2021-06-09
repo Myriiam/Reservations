@@ -1,4 +1,4 @@
-    <template>
+<template>
     <!--
       Mobile menu, show/hide based on mobile menu state.
 
@@ -9,6 +9,7 @@
         From: "opacity-100 scale-100"
         To: "opacity-0 scale-95"
     -->
+  <transition name="slide-fade">
     <div v-if="mobile_open" class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
 
 
@@ -101,12 +102,6 @@
             </a>
           @endauth
 
-
-
-
-
-
-
             <p class="mt-6 text-center text-base font-medium text-gray-500">
               Devenir membre ?
               <a href="#" class="text-red-800 hover:text-red-500">
@@ -117,16 +112,14 @@
         </div>
       </div>
     </div>
+  </transition>
 </template>
 
 
 <script>
-  //import Child from './Mobilebutton';
   export default {
-    //name: 'Mobile.vue',
     data: () => ({
       mobile_open: false,
     }),
-
   }
 </script>

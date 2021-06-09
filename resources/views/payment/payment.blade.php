@@ -4,11 +4,11 @@
             {{ __('Paiement de votre réservation de spectacle') }}
         </h2>
     </x-slot>
-    <div class="bg-no-repeat bg-right-bottom h-screen" style="background-image: url({{ asset('images/pay.png') }});">
+    <div class="bg-contain bg-no-repeat bg-right-bottom h-screen" style="background-image: url({{ asset('images/pay.png') }});">
         <div class="flex items-center justify-center">
 
 
-    <div class="bg-white  px-8 pt-6 pb-8 mb-4 flex flex-col my-2 w-2/3 mx-auto   p-10 mt-20 rounded-lg shadow-lg overflow-hidden">
+    <div class="bg-white  px-8 pt-6 pb-8 mb-4 flex flex-col my-2 sm:w-4/5 md:w-3/5 mx-auto   p-10 mt-20 rounded-lg shadow-lg overflow-hidden">
       <form role="form" action="{{ route('payment', Auth()->user()->id) }}" method="post" class="validation"
       data-cc-on-file="false"
           data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"

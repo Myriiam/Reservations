@@ -676,11 +676,12 @@ CREATE TABLE `representations` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `location_id` bigint(20) UNSIGNED NOT NULL,
   `show_id` bigint(20) UNSIGNED NOT NULL,
-  `when` datetime NOT NULL,
+  `when` datetime DEFAULT NULL,
   `price` decimal(10,2) DEFAULT NULL,
   `places` int(11) DEFAULT NULL,
   `bookable` tinyint(1) NOT NULL DEFAULT 0,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -690,6 +691,7 @@ CREATE TABLE `representations` (
 INSERT INTO `representations` (`id`, `location_id`, `show_id`, `when`, `price`, `places`, `bookable`, `created_at`) VALUES
 (1, 1, 1, '2012-10-12 13:30:00', '10.50', 120, 1, '2021-06-09 10:23:19'),
 (2, 2, 1, '2012-10-12 20:30:00', '9.50', 80, 1, '2021-06-09 10:23:19'),
+(3, 2, 2, '2021-10-02 20:30:00', '12.50', 99, 0, '2021-06-09 14:21:30', '2021-06-09 12:21:30'),
 (3, 3, 2, '2012-10-02 20:30:00', '12.50', 100, 1, '2021-06-09 15:54:51'),
 (4, 4, 3, '2012-10-16 20:30:00', '11.00', 150, 1, '2021-06-09 15:54:55');
 
@@ -704,7 +706,8 @@ CREATE TABLE `representation_user` (
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `representation_id` bigint(20) UNSIGNED NOT NULL,
   `places` int(11) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -904,9 +907,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`, `stripe_id`, `card_brand`, `card_last_four`, `trial_ends_at`, `firstname`, `lastname`, `langue`) VALUES
-(1, 1, 'epfc', 'epfc@epfc.com', 'users\\June2021\\hCMZ3595tpH2piVJQEsX.jpg', NULL, '$2y$10$ej/I18rcZ0BRCBy6SdkbieANeYn8Fk4i6wpp5i3/4ryG.GAcVRt4m', NULL, '{\"locale\":\"fr\"}', NULL, '2021-06-06 10:29:08', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 1, 'luc', 'luc@luc.com', 'users/default.png', NULL, '$2y$10$wbNxSb9DH2rF5dEdd.HF2OmfOo8Iq14eBvA1.MHtVLjBPoEE/5Nzq', NULL, '{\"locale\":\"fr\"}', '2021-06-01 16:56:23', '2021-06-01 16:56:23', NULL, NULL, NULL, NULL, NULL, NULL, 'FR'),
-(4, 2, 'Grégory Van Ossel', 'vanosselgregory@gmail.com', 'users\\June2021\\RyRfpOndszTCjvYzgIJ6.jpg', NULL, '$2y$10$DU.2TfuP6axkMC6XzP3vRuCIQoCMv3PpbSiTYQSigNn5FXBzKbFEG', NULL, '{\"locale\":\"fr\"}', '2021-06-01 21:48:35', '2021-06-04 11:35:16', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(3, 2, 'bot', '', 'users/default.png', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'bot', 'bot', 'FR'),
+(8, 1, 'admin', 'admin@epfc.com', 'users/default.png', NULL, '$2y$10$gWe33WHlMQWg2rUG5GkUH.Qyr5Yo6hOKTx0eo9Q5Se.Z51i3BvQ8.', NULL, NULL, '2021-06-09 12:53:19', '2021-06-09 12:53:19', NULL, NULL, NULL, NULL, 'Lucie', 'Epfc', 'FR'),
+(9, 2, 'Mufasa Simba', 'epfc@epfc.com', 'users/default.png', NULL, '$2y$10$YSzsg1GGXd/BvViTfGFE1.zPwUis5wycO3f8mtbmr0Qyfr88k30MW', NULL, NULL, '2021-06-09 12:56:47', '2021-06-09 12:56:47', NULL, NULL, NULL, NULL, 'Simba', 'Mufasa', 'FR');
 
 -- --------------------------------------------------------
 
@@ -1193,7 +1196,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT pour la table `representations`
 --
 ALTER TABLE `representations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `representation_user`
@@ -1316,7 +1319,6 @@ ALTER TABLE `shows`
 -- Contraintes pour la table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_id_foreign` FOREIGN KEY (`id`) REFERENCES `locations` (`id`),
   ADD CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`);
 
 --

@@ -84,51 +84,6 @@ class ShowController extends Controller
     }
 
     /**
-     * Method to book a show.
-     *
-     * @param  int  $id
-     * @param  request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function booking($id,Request $request)
-    {
-        $show = Show::find($id);
-        $quantity = $request->quantity;
-        $price = $quantity*$show->price;
-        $date = $request->date;
-        $representations = DB::table('representations')->where('show_id', $id)->where('when', $date)->get();
-
-        if($quantity < 1 || empty($request->date)){
-            //Récupérer les artistes du spectacle et les grouper par type
-            $collaborateurs = [];
-            
-            foreach($show->artistTypes as $at) {
-                $collaborateurs[$at->type->type][] = $at->artist;
-            }
-            return view('show.show',[
-                'show' => $show,
-                'message' => "Vous n'avez pas remplis tous les champs",
-                'representations' => $representations,
-                'collaborateurs' => $collaborateurs,
-            ]);
-        } else {
-            session([
-                'qty' => $quantity,
-                'price' => $price,
-                'representations' => $representations,
-                'date' => $date,
-                'show' => $show,
-                ]);
-            return view('show.booking',[
-                'show' => $show,
-                'qty' => $quantity,
-                'price' => $price,
-                'date' => $date,
-            ]);
-        }
-    }
-
-    /**
      * Confirmation method to booking a show.
      *
      * @param  int  $id

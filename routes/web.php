@@ -47,18 +47,19 @@ Route::get('/show/fetch', [App\Http\Controllers\ShowController::class, 'fetch'])
 Route::post('/show/fill', [App\Http\Controllers\ShowController::class, 'fill'])->name('show_fill');
 Route::get('/show/sort', [App\Http\Controllers\ShowController::class, 'sort'])->name('sort_show');
 Route::get('/show/{slug}', [App\Http\Controllers\ShowController::class, 'show'])->name('show_show');
-Route::post('/show/{slug}', [App\Http\Controllers\ShowController::class, 'booking'])->name('show_booking');
+Route::post('/show/{slug}', [App\Http\Controllers\RepresentationController::class, 'booking'])->name('show_booking');
 Route::post('/confirmation/{id}', [App\Http\Controllers\ShowController::class, 'bookingConfirm'])->name('show_booking_confirm');
 Route::get('/confirmation/{id}', [App\Http\Controllers\ShowController::class, 'bookingConfirm'])->middleware(['auth'])->name('show_booking_confirm');
 //Representation
 Route::get('/representation', [App\Http\Controllers\RepresentationController::class, 'index'])->name('representation_index');
 Route::get('/representation/{id}', [App\Http\Controllers\RepresentationController::class, 'show'])->name('representation_show');
-//Payment
+//Payement
 Route::get('/show/{id}/checkout', [App\Http\Controllers\PaymentController::class, 'handleGet'])->middleware(['auth'])->name('purchase');
 Route::post('/payment/{id}', [App\Http\Controllers\PaymentController::class, 'handlePost'])->middleware(['auth'])->name('payment');
 //Profil
 Route::get('/profil', [App\Http\Controllers\UserController::class, 'profilDisplay'])->middleware(['auth'])->name('my_profil');
 Route::get('/profil/{id}/edit', [App\Http\Controllers\UserController::class, 'edit'])->middleware(['auth'])->name('edit_profil');
+Route::get('/profil/{id}/destroy', [App\Http\Controllers\UserController::class, 'delete'])->middleware(['auth'])->name('delete_profil');
 //Back office
 Route::group(['prefix' => 'admin'], function () { Voyager::routes(); });
 //Flux RSS

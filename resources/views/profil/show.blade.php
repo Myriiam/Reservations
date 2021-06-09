@@ -18,19 +18,21 @@
                         @if (count($user->representations) == 0)
                         <p>Acune représentation pour le moment</p>
                         @else
-                            @foreach($user->representations as $representation)
-                                @if($representation->when > $today)
-                                    <p>Représentations à venir :</p>
-                                @elseif($representation->when < $today)
-                                    <p>Représentations passées :</p>
-                                @endif
-                            @endforeach
-
+                            <p>Représentation passée :</p>
+                                <ul class="list-disc list-inside">
+                                        @foreach ($user->representations as $allShows)
+                                            @if ($allShows->when < $today)
+                                                <li>show: {{ $allShows->show->title }} - date: {{ $allShows->when }}</li>
+                                            @endif      
+                                        @endforeach
+                                </ul>
+                            <p>Représentation à venir :</p>
                             <ul class="list-disc list-inside">
-                            <!-- ajouter le code if(le nombre de spectacle est => 1 alors on affiche les spectacles sinon on écrit aucune repres)-->
-                                @foreach ($user->representations as $allShows)
-                                    <li>{{ $allShows->show->title }}</li>
-                                @endforeach
+                                    @foreach ($user->representations as $allShows)
+                                        @if ($allShows->when > $today)
+                                            <li>show: {{ $allShows->show->title }} - date: {{ $allShows->when }}</li>
+                                        @endif
+                                    @endforeach
                             </ul>
                         @endif
                     </div>

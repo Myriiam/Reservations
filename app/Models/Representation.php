@@ -19,6 +19,7 @@ class Representation extends Model
         'when',
         'location_id',
         'created_at',
+        'updated_at',
         'price',
         'places',
         'bookable',
@@ -66,7 +67,7 @@ class Representation extends Model
     /**
      * The User's representation(s) user - Relationship.
      */
-    public function userRu()
+    public function representationUser()
     {
         return $this->hasMany('App\Models\RepresentationUser');
     }
