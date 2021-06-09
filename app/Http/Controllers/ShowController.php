@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Show;
+use App\Models\Artist;
 use GuzzleHttp\Client;
+use App\Models\ArtistType;
 use Illuminate\Http\Request;
 use App\Models\Representation;
 use Illuminate\Support\Facades\DB;
@@ -149,15 +151,58 @@ class ShowController extends Controller
         ]);
         $response = $client->request('GET', 'shows');
         $response = json_decode($response->getBody()->getContents());
-        
-        foreach ($response->shows as $show) {
-            if(array_key_exists($show->slug, $checkedShows)) {
-                $show->bookable = false;
-                $show->poster_url = 'default.jpg';
-                Show::firstOrCreate(
-                    ['title' => $show->title],
-                    (array)$show
+
+        foreach ($response->shows as $object) {
+            if(array_key_exists($object->show->slug, $checkedShows)) {
+                $object->show->bookable = false;
+                $object->show->poster_url = 'default.jpg';
+                
+                $lastShow = Show::firstOrCreate(
+                    ['title' => $object->show->title],
+                    (array)$object->show
                 );
+
+                foreach ($object->actors as $actor) {
+                    $lastActor = Artist::firstOrCreate(
+                        ['firstname' => $actor->firstname, 'lastname' => $actor->lastname],
+                    );
+
+                    $artistType = ArtistType::firstOrCreate(
+                        ['type_id' => 3, 'artist_id' => $lastActor->id],
+                    );
+
+                    $artistType = DB::table('artist_type_show')->insert(
+                        ['artist_type_id' => $artistType->id, 'show_id' => $lastShow->id],
+                    );
+                }
+
+                foreach ($object->scene as $director) {
+                    $lastActor = Artist::firstOrCreate(
+                        ['firstname' => $actor->firstname, 'lastname' => $actor->lastname],
+                    );
+
+                    $artistType = ArtistType::firstOrCreate(
+                        ['type_id' => 2, 'artist_id' => $lastActor->id],
+                    );
+
+                    $artistType = DB::table('artist_type_show')->insert(
+                        ['artist_type_id' => $artistType->id, 'show_id' => $lastShow->id],
+                    );
+                }
+
+                foreach ($object->authors as $author) {
+                    $lastActor = Artist::firstOrCreate(
+                        ['firstname' => $actor->firstname, 'lastname' => $actor->lastname],
+                    );
+
+                    $artistType = ArtistType::firstOrCreate(
+                        ['type_id' => 1, 'artist_id' => $lastActor->id],
+                    );
+
+                    $artistType = DB::table('artist_type_show')->insert(
+                        ['artist_type_id' => $artistType->id, 'show_id' => $lastShow->id],
+                    );
+                }
             }
         }
 
@@ -169,7 +214,6 @@ class ShowController extends Controller
         if (! Gate::allows('fetch')) {
             return redirect()->route('home');
         }
-
         $shows = [];
         $client = new Client([
             'base_uri' => 'https://60bbc78f3a39900017b2dea7.mockapi.io/api/other_shows/',
@@ -180,8 +224,8 @@ class ShowController extends Controller
 
         foreach ($response->shows as $object){
             $object->bookable= false;
-            if(!Show::where('slug', '=', $object->slug)->exists()){
-                $shows[] = new Show((array)$object);
+            if(!Show::where('slug', '=', $object->show->slug)->exists()){
+                $shows[] = new Show((array)$object->show);
             }
         }
         return view('show.fetch', [

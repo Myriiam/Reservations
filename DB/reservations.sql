@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : mer. 09 juin 2021 à 16:57
--- Version du serveur :  10.4.14-MariaDB
--- Version de PHP : 7.4.10
+-- Hôte : 127.0.0.1:3308
+-- Généré le : mer. 09 juin 2021 à 18:26
+-- Version du serveur : 10.4.19-MariaDB
+-- Version de PHP : 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -50,7 +50,8 @@ INSERT INTO `artists` (`id`, `firstname`, `lastname`) VALUES
 (10, 'Claude', 'Semal'),
 (11, 'Laurence', 'Warin'),
 (12, 'Pierre', 'Wayburn'),
-(13, 'Gwendoline', 'Gauthier');
+(13, 'Gwendoline', 'Gauthier'),
+(14, 'Zenel', 'Laci');
 
 -- --------------------------------------------------------
 
@@ -88,7 +89,10 @@ INSERT INTO `artist_type` (`id`, `artist_id`, `type_id`) VALUES
 (17, 13, 1),
 (18, 2, 2),
 (19, 12, 3),
-(20, 13, 3);
+(20, 13, 3),
+(21, 14, 3),
+(22, 14, 2),
+(23, 14, 1);
 
 -- --------------------------------------------------------
 
@@ -107,190 +111,26 @@ CREATE TABLE `artist_type_show` (
 --
 
 INSERT INTO `artist_type_show` (`id`, `artist_type_id`, `show_id`) VALUES
-(1, 15, 21),
-(2, 13, 17),
-(3, 7, 17),
-(4, 5, 21),
-(5, 16, 11),
-(6, 2, 23),
-(7, 1, 7),
-(8, 12, 20),
-(9, 16, 15),
-(10, 8, 22),
-(11, 20, 10),
-(12, 3, 8),
-(13, 16, 20),
-(14, 17, 20),
-(15, 10, 21),
-(16, 11, 6),
-(17, 2, 24),
-(18, 3, 16),
-(19, 18, 13),
-(20, 18, 10),
-(21, 20, 22),
-(22, 8, 19),
-(23, 17, 14),
-(24, 19, 15),
-(25, 4, 24),
-(26, 6, 15),
-(27, 8, 24),
-(28, 7, 8),
-(29, 11, 9),
-(30, 11, 18),
-(31, 20, 6),
-(32, 14, 16),
-(33, 13, 15),
-(34, 17, 24),
-(35, 7, 18),
-(36, 1, 7),
-(37, 2, 8),
-(38, 10, 23),
-(39, 14, 17),
-(40, 15, 22),
-(41, 7, 18),
-(42, 18, 11),
-(43, 14, 10),
-(44, 9, 20),
-(45, 1, 18),
-(46, 14, 11),
-(47, 6, 8),
-(48, 4, 18),
-(49, 8, 16),
-(50, 14, 7),
-(51, 14, 12),
-(52, 9, 24),
-(53, 15, 7),
-(54, 18, 19),
-(55, 14, 8),
-(56, 8, 12),
-(57, 9, 6),
-(58, 12, 6),
-(59, 8, 14),
-(60, 14, 17),
-(61, 13, 12),
-(62, 2, 15),
-(63, 11, 23),
-(64, 18, 12),
-(65, 11, 20),
-(66, 11, 15),
-(67, 10, 15),
-(68, 7, 23),
-(69, 3, 7),
-(70, 1, 16),
-(71, 16, 15),
-(72, 18, 9),
-(73, 20, 14),
-(74, 3, 23),
-(75, 13, 19),
-(76, 8, 16),
-(77, 19, 6),
-(78, 1, 18),
-(79, 3, 22),
-(80, 19, 16),
-(81, 18, 14),
-(82, 6, 22),
-(83, 2, 7),
-(84, 9, 15),
-(85, 3, 14),
-(86, 7, 17),
-(87, 18, 7),
-(88, 1, 19),
-(89, 18, 15),
-(90, 11, 20),
-(91, 2, 18),
-(92, 4, 9),
-(93, 18, 22),
-(94, 20, 21),
-(95, 6, 16),
-(96, 20, 13),
-(97, 4, 24),
-(98, 6, 9),
-(99, 11, 21),
-(100, 20, 24),
-(101, 6, 13),
-(102, 20, 16),
-(103, 10, 17),
-(104, 3, 9),
-(105, 8, 6),
-(106, 4, 18),
-(107, 4, 22),
-(108, 10, 17),
-(109, 15, 19),
-(110, 20, 16),
-(111, 4, 8),
-(112, 15, 24),
-(113, 6, 24),
-(114, 8, 12),
-(115, 6, 24),
-(116, 14, 22),
-(117, 5, 12),
-(118, 13, 7),
-(119, 16, 15),
-(120, 16, 23),
-(121, 10, 18),
-(122, 3, 6),
-(123, 19, 24),
-(124, 18, 20),
-(125, 12, 13),
-(126, 10, 13),
-(127, 7, 18),
-(128, 1, 19),
-(129, 8, 10),
-(130, 8, 10),
-(131, 2, 14),
-(132, 18, 16),
-(133, 10, 8),
-(134, 15, 8),
-(135, 18, 14),
-(136, 6, 21),
-(137, 8, 7),
-(138, 15, 11),
-(139, 10, 23),
-(140, 2, 8),
-(141, 8, 12),
-(142, 18, 21),
-(143, 10, 23),
-(144, 16, 23),
-(145, 4, 24),
-(146, 18, 9),
-(147, 14, 21),
-(148, 13, 14),
-(149, 11, 14),
-(150, 14, 13),
-(151, 14, 16),
-(152, 18, 18),
-(153, 17, 20),
-(154, 10, 15),
-(155, 6, 23),
-(156, 9, 6),
-(157, 14, 20),
-(158, 3, 9),
-(159, 5, 21),
-(160, 20, 20),
-(161, 14, 21),
-(162, 4, 11),
-(163, 13, 8),
-(164, 1, 12),
-(165, 1, 1),
-(166, 2, 1),
-(167, 3, 1),
-(168, 4, 1),
-(169, 5, 1),
-(170, 6, 2),
-(171, 7, 2),
-(172, 8, 2),
-(173, 9, 2),
-(174, 10, 2),
-(175, 11, 2),
-(176, 12, 2),
-(177, 13, 3),
-(178, 14, 3),
-(179, 15, 3),
-(180, 16, 4),
-(181, 17, 4),
-(182, 4, 4),
-(183, 19, 4),
-(184, 20, 4);
+(160, 1, 1),
+(161, 2, 1),
+(162, 3, 1),
+(163, 4, 1),
+(164, 5, 1),
+(165, 6, 2),
+(166, 7, 2),
+(167, 8, 2),
+(168, 9, 2),
+(169, 10, 2),
+(170, 11, 2),
+(171, 12, 2),
+(172, 13, 3),
+(173, 14, 3),
+(174, 15, 3),
+(175, 16, 4),
+(176, 17, 4),
+(177, 4, 4),
+(178, 19, 4),
+(179, 20, 4);
 
 -- --------------------------------------------------------
 
@@ -784,6 +624,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (23, 1),
 (24, 1),
 (25, 1),
+(26, 1),
 (32, 1),
 (33, 1),
 (34, 1),
@@ -833,12 +674,12 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 
 CREATE TABLE `representations` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `location_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `location_id` bigint(20) UNSIGNED NOT NULL,
   `show_id` bigint(20) UNSIGNED NOT NULL,
   `when` datetime DEFAULT NULL,
   `price` decimal(10,2) DEFAULT NULL,
   `places` int(11) DEFAULT NULL,
-  `bookable` tinyint(1) DEFAULT NULL,
+  `bookable` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -847,12 +688,12 @@ CREATE TABLE `representations` (
 -- Déchargement des données de la table `representations`
 --
 
-INSERT INTO `representations` (`id`, `location_id`, `show_id`, `when`, `price`, `places`, `bookable`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, '2021-10-12 13:30:00', '10.50', 97, 1, '2021-06-09 08:21:45', '2021-06-09 06:21:45'),
-(2, 2, 1, '2021-10-12 20:30:00', '9.50', 80, 1, '2021-06-08 23:30:15', NULL),
+INSERT INTO `representations` (`id`, `location_id`, `show_id`, `when`, `price`, `places`, `bookable`, `created_at`) VALUES
+(1, 1, 1, '2012-10-12 13:30:00', '10.50', 120, 1, '2021-06-09 10:23:19'),
+(2, 2, 1, '2012-10-12 20:30:00', '9.50', 80, 1, '2021-06-09 10:23:19'),
 (3, 2, 2, '2021-10-02 20:30:00', '12.50', 99, 0, '2021-06-09 14:21:30', '2021-06-09 12:21:30'),
-(4, NULL, 3, '2021-10-16 20:30:00', '11.00', 150, 1, '2021-06-08 23:30:06', NULL),
-(5, 3, 4, NULL, '21.00', 97, 1, '2021-06-09 13:53:51', '2021-06-09 11:53:51');
+(3, 3, 2, '2012-10-02 20:30:00', '12.50', 100, 1, '2021-06-09 15:54:51'),
+(4, 4, 3, '2012-10-16 20:30:00', '11.00', 150, 1, '2021-06-09 15:54:55');
 
 -- --------------------------------------------------------
 
@@ -868,6 +709,13 @@ CREATE TABLE `representation_user` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `representation_user`
+--
+
+INSERT INTO `representation_user` (`id`, `user_id`, `representation_id`, `places`, `created_at`) VALUES
+(1, 1, 1, NULL, '2021-06-09 10:23:20');
 
 -- --------------------------------------------------------
 
@@ -1276,19 +1124,19 @@ ALTER TABLE `user_roles`
 -- AUTO_INCREMENT pour la table `artists`
 --
 ALTER TABLE `artists`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT pour la table `artist_type`
 --
 ALTER TABLE `artist_type`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT pour la table `artist_type_show`
 --
 ALTER TABLE `artist_type_show`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=185;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=186;
 
 --
 -- AUTO_INCREMENT pour la table `data_rows`
@@ -1354,7 +1202,7 @@ ALTER TABLE `representations`
 -- AUTO_INCREMENT pour la table `representation_user`
 --
 ALTER TABLE `representation_user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `roles`
@@ -1372,7 +1220,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT pour la table `shows`
 --
 ALTER TABLE `shows`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT pour la table `subscriptions`
@@ -1402,7 +1250,7 @@ ALTER TABLE `types`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Contraintes pour les tables déchargées
@@ -1420,7 +1268,7 @@ ALTER TABLE `artist_type`
 --
 ALTER TABLE `artist_type_show`
   ADD CONSTRAINT `artist_type_show_artist_type_id_foreign` FOREIGN KEY (`artist_type_id`) REFERENCES `artist_type` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `artist_type_show_show_id_foreign` FOREIGN KEY (`show_id`) REFERENCES `shows` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `artist_type_show_show_id_foreign` FOREIGN KEY (`show_id`) REFERENCES `shows` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `data_rows`
