@@ -10,30 +10,38 @@
         <h2 class="py-5"><b class="text-2xl">Infos billeterie</b></h2>
         <p><strong>Prix:</strong> {{ $show->price }} €</p>
 
-
-        @if($show->bookable)
+        @if(($show->bookable) && (empty($representations[0]->when)))
+          <p><em>Précommande uniquement</em></p>
+        @elseif($show->bookable)
           <p><em>Réservable</em></p>
         @else
           <p><em>Non réservable</em></p>
         @endif
 
         <h2 class="py-5"><b class="text-2xl">Liste des représentations</b></h2>
-        @if($show->representations->count()>=1)
-          <ul>
-          @foreach ($show->representations as $item)
-              <li class="list-disc"><b>Date</b> : {{ $item->when }}</li> 
-              <li class="list-none"><b>Salle</b> : {{ !empty($representations[0]->location_id) ? $item->location->designation : "Pas de salle actuellement" }}</li>  <!--TODO-->
+        @if($show->representations->count()>0)
+            <ul>
 
-              @if($item->bookable === true)
-              <li><b>{{ !empty($representations[0]->location_id) ? "Places" : "Précommandes" }}</b> : <b @if($item->places < 11) class="text-red-600" @endif></b>
-                {{ $item->places }}
-              </li>
-              @else
-              <li><b>Places</b> : Bientôt disponnibles</li> 
-              @endif
+            @foreach ($show->representations as $item)
+                <li class="list-disc"><b>Date</b> : {{ !empty($item->when) ? $item->when : "non définie" }}</li> 
+                <li class="list-none"><b>Salle</b> : {{ !empty($representations[0]->location_id) ? $item->location->designation : "Non définie" }}</li>  <!--TODO-->
 
-          @endforeach
-          </ul>
+                @if($show->bookable == true)
+                  <li><b>{{ !empty($representations[0]->location_id) ? "Places" : "Précommandes" }}</b> : <b @if($item->places < 11) class="text-red-600" @endif></b>
+                  {{ $item->places }}
+                  </li>
+                @else
+                  <li><b>Places</b> : Bientôt disponnibles</li> 
+                @endif
+
+            @endforeach
+            </ul>
+        @elseif($show->location_id != NULL)
+
+        <ul>
+          <li><b>Salle</b>: {{ $show->location->designation }}</li>
+        </ul>
+
         @else
           <p class="text-gray-600">Aucune représentation</p>
         @endif
@@ -94,7 +102,7 @@
                 <option value="">Choisir une salle</option>
                 
                 @foreach ($show->representations as $item)
-                  <option value="{{ !empty($item->location->id) ? $item->location->id : "" }}">{{ !empty($item->location->designation) ? $item->location->designation : "Inconnue" }}</option>
+                  <option value="{{ !empty($item->location->id) ? $item->location->id : "" }}">{{ !empty($item->location->designation) ? $item->location->designation : "Non définie" }}</option>
                 @endforeach
 
               </select><br>
@@ -115,10 +123,10 @@
           @else
             <p><em class="text-red-700 pl-5 text-2xl">Non réservable</em></p>
           @endif
-          @php
-            if(!empty($message)){echo("<p class='my-5 text-red-800'>".$message."</p>");}
-            if(!empty($message2)){echo("<p class='my-5 text-red-800'>".$message2."</p>");}
-          @endphp
+
+          @if(Session::has('message'))
+            <p class="text-red-700">{{ Session::get('message') }}</p>
+          @endif
           
           @if($show->bookable)
             <div class="mt-10">

@@ -59,7 +59,7 @@ Route::post('/payment/{id}', [App\Http\Controllers\PaymentController::class, 'ha
 //Profil
 Route::get('/profil', [App\Http\Controllers\UserController::class, 'profilDisplay'])->middleware(['auth'])->name('my_profil');
 Route::get('/profil/{id}/edit', [App\Http\Controllers\UserController::class, 'edit'])->middleware(['auth'])->name('edit_profil');
-Route::get('/profil/{id}/delete', [App\Http\Controllers\UserController::class, 'destroy'])->middleware(['auth'])->name('delete_profil');
+Route::get('/profil/{id}/destroy', [App\Http\Controllers\UserController::class, 'delete'])->middleware(['auth'])->name('delete_profil');
 //Back office
 Route::group(['prefix' => 'admin'], function () { Voyager::routes(); });
 //Flux RSS

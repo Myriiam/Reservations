@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 08 juin 2021 à 17:21
+-- Généré le : mer. 09 juin 2021 à 16:57
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.4.10
 
@@ -835,7 +835,7 @@ CREATE TABLE `representations` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `location_id` bigint(20) UNSIGNED DEFAULT NULL,
   `show_id` bigint(20) UNSIGNED NOT NULL,
-  `when` datetime NOT NULL,
+  `when` datetime DEFAULT NULL,
   `price` decimal(10,2) DEFAULT NULL,
   `places` int(11) DEFAULT NULL,
   `bookable` tinyint(1) DEFAULT NULL,
@@ -848,10 +848,11 @@ CREATE TABLE `representations` (
 --
 
 INSERT INTO `representations` (`id`, `location_id`, `show_id`, `when`, `price`, `places`, `bookable`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, '2012-10-12 13:30:00', '10.50', 39, 1, '2021-06-08 12:15:13', '2021-06-08 10:15:13'),
-(2, 2, 1, '2012-10-12 20:30:00', '9.50', 80, 1, '2021-06-06 12:56:55', NULL),
-(3, NULL, 2, '2012-10-02 20:30:00', '12.50', 88, 1, '2021-06-08 12:16:24', '2021-06-08 10:16:24'),
-(4, NULL, 3, '2012-10-16 20:30:00', '11.00', 150, 1, '2021-06-06 12:56:55', NULL);
+(1, 1, 1, '2021-10-12 13:30:00', '10.50', 97, 1, '2021-06-09 08:21:45', '2021-06-09 06:21:45'),
+(2, 2, 1, '2021-10-12 20:30:00', '9.50', 80, 1, '2021-06-08 23:30:15', NULL),
+(3, 2, 2, '2021-10-02 20:30:00', '12.50', 99, 0, '2021-06-09 14:21:30', '2021-06-09 12:21:30'),
+(4, NULL, 3, '2021-10-16 20:30:00', '11.00', 150, 1, '2021-06-08 23:30:06', NULL),
+(5, 3, 4, NULL, '21.00', 97, 1, '2021-06-09 13:53:51', '2021-06-09 11:53:51');
 
 -- --------------------------------------------------------
 
@@ -864,64 +865,9 @@ CREATE TABLE `representation_user` (
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `representation_id` bigint(20) UNSIGNED NOT NULL,
   `places` int(11) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `representation_user`
---
-
-INSERT INTO `representation_user` (`id`, `user_id`, `representation_id`, `places`, `created_at`) VALUES
-(1, 1, 1, NULL, '2021-06-06 12:56:58'),
-(2, 1, 1, NULL, '2021-06-07 19:19:10'),
-(3, 1, 1, NULL, '2021-06-07 19:31:55'),
-(4, 1, 1, NULL, '2021-06-07 19:38:36'),
-(5, 1, 1, NULL, '2021-06-07 19:45:54'),
-(6, 1, 1, NULL, '2021-06-07 19:59:25'),
-(7, 1, 1, NULL, '2021-06-07 20:01:02'),
-(8, 1, 1, NULL, '2021-06-07 20:34:47'),
-(9, 1, 1, NULL, '2021-06-07 20:36:30'),
-(10, 1, 1, NULL, '2021-06-07 20:37:33'),
-(11, 1, 1, NULL, '2021-06-07 20:44:22'),
-(12, 1, 1, NULL, '2021-06-07 20:56:21'),
-(13, 1, 1, NULL, '2021-06-07 22:56:19'),
-(14, 1, 1, NULL, '2021-06-08 00:32:17'),
-(15, 1, 1, NULL, '2021-06-08 00:39:19'),
-(16, 1, 2, NULL, '2021-06-08 00:41:27'),
-(17, 1, 1, NULL, '2021-06-08 00:42:43'),
-(18, 1, 2, NULL, '2021-06-08 00:44:43'),
-(19, 1, 1, NULL, '2021-06-08 00:46:56'),
-(20, 1, 1, NULL, '2021-06-08 00:49:54'),
-(21, 1, 1, NULL, '2021-06-08 00:51:33'),
-(22, 1, 2, NULL, '2021-06-08 00:55:36'),
-(23, 1, 1, NULL, '2021-06-08 00:57:03'),
-(24, 1, 1, NULL, '2021-06-08 01:01:26'),
-(25, 1, 1, NULL, '2021-06-08 01:03:06'),
-(26, 1, 1, NULL, '2021-06-08 01:10:49'),
-(27, 1, 1, NULL, '2021-06-08 01:32:56'),
-(28, 1, 1, NULL, '2021-06-08 01:58:35'),
-(29, 1, 3, NULL, '2021-06-08 02:38:09'),
-(30, 1, 3, NULL, '2021-06-08 02:51:06'),
-(31, 1, 3, NULL, '2021-06-08 02:58:47'),
-(32, 1, 3, NULL, '2021-06-08 03:11:33'),
-(33, 1, 3, NULL, '2021-06-08 03:12:53'),
-(34, 1, 3, NULL, '2021-06-08 03:14:56'),
-(35, 1, 3, NULL, '2021-06-08 03:16:16'),
-(36, 1, 3, NULL, '2021-06-08 03:17:29'),
-(37, 1, 3, NULL, '2021-06-08 03:22:06'),
-(38, 1, 3, NULL, '2021-06-08 03:31:20'),
-(39, 1, 3, NULL, '2021-06-08 03:32:22'),
-(40, 1, 1, NULL, '2021-06-08 03:34:32'),
-(41, 1, 1, NULL, '2021-06-08 03:37:03'),
-(42, 1, 1, NULL, '2021-06-08 03:38:27'),
-(43, 1, 1, NULL, '2021-06-08 03:39:31'),
-(44, 1, 1, NULL, '2021-06-08 10:26:07'),
-(45, 1, 3, NULL, '2021-06-08 11:09:02'),
-(46, 1, 3, NULL, '2021-06-08 11:10:37'),
-(47, 1, 1, NULL, '2021-06-08 11:11:54'),
-(48, 1, 3, NULL, '2021-06-08 11:12:25'),
-(49, 1, 1, NULL, '2021-06-08 12:15:13'),
-(50, 1, 3, NULL, '2021-06-08 12:16:24');
 
 -- --------------------------------------------------------
 
@@ -1006,28 +952,7 @@ INSERT INTO `shows` (`id`, `slug`, `title`, `description`, `poster_url`, `locati
 (1, 'ayiti', 'Ayiti', 'Un homme est bloqué à l’aéroport.\n Questionné par les douaniers, il doit alors justifier son identité, et surtout prouver qu\'il est haïtien – qu\'est-ce qu\'être haïtien ?', 'ayiti.jpg', 1, 1, '10.50', NULL, NULL),
 (2, 'cible-mouvante', 'Cible mouvante', 'Dans ce « thriller d’anticipation », des adultes semblent alimenter et véhiculer une crainte féroce envers les enfants âgés entre 10 et 12 ans.', 'cible.jpg', 2, 1, '9.50', NULL, NULL),
 (3, 'ceci-nest-pas-un-chanteur-belge', 'Ceci n\'est pas un chanteur belge', 'Non peut-être ?!\nEntre Magritte (pour le surréalisme comique) et Maigret (pour le réalisme mélancolique), ce dixième opus semalien propose quatorze nouvelles chansons mêlées à de petits textes humoristiques et à quelques fortes images poétiques.', 'claudebelgesaison220.jpg', NULL, 0, '12.50', NULL, NULL),
-(4, 'manneke', 'Manneke… !', 'A tour de rôle, Pierre se joue de ses oncles, tantes, grands-parents et surtout de sa mère.', 'wayburn.jpg', 3, 1, '11.00', NULL, NULL),
-(5, 'quae-aut', 'Quae aut.', 'Repellendus ipsam dolor repudiandae optio est sit eligendi ut accusantium.', 'default.jpg', 3, 1, '29.36', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(6, 'debitis-tempore-dolorem', 'Debitis tempore dolorem.', 'Eos impedit alias est sed aspernatur voluptatem consequatur laborum quibusdam impedit alias ut exercitationem.', 'default.jpg', 1, 1, '22.65', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(7, 'eveniet-provident-numquam', 'Eveniet provident numquam.', 'Non quod porro minus totam quaerat quidem hic et qui porro et omnis est ea quos et quas labore.', 'default.jpg', 2, 0, '20.61', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(8, 'eos-dicta-eos', 'Eos dicta eos.', 'Vel sint rerum voluptas non est quibusdam nobis eum accusantium laudantium exercitationem temporibus omnis dolorem et.', 'default.jpg', 2, 1, '7.88', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(9, 'ea-vitae', 'Ea vitae.', 'Rerum at dolorem quod placeat voluptatem minima soluta rerum voluptates eum voluptas aut soluta qui unde.', 'default.jpg', 2, 1, '12.81', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(10, 'magnam-est-dignissimos', 'Magnam est dignissimos.', 'Sed iure officiis temporibus animi et sed est pariatur cupiditate sed nihil libero est commodi.', 'default.jpg', 2, 1, '12.55', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(11, 'qui-omnis-ipsum', 'Qui omnis ipsum.', 'Molestias rem dolores voluptatem sit rerum sed cum quo ea quasi consequatur fugit quibusdam unde pariatur adipisci.', 'default.jpg', 2, 0, '37.03', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(12, 'totam-autem-vero', 'Totam autem vero.', 'Blanditiis similique dolorem nihil incidunt ea eius numquam dolores est quam qui.', 'default.jpg', 1, 1, '6.73', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(13, 'a-quod', 'A quod.', 'Harum fugit est ex distinctio laborum excepturi ipsam architecto cupiditate ut quis voluptatibus et ut ea eius sed qui sed.', 'default.jpg', 3, 1, '7.60', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(14, 'molestiae-esse-quibusdam', 'Molestiae esse quibusdam.', 'Non quam voluptatibus et officiis magni laboriosam laudantium atque at alias error eveniet at quidem mollitia.', 'default.jpg', 3, 0, '34.86', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(15, 'omnis-voluptate', 'Omnis voluptate.', 'Debitis hic rem nostrum rerum consequuntur reiciendis sed omnis enim earum excepturi vel quis inventore magnam.', 'default.jpg', 3, 1, '15.74', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(16, 'dolores-et', 'Dolores et.', 'Voluptatem dolorem ut adipisci inventore nihil quo fugiat vel excepturi illum ut doloribus quod et molestias blanditiis.', 'default.jpg', 2, 1, '16.86', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(17, 'nemo-aperiam', 'Nemo aperiam.', 'Optio esse similique reiciendis est est nihil quaerat sint distinctio recusandae quis ipsum voluptatem est.', 'default.jpg', 1, 0, '30.55', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(18, 'sit-et-eum', 'Sit et eum.', 'Et consectetur nisi illum animi eum delectus voluptatem quaerat voluptatum dolorem doloremque pariatur dolores reprehenderit sed eum dolorem nisi dolor consectetur.', 'default.jpg', 2, 1, '5.90', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(19, 'optio-facere', 'Optio facere.', 'Incidunt occaecati eum qui vero ipsa asperiores earum tempore ut et aut repellat non et sunt consequuntur.', 'default.jpg', 4, 1, '20.77', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(20, 'ut-dolores-alias', 'Ut dolores alias.', 'Veritatis quam quibusdam voluptatem officia a maiores voluptatum quam minima aut qui fuga repellat asperiores iste voluptas.', 'default.jpg', 3, 1, '16.70', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(21, 'quaerat-temporibus-quidem', 'Quaerat temporibus quidem.', 'Qui error quibusdam sit tempora est sit molestias ea error blanditiis distinctio expedita neque quod ut ullam non qui.', 'default.jpg', 1, 1, '38.69', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(22, 'vero-esse', 'Vero esse.', 'Qui suscipit aspernatur quia aut ut ipsam accusantium ducimus similique nihil consectetur.', 'default.jpg', 1, 1, '18.76', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(23, 'cum-deserunt-labore', 'Cum deserunt labore.', 'Itaque nam mollitia qui ut quis aut dolorum in et et totam debitis.', 'default.jpg', 1, 1, '9.07', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(24, 'eius-eius-alias', 'Eius eius alias.', 'Est sunt dolor ex odit qui sed accusamus quia sint.', 'default.jpg', 2, 1, '11.83', '2021-06-06 12:56:55', '2021-06-06 12:56:55'),
-(25, 'frtiland', 'Fritland', 'Fritland, c’est tout simplement la friterie la plus connue de Bruxelles, n’en déplaise à Antoine et Eugène. Un fleuron du patrimoine national, des frites remarquables. Fritland est un succès et la famille en vit bien. L’argent, pourtant, ce n’est pas le truc de Zenel. Lui, ce qu’il aime, c’est la littérature, l’art, rêver, raconter des histoires. Et il en connaît des histoires…', 'default.jpg', 1, 0, '8.00', '2021-06-07 19:14:15', '2021-06-07 19:14:15');
+(4, 'manneke', 'Manneke… !', 'A tour de rôle, Pierre se joue de ses oncles, tantes, grands-parents et surtout de sa mère.', 'wayburn.jpg', 3, 1, '11.00', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1134,7 +1059,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`, `stripe_id`, `card_brand`, `card_last_four`, `trial_ends_at`, `firstname`, `lastname`, `langue`) VALUES
-(1, 1, 'epfc', 'epfc@epfc.com', 'users/default.png', NULL, '$2y$10$ke.sO8kUTaDypKaqTtS9bOET0.Skm1TwNSUkAYS2vUKI8/zB0P356', NULL, NULL, NULL, NULL, '4242424242424242', '416', '', '2023-09-20 00:54:04', 'Simba', 'Moufassa', 'français');
+(3, 2, 'bot', '', 'users/default.png', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'bot', 'bot', 'FR'),
+(8, 1, 'admin', 'admin@epfc.com', 'users/default.png', NULL, '$2y$10$gWe33WHlMQWg2rUG5GkUH.Qyr5Yo6hOKTx0eo9Q5Se.Z51i3BvQ8.', NULL, NULL, '2021-06-09 12:53:19', '2021-06-09 12:53:19', NULL, NULL, NULL, NULL, 'Lucie', 'Epfc', 'FR'),
+(9, 2, 'Mufasa Simba', 'epfc@epfc.com', 'users/default.png', NULL, '$2y$10$YSzsg1GGXd/BvViTfGFE1.zPwUis5wycO3f8mtbmr0Qyfr88k30MW', NULL, NULL, '2021-06-09 12:56:47', '2021-06-09 12:56:47', NULL, NULL, NULL, NULL, 'Simba', 'Mufasa', 'FR');
 
 -- --------------------------------------------------------
 
@@ -1421,13 +1348,13 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT pour la table `representations`
 --
 ALTER TABLE `representations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `representation_user`
 --
 ALTER TABLE `representation_user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT pour la table `roles`
@@ -1445,7 +1372,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT pour la table `shows`
 --
 ALTER TABLE `shows`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT pour la table `subscriptions`
@@ -1475,7 +1402,7 @@ ALTER TABLE `types`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Contraintes pour les tables déchargées
@@ -1544,7 +1471,6 @@ ALTER TABLE `shows`
 -- Contraintes pour la table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_id_foreign` FOREIGN KEY (`id`) REFERENCES `locations` (`id`),
   ADD CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`);
 
 --

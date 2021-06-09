@@ -37,11 +37,25 @@ class PaymentController extends Controller
         $qty = $request->session()->get('qty');
         $price = $request->session()->get('price');
         $name = $request->session()->get('show')->title;
+        $show = $request->session()->get('show');
         $date = $request->session()->get('date');
-        $show = Show::find($id);
         $user = Auth::id();
         $representations = $request->session()->get('representations');
-        $places = $representations[0]->places;
+        
+        $representations = DB::table('representations')->where([
+            ['show_id', '=', $show->id],
+            ['location_id', '=', $show->location_id],
+        ])->get();
+ 
+        /*
+        foreach($representations as $representation){
+            if($representations->when == $date){
+                $places = $representation->places;
+            }
+        }
+        */
+
+
         $noLocation = false;
 
         if(empty($places))
@@ -70,7 +84,7 @@ class PaymentController extends Controller
                     $representation->places = $places - $qty;
                     $representation->save();
 
-                    if($representation->location_id === NULL)
+                    if($representation->location_id === NULL || $show->location_id === NULL)
                     {
                         $noLocation = true;
                     }
@@ -91,6 +105,7 @@ class PaymentController extends Controller
                     foreach($show->artistTypes as $at) {
                         $collaborateurs[$at->type->type][] = $at->artist;
                     }
+
                     return view('show.show',[
                         'show' => $show,
                         'message' => "Une erreur est survenue",
@@ -104,6 +119,7 @@ class PaymentController extends Controller
             foreach($show->artistTypes as $at) {
                 $collaborateurs[$at->type->type][] = $at->artist;
             }
+
             return view('show.show',[
                 'show' => $show,
                 'message' => "Plus de places disponibles",

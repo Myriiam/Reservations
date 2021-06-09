@@ -7,6 +7,7 @@ use App\Models\Show;
 use Illuminate\Http\Request;
 use App\Models\Representation;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class RepresentationController extends Controller
 {
@@ -110,33 +111,89 @@ class RepresentationController extends Controller
      */
     public function booking($id,Request $request)
     {
+
         $show = Show::find($id);
         $quantity = $request->quantity;
         $price = $quantity*$show->price;
-        $date = $request->date;
+        $date = Carbon::parse($request->date)->format('d/m/Y');
+        $hour = Carbon::parse($request->date)->format('G:i');
         $slug = $show->slug;
+        $location_id = $request->place;
+        $place = DB::table('locations')->where('id', '=', $location_id)->get();
 
         $representations = DB::table('representations')->where([
-            ['show_id', '=', $id],
-            ['when', '=', $date],
+            ['show_id', '=', $show->id],
         ])->get();
 
-        if($quantity < 1 || empty($request->date)){
-            return redirect()->action([ShowController::class, 'show', $slug]);
-        } else {
+          
+        if(($quantity > 0) && !empty($request->date)) {
             session([
                 'qty' => $quantity,
                 'price' => $price,
                 'representations' => $representations,
                 'date' => $date,
                 'show' => $show,
+                'place' => $place,
+                'hour' => $hour,
                 ]);
             return view('show.booking',[
                 'show' => $show,
                 'qty' => $quantity,
                 'price' => $price,
                 'date' => $date,
-            ]);
+                'place' => $place,
+                'hour' => $hour,
+                ]);
+
+        } elseif(($quantity > 0) && empty($request->date)) {
+
+            if(empty($representations->when))
+            {
+                if(empty($representations->when) && $show->bookable == true)
+                {
+                    session([
+                        'qty' => $quantity,
+                        'price' => $price,
+                        'representations' => NULL,
+                        'date' => NULL,
+                        'show' => $show,
+                        'place' => $place,
+                        'hour' => $hour,
+                        ]);
+
+                    return view('show.booking',[
+                        'show' => $show,
+                        'qty' => $quantity,
+                        'price' => $price,
+                        'date' => NULL,
+                        'place' => $place,
+                        'hour' => $hour,
+                        ]);
+                }
+                elseif(empty($representations->when) && $show->bookable == false)
+                {
+                    Session::flash('message', 'Ce spectacle n\'est pas réservable'); 
+                    return redirect()->route('show_show', 
+                    ['slug' => $slug]);
+                }
+                else
+                {
+                    Session::flash('message', 'Veuillez choisir une date'); 
+                    return redirect()->route('show_show', 
+                    ['slug' => $slug]);
+                }
+            }
+
+
+        } elseif(($quantity < 1) && !empty($request->date)) {  
+            Session::flash('message', 'Veuillez choisir une quantité'); 
+            return redirect()->route('show_show', 
+            ['slug' => $slug]);
+            
+        } else {
+            Session::flash('message', 'Veuillez remplir tous les champs'); 
+            return redirect()->route('show_show', 
+            ['slug' => $slug]);
         }
     }
 }
