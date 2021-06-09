@@ -27,7 +27,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('fetch', function (User $user) {
-            return $user->role->name === 'admin' || $user->role->name === 'affiliate';
+            return $user->role_id === 1;
         });
     
     }
