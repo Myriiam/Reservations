@@ -64,3 +64,5 @@ Route::get('/profil/{id}/destroy', [App\Http\Controllers\UserController::class, 
 Route::group(['prefix' => 'admin'], function () { Voyager::routes(); });
 //Flux RSS
 Route::feeds();
+//Csv
+Route::get('/export-csv', [App\Http\Controllers\CsvController::class, 'exportCsv'])->middleware(['auth'])->name('export_csv');
