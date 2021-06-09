@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 
@@ -135,8 +136,8 @@ class UserController extends Controller
             $file->move($location,$filename);
 
         }
-
-        return redirect('/welcome')->with('message', 'Votre profil a été mis à jours !');
+        Session::flash('message', 'Votre profil a été mis à jours !');
+        return redirect()->route('my_profil');
     }
 
     /**
@@ -147,15 +148,20 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        if(User::find($id)){
-            $user = User::find($id);
-            Auth::logout();
+        $user = User::findOrFail($id);
+        $representations = $user->representationUser()->get();
+        if(isset($representations)) {
+            $botUser = User::where('name', '=', 'bot')->get()->first();
+            foreach($representations as $representation) {
+                $representation->user_id = $botUser->id;
+                $representation->save();
+            }
             $user->delete();
-           // Notification::container()->success('Your account has been permanently removed from the system. Sorry to see you go!');
-           $message = 'Votre compte a été définitivement supprimé !';
-            return view('welcome',[
-                'message' => $message,
-            ]);
+        } else {
+            $user->forceDelete();
         }
+        Storage::delete($user->avatar);
+        Session::flash('message', 'Votre compte a été définitivement supprimé !'); 
+        return redirect()->route('home');
     }
 }
