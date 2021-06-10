@@ -70,3 +70,8 @@ Route::get('/profil/{id}/destroy', [App\Http\Controllers\UserController::class, 
 Route::group(['prefix' => 'admin'], function () { Voyager::routes(); });
 //Flux RSS
 Route::feeds();
+//Csv
+Route::get('/shows-csv', [App\Http\Controllers\CsvController::class, 'showsCsv'])->middleware(['auth'])->name('export_shows_csv');
+Route::get('/users-csv', [App\Http\Controllers\CsvController::class, 'usersCsv'])->middleware(['auth'])->name('export_users_csv');
+Route::get('/csv', [App\Http\Controllers\HomeController::class, 'csv'])->middleware(['auth'])->name('csv');
+Route::post('/csv-import', [App\Http\Controllers\CsvController::class, 'importCsv'])->middleware(['auth'])->name('file-import');

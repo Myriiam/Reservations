@@ -26,4 +26,14 @@ class HomeController extends Controller
     {
         return view('about');
     }
+
+    /**
+     * Show the CSV page.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function csv()
+    {
+        return view('csv.export');
+    }
 }
