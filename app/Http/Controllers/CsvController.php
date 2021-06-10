@@ -15,7 +15,7 @@ class CsvController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showCsv(Request $request)
+    public function showsCsv(Request $request)
     {
        $fileName = 'shows.csv';
 
@@ -67,7 +67,7 @@ class CsvController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function userCsv(Request $request)
+    public function usersCsv(Request $request)
     {
         $fileName = 'users.csv';
         $users = User::all();
