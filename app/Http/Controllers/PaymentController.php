@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Representation;
-use Illuminate\Http\Request;
 use Stripe;
 use Session;
 use App\Models\Show;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use App\Models\Representation;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
@@ -47,21 +48,15 @@ class PaymentController extends Controller
             ['location_id', '=', $show->location_id],
         ])->get();
 
-        $representationsBis = DB::table('representations')->where([
-            ['show_id', '=', $show->id],
-            ['when', '=', $date],
-        ])->get();
-
 
         foreach($representations as $representation){
-            if(isset($representations->when))
+            if(isset($representation->when))
             {
-                if($representations->when == $date){
+                if(Carbon::parse($representation->when)->format('d/m/Y') == $date){
                     $places = $representation->places;
                 }
             }
         }
-
 
 
         $noLocation = false;
