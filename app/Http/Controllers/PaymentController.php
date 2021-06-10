@@ -27,7 +27,7 @@ class PaymentController extends Controller
     {
         return view('payment.payment');
     }
-  
+
     /**
      * handling payment with POST
      */
@@ -41,34 +41,37 @@ class PaymentController extends Controller
         $date = $request->session()->get('date');
         $user = Auth::id();
         $representations = $request->session()->get('representations');
-        
+
         $representations = DB::table('representations')->where([
             ['show_id', '=', $show->id],
             ['location_id', '=', $show->location_id],
         ])->get();
- 
-        /*
+
+        $representationsBis = DB::table('representations')->where([
+            ['show_id', '=', $show->id],
+            ['when', '=', $date],
+        ])->get();
+
+
         foreach($representations as $representation){
-            if($representations->when == $date){
-                $places = $representation->places;
+            if(isset($representations->when))
+            {
+                if($representations->when == $date){
+                    $places = $representation->places;
+                }
             }
         }
-        */
+
 
 
         $noLocation = false;
-
-        if(empty($places))
-        {
-            $places = $mininumPlace;
-        }
 
         if(($places - $qty) >= 0)
         {
 
             try {
                     Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
-                    
+
                     Stripe\Charge::create ([
                         'amount' => $price * 100,
                         'currency' => "EUR",
@@ -101,7 +104,7 @@ class PaymentController extends Controller
                     ]);
                 } catch(\Exception $ex) {
                     $collaborateurs = [];
-        
+
                     foreach($show->artistTypes as $at) {
                         $collaborateurs[$at->type->type][] = $at->artist;
                     }
@@ -115,7 +118,7 @@ class PaymentController extends Controller
                 }
         } else {
             $collaborateurs = [];
-        
+
             foreach($show->artistTypes as $at) {
                 $collaborateurs[$at->type->type][] = $at->artist;
             }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Show;
 use App\Models\Artist;
 use GuzzleHttp\Client;
+use App\Models\Location;
 use App\Models\ArtistType;
 use Illuminate\Http\Request;
 use App\Models\Representation;
@@ -23,7 +24,7 @@ class ShowController extends Controller
     public function index(Request $request)
     {
         session(['search_criteria' => $request->title]);
-        
+
         if ($request && $request->title) {
             $shows = DB::table('shows')->where('title', 'LIKE', "%{$request->title}%")->paginate(12);
             $shows->withPath("show?title={$request->title}");
@@ -71,7 +72,7 @@ class ShowController extends Controller
 
         //Récupérer les artistes du spectacle et les grouper par type
         $collaborateurs = [];
-        
+
         foreach($show->artistTypes as $at) {
             $collaborateurs[$at->type->type][] = $at->artist;
         }
@@ -81,6 +82,58 @@ class ShowController extends Controller
             'collaborateurs' => $collaborateurs,
             'representations' => $representations,
         ]);
+    }
+
+
+    /**
+     * Select a place to see all dates.
+     *
+     * @param  string  $slug
+     * @return \Illuminate\Http\Response
+     */
+    public function selectPlace()
+    {
+        $place = $_GET['place'];
+        $show_id = $_GET['showSelected'];
+        $show = Show::find($show_id);
+        $dates = [];
+        $location_id = Location::where('designation', $place)->get();
+        $location_id = $location_id[0]->id;
+        //Récupérer les artistes du spectacle et les grouper par type
+        $collaborateurs = [];
+
+        foreach($show->artistTypes as $at) {
+            $collaborateurs[$at->type->type][] = $at->artist;
+        }
+
+        $representations = Representation::where([
+            ['show_id', $show_id],
+            ['location_id', $location_id],
+        ])->get();
+
+        foreach($representations as $representation)
+        {
+            array_push($dates ,$representation->when);
+        }
+        return view('show.show', [
+            'id' => $show_id,
+            'dates' => $dates,
+            'show' => $show,
+            'collaborateurs' => $collaborateurs,
+            'place' => $place,
+        ]);
+    }
+
+
+    /**
+     * Select a date to see all places.
+     *
+     * @param  string  $slug
+     * @return \Illuminate\Http\Response
+     */
+    public function selectDate($slug)
+    {
+        //TODO
     }
 
     /**
@@ -156,7 +209,7 @@ class ShowController extends Controller
             if(array_key_exists($object->show->slug, $checkedShows)) {
                 $object->show->bookable = false;
                 $object->show->poster_url = 'default.jpg';
-                
+
                 $lastShow = Show::firstOrCreate(
                     ['title' => $object->show->title],
                     (array)$object->show

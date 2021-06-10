@@ -43,6 +43,12 @@ Route::get('/location', [App\Http\Controllers\LocationController::class, 'index'
 Route::get('/location/{id}', [App\Http\Controllers\LocationController::class, 'show'])->name('location_show');
 //Show
 Route::get('/show', [App\Http\Controllers\ShowController::class, 'index'])->name('show');
+
+
+Route::get('/show/select', [App\Http\Controllers\ShowController::class, 'selectPlace'])->name('show_select_place');
+Route::post('/show/selected', [App\Http\Controllers\ShowController::class, 'selectShow'])->name('show_select');
+
+
 Route::get('/show/fetch', [App\Http\Controllers\ShowController::class, 'fetch'])->name('show_fecth');
 Route::post('/show/fill', [App\Http\Controllers\ShowController::class, 'fill'])->name('show_fill');
 Route::get('/show/sort', [App\Http\Controllers\ShowController::class, 'sort'])->name('sort_show');
