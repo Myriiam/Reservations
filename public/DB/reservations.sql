@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 10 juin 2021 à 16:25
+-- Généré le : ven. 11 juin 2021 à 14:23
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.4.10
 
@@ -400,9 +400,9 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (58, 11, 'bookable', 'text', 'Bookable', 1, 1, 1, 1, 1, 1, '{}', 7),
 (59, 11, 'price', 'text', 'Price', 1, 1, 1, 1, 1, 1, '{}', 8),
 (60, 12, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(61, 12, 'location_id', 'text', 'Location Id', 0, 1, 1, 1, 1, 1, '{}', 2),
+(61, 12, 'location_id', 'text', 'Location Id', 0, 0, 0, 0, 0, 0, '{}', 2),
 (62, 12, 'show_id', 'text', 'Show Id', 1, 1, 1, 1, 1, 1, '{}', 3),
-(63, 12, 'when', 'text', 'When', 1, 1, 1, 1, 1, 1, '{}', 4),
+(63, 12, 'when', 'text', 'When', 0, 1, 1, 1, 1, 1, '{}', 4),
 (64, 15, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (65, 15, 'user_id', 'text', 'User Id', 1, 1, 1, 1, 1, 1, '{}', 2),
 (66, 15, 'representation_id', 'text', 'Representation Id', 1, 1, 1, 1, 1, 1, '{}', 3),
@@ -429,10 +429,13 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (87, 11, 'show_belongstomany_artist_type_relationship', 'relationship', 'artist_type', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\ArtistType\",\"table\":\"artist_type\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"type_id\",\"pivot_table\":\"artist_type_show\",\"pivot\":\"1\",\"taggable\":\"0\"}', 11),
 (88, 12, 'representation_belongsto_location_relationship', 'relationship', 'locations', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Location\",\"table\":\"locations\",\"type\":\"belongsTo\",\"column\":\"location_id\",\"key\":\"id\",\"label\":\"designation\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 5),
 (89, 12, 'representation_belongsto_show_relationship', 'relationship', 'shows', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Show\",\"table\":\"shows\",\"type\":\"belongsTo\",\"column\":\"show_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 6),
-(90, 12, 'representation_belongstomany_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\User\",\"table\":\"users\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"representation_user\",\"pivot\":\"1\",\"taggable\":\"0\"}', 7),
-(91, 12, 'representation_hasmany_representation_user_relationship', 'relationship', 'representation_user', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\RepresentationUser\",\"table\":\"representation_user\",\"type\":\"hasMany\",\"column\":\"representation_id\",\"key\":\"id\",\"label\":\"places\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 8),
+(90, 12, 'representation_belongstomany_user_relationship', 'relationship', 'users', 0, 0, 0, 0, 0, 0, '{\"model\":\"App\\\\Models\\\\User\",\"table\":\"users\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"representation_user\",\"pivot\":\"1\",\"taggable\":\"0\"}', 7),
+(91, 12, 'representation_hasmany_representation_user_relationship', 'relationship', 'representation_user', 0, 0, 0, 0, 0, 0, '{\"model\":\"App\\\\Models\\\\RepresentationUser\",\"table\":\"representation_user\",\"type\":\"hasMany\",\"column\":\"representation_id\",\"key\":\"id\",\"label\":\"places\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 8),
 (92, 15, 'representation_user_belongsto_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"user_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 5),
-(93, 15, 'representation_user_belongsto_representation_relationship', 'relationship', 'representations', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Representation\",\"table\":\"representations\",\"type\":\"belongsTo\",\"column\":\"representation_id\",\"key\":\"id\",\"label\":\"when\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 6);
+(93, 15, 'representation_user_belongsto_representation_relationship', 'relationship', 'representations', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Representation\",\"table\":\"representations\",\"type\":\"belongsTo\",\"column\":\"representation_id\",\"key\":\"id\",\"label\":\"when\",\"pivot_table\":\"artist_type\",\"pivot\":\"0\",\"taggable\":\"0\"}', 6),
+(94, 12, 'created_at', 'timestamp', 'Created At', 1, 1, 1, 0, 0, 0, '{}', 5),
+(95, 12, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
+(96, 12, 'places', 'text', 'Places', 0, 1, 1, 1, 1, 1, '{}', 7);
 
 -- --------------------------------------------------------
 
@@ -472,7 +475,7 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (9, 'types', 'types', 'Type', 'Types', NULL, 'App\\Models\\Type', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-06-01 16:59:40', '2021-06-01 21:03:20'),
 (10, 'artist_type', 'artist-type', 'Artist Type', 'Artist Types', NULL, 'App\\Models\\ArtistType', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-06-01 17:00:21', '2021-06-01 20:54:22'),
 (11, 'shows', 'shows', 'Show', 'Shows', NULL, 'App\\Models\\Show', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":\"id\",\"scope\":null}', '2021-06-01 17:15:52', '2021-06-01 21:12:21'),
-(12, 'representations', 'representations', 'Representation', 'Representations', NULL, 'App\\Models\\Representation', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-06-01 17:17:00', '2021-06-01 21:20:47'),
+(12, 'representations', 'representations', 'Representation', 'Representations', NULL, 'App\\Models\\Representation', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-06-01 17:17:00', '2021-06-11 09:46:25'),
 (15, 'representation_user', 'representation-user', 'Representation User', 'Representation Users', NULL, 'App\\Models\\RepresentationUser', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-06-01 20:41:20', '2021-06-01 21:20:04');
 
 -- --------------------------------------------------------
@@ -608,9 +611,13 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (20, 1, 'Representation Users', '', '_self', NULL, NULL, 21, 1, '2021-06-01 20:41:20', '2021-06-01 21:25:48', 'voyager.representation-user.index', NULL),
 (21, 1, 'Données', '', '_self', 'voyager-folder', '#000000', NULL, 2, '2021-06-01 21:22:48', '2021-06-01 21:27:04', NULL, ''),
 (22, 2, 'CustomLink', '', '_blank', 'voyager-eye', '#000000', NULL, 1, '2021-06-01 21:40:07', '2021-06-01 21:40:30', 'home', NULL),
-(23, 1, 'Vers le site', '', '_blank', 'voyager-eye', '#000000', NULL, 7, '2021-06-01 21:41:33', '2021-06-03 07:44:10', 'home', NULL),
-(24, 1, 'Données', '', '_self', NULL, '#000000', NULL, 8, '2021-06-03 06:04:37', '2021-06-03 07:44:10', NULL, ''),
-(25, 1, 'Utilisateurs', '', '_self', 'voyager-person', '#000000', NULL, 3, '2021-06-03 07:43:59', '2021-06-03 07:44:07', NULL, '');
+(23, 1, 'Vers le site', '', '_blank', 'voyager-eye', '#000000', NULL, 9, '2021-06-01 21:41:33', '2021-06-11 05:47:33', 'home', NULL),
+(24, 1, 'Données', '', '_self', NULL, '#000000', NULL, 10, '2021-06-03 06:04:37', '2021-06-11 05:47:33', NULL, ''),
+(25, 1, 'Utilisateurs', '', '_self', 'voyager-person', '#000000', NULL, 3, '2021-06-03 07:43:59', '2021-06-03 07:44:07', NULL, ''),
+(26, 1, 'API', '/show/fetch', '_self', 'voyager-forward', '#000000', NULL, 7, '2021-06-11 05:40:49', '2021-06-11 05:43:43', NULL, ''),
+(27, 1, 'CSV', '', '_self', 'voyager-sort', '#000000', NULL, 8, '2021-06-11 05:44:30', '2021-06-11 05:52:04', NULL, ''),
+(28, 1, 'Export CSV', '/csv', '_self', NULL, '#000000', 27, 1, '2021-06-11 05:45:57', '2021-06-11 05:47:40', NULL, ''),
+(29, 1, 'Import CSV', '/import', '_self', NULL, '#000000', 27, 2, '2021-06-11 05:48:29', '2021-06-11 09:48:12', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -864,7 +871,7 @@ CREATE TABLE `representations` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `location_id` bigint(20) UNSIGNED DEFAULT NULL,
   `show_id` bigint(20) UNSIGNED NOT NULL,
-  `when` datetime NOT NULL,
+  `when` datetime DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL,
   `places` int(11) DEFAULT NULL
@@ -875,10 +882,11 @@ CREATE TABLE `representations` (
 --
 
 INSERT INTO `representations` (`id`, `location_id`, `show_id`, `when`, `created_at`, `updated_at`, `places`) VALUES
-(1, 1, 1, '2012-10-12 13:30:00', '2021-06-10 14:15:11', '2021-06-10 12:15:11', 14),
+(1, 1, 1, '2012-10-12 13:30:00', '2021-06-11 12:19:39', '2021-06-11 10:19:39', 12),
 (2, 2, 1, '2012-10-12 20:30:00', '2021-06-10 13:20:39', NULL, 105),
 (3, 2, 2, '2012-10-02 20:30:00', '2021-06-10 14:19:10', '2021-06-10 12:19:10', 48),
-(4, 3, 3, '2012-10-16 20:30:00', '2021-06-10 13:45:57', '2021-06-10 11:45:57', 100);
+(4, 3, 3, '2012-10-16 20:30:00', '2021-06-10 13:45:57', '2021-06-10 11:45:57', 100),
+(5, 2, 4, NULL, '2021-06-11 12:18:46', '2021-06-11 10:18:46', 199);
 
 -- --------------------------------------------------------
 
@@ -903,7 +911,10 @@ INSERT INTO `representation_user` (`id`, `user_id`, `representation_id`, `places
 (4, 1, 1, NULL, '2021-06-10 13:33:55', NULL),
 (5, 6, 1, NULL, '2021-06-10 13:36:55', NULL),
 (6, 1, 1, NULL, '2021-06-10 14:15:11', NULL),
-(7, 8, 3, NULL, '2021-06-10 14:24:11', '2021-06-10 12:24:11');
+(7, 8, 3, NULL, '2021-06-10 14:24:11', '2021-06-10 12:24:11'),
+(8, 4, 1, NULL, '2021-06-11 12:07:01', NULL),
+(9, 4, 5, NULL, '2021-06-11 12:18:46', NULL),
+(10, 4, 1, NULL, '2021-06-11 12:19:39', NULL);
 
 -- --------------------------------------------------------
 
@@ -1532,7 +1543,7 @@ ALTER TABLE `artist_type_show`
 -- AUTO_INCREMENT pour la table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT pour la table `data_types`
@@ -1568,7 +1579,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT pour la table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT pour la table `migrations`
@@ -1586,13 +1597,13 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT pour la table `representations`
 --
 ALTER TABLE `representations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `representation_user`
 --
 ALTER TABLE `representation_user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `roles`
