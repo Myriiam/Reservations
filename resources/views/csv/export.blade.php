@@ -6,7 +6,7 @@
     </x-slot>
     
     <h1>
-        <span class="mt-2 mb-4 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Import / export fichiers CSV</span>
+        <span class="mt-2 mb-4 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Export fichiers CSV</span>
     </h1>
     <div class="flex justify-center mb-2">
         <div class="content-center">
@@ -22,18 +22,6 @@
                 Exporter le CSV
             </a>
         </div>
-    </div>
-    <div>
-        <form action="{{ route('file-import') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="mb-4" style="max-width: 500px; margin: 0 auto;">
-                <div class="custom-file text-left">
-                    <input type="file" name="file" class="custom-file-input" id="customFile">
-                    <label class="custom-file-label" for="customFile">Choose file</label>
-                </div>
-            </div>
-            <button class="mt-8 whitespace-nowrap inline-flex justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-800 hover:bg-red-700">Importez CSV</button>
-        </form>
     </div>
 
 </x-app-layout>

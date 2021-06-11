@@ -23,11 +23,12 @@
             <ul>
 
             @foreach ($show->representations as $item)
+
                 <li class="list-disc"><b>Date</b> : {{ !empty($item->when) ? $item->when : "non définie" }}</li>
-                <li class="list-none"><b>Salle</b> : {{ !empty($representations[0]->location_id) ? $item->location->designation : "Non définie" }}</li>  <!--TODO-->
+                <li class="list-none"><b>Salle</b> : {{ !empty($item->location->designation) ? $item->location->designation : "Non définie" }}</li>  <!--TODO-->
 
                 @if($show->bookable == true)
-                  <li><b>{{ !empty($representations[0]->location_id) ? "Places" : "Précommandes" }}</b> : <b @if($item->places < 11) class="text-red-600" @endif></b>
+                  <li><b>{{ !empty($item->location->designation) ? "Places" : "Précommandes" }}</b> : <b @if($item->places < 11) class="text-red-600" @endif></b>
                   {{ $item->places }}
                   </li>
                 @else

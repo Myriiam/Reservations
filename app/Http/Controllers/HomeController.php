@@ -28,12 +28,22 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the CSV page.
+     * Show the CSV export page.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function csv()
     {
         return view('csv.export');
+    }
+
+    /**
+     * Show the CSV import page.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function csvImport()
+    {
+        return view('csv.import');
     }
 }

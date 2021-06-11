@@ -34,7 +34,6 @@ class PaymentController extends Controller
      */
     public function handlePost($id,Request $request)
     {
-        $mininumPlace = 100;  //Le minimum de place que l'on vend en avant première.(salle inconnue NULL)   TODO   choisir
         $qty = $request->session()->get('qty');
         $price = $request->session()->get('price');
         $name = $request->session()->get('show')->title;
@@ -48,14 +47,21 @@ class PaymentController extends Controller
             ['location_id', '=', $show->location_id],
         ])->get();
 
-
         foreach($representations as $representation){
+
             if(isset($representation->when))
             {
-                if(Carbon::parse($representation->when)->format('d/m/Y') == $date){
+                if(Carbon::parse($representation->when)->format('d/m/Y') == $date)
+                {
                     $places = $representation->places;
                 }
-            }
+            }else{
+                if(isset($representation->places))
+                {
+                    $places = $representation->places;
+                }else{
+                    $places = 0; 
+                }
         }
 
 
@@ -126,4 +132,5 @@ class PaymentController extends Controller
             ]);
         }
     }
+}
 }
