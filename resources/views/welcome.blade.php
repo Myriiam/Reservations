@@ -69,9 +69,11 @@
                     <div class="w-1/2 bg-gray-900 text-center text-white">
                         <h3 class="font-bold text-3xl pt-20 pb-10">Une expérience unique !</h3>
                         <p>Assistez aux meilleures pièces d'Europe !</p>
-                        <button class="mt-10 bg-gray-200 hover:bg-gray-500 hover:text-white text-gray-900 font-bold py-2 px-4 rounded-full">
-                            En savoir plus
-                        </button>   
+                        <a href="{{ route('about') }}">
+                            <button class="mt-10 bg-gray-200 hover:bg-gray-500 hover:text-white text-gray-900 font-bold py-2 px-4 rounded-full">
+                                En savoir plus
+                            </button>
+                        </a>
                     </div>
                 </section>
                 <div class="flex justify-center pt-20 pb-10">

@@ -21,7 +21,7 @@
         </div>
 
         <div class="px-5 py-2">
-          <a href="{{ route('home') }}" class="text-base text-white hover:text-gray-400">
+          <a href="{{ route('about') }}" class="text-base text-white hover:text-gray-400">
             A propos
           </a>
         </div>
