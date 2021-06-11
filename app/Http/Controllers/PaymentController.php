@@ -42,10 +42,6 @@ class PaymentController extends Controller
         $user = Auth::id();
         $representations = $request->session()->get('representations');
 
-        $representations = DB::table('representations')->where([
-            ['show_id', '=', $show->id],
-            ['location_id', '=', $show->location_id],
-        ])->get();
 
         foreach($representations as $representation){
 

@@ -124,7 +124,6 @@ class RepresentationController extends Controller
         $representations = DB::table('representations')->where([
             ['show_id', '=', $show->id],
         ])->get();
-
           
         if(($quantity > 0) && !empty($request->date)) {
             session([
@@ -154,7 +153,7 @@ class RepresentationController extends Controller
                     session([
                         'qty' => $quantity,
                         'price' => $price,
-                        'representations' => NULL,
+                        'representations' => $representations,
                         'date' => NULL,
                         'show' => $show,
                         'place' => $place,

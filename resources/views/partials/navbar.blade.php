@@ -47,7 +47,7 @@
           </a>
         @auth
           @if(Auth::user()->hasRole('admin'))
-            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+            <a href="/admin" class="text-base font-medium text-gray-500 hover:text-gray-900">
               Back office
             </a>
           @endif
