@@ -39,12 +39,19 @@
             </navigation>
           </div>
         </div>
-          <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
-            Nos tarifs
-          </a>
           <a href="/about" class="text-base font-medium text-gray-500 hover:text-gray-900">
             A propos
           </a>
+          <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+            Nos tarifs
+          </a>
+        @auth
+          @if(Auth::user()->hasRole('admin'))
+            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+              Back office
+            </a>
+          @endif
+        @endauth
            <!-- Lien du menu vers la page Profil d'un user connecté -->
            @if(auth()->user() !== null)
             <a href="{{ route('my_profil') }}" class="text-base font-medium text-gray-500 hover:text-gray-900">
