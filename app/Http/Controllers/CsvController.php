@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Location;
 use Illuminate\Http\Request;
 use App\Models\Representation;
+use Illuminate\Support\Carbon;
 
 class CsvController extends Controller
 {
@@ -19,24 +20,36 @@ class CsvController extends Controller
     {
        $fileName = 'shows.csv';
 
-       $shows = Show::all();
+       $reps = Representation::where('when', '!=', null)->get();
+
        $datas = [];
 
-       foreach($shows as $show){
+       foreach($reps as $rep){
+           $show = Show::where('id', '=', $rep->show_id)->get()[0];
+
            array_push($datas,
                $show->title,
                $show->description,
                $show->bookable,
                $show->price              
            );
-           $location = Location::findOrFail($show->location_id);
-           $place = $location->designation;
+
+           $location = Location::find($show->location_id);
+           
+           $place;
+           if(!$location){
+               $place = "";
+            } else {
+                $place = $location->designation;
+            }
+
            $representation = Representation::where('show_id', '=', $show->id)->get();
-           $date = $representation[0]->when;
+            $date = $representation[0]->when;
+
            $qty = $representation[0]->places;
-           array_push($datas, $date, $place, $qty);   //location_id can not be NULL
+            array_push($datas, $date, $place, $qty);   //location_id can not be NULL
         }
-       
+
             $headers = array(
                 "Content-type"        => "text/csv; charset=UTF-8",
                 "Content-Disposition" => "attachment; filename=$fileName",

@@ -51,6 +51,8 @@ Afin d'obtenir les images et les BREAD dans le back offices :
 
 ### `php artisan storage:link`
 
+Add stripe keys and you should be good to go
+
 ## Contributing
 
 ## Authors and acknowledgment

@@ -18,7 +18,7 @@
 
                     <h1 class= 'text-gray-800 font-bold text-4xl mt-5'> {{ $user->firstname }} {{ $user->lastname }}</h1><br>
                     <div class= 'text-gray-600 font-semibold text-xl text-center mt-5'>
-                        <p> Mon login : {{ $user->login }}</p>
+                        <p> Mon pseudo : {{ $user->name }}</p>
                         <p> Mon email : {{ $user->email }}</p>
                         <p> Langue : {{ $user->langue }}</p>
                         <p class="mt-5 mb-2 text-red-600 underline"> Mes spectacles : </p>

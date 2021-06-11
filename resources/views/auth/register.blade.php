@@ -18,7 +18,7 @@
 
             <!-- Login -->
             <div class="mt-4">
-                <x-label for="name" :value="__('Name')" />
+                <x-label for="name" :value="__('Pseudo')" />
 
                 <x-input id="name" class="block mt-1 w-full" type="name" name="name" :value="old('name')" required autofocus />
             </div>

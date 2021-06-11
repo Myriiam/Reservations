@@ -26,7 +26,7 @@
                 @endif
               </dd>
               <dt class="sr-only"></dt>
-              <dd class="text-gray-500 text-sm">Prix par place: <b>{{ $representation->price }} €</b></dd>
+              <dd class="text-gray-500 text-sm">Prix par place: <b>{{ $representation->show->price }} €</b></dd>
             </dl>
           </div>
           <div>
